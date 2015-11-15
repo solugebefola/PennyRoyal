@@ -32,8 +32,7 @@ and React.js. PennyRoyal allows users to:
 
 ### Phase 1: User Authentication, Institution model, Account model(1.5 days)
 
-In Phase 1, I will begin by implementing user signup and authentication (using
-BCrypt). I will then create the Institution and Account models and controllers.
+In Phase 1, I will begin by implementing user signup and authentication (using BCrypt). I will then create the Institution and Account models and controllers. Lastly, I will create the Account JSON API views.
 
 [Details][phase-one]
 
