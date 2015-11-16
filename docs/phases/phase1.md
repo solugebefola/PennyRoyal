@@ -9,14 +9,14 @@
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::InstitutionController (create, destroy, index, show, update)
+* Api::InstitutionController (create, destroy, update)
 * Api::AccountController (create, destroy, index, show, update)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* account/index.html.erb
-* account/show.html.erb
+* accounts/index.html.erb
+* accounts/show.html.erb
 
 ## Flux
 ### Views (React Components)

@@ -11,15 +11,18 @@ and React.js. PennyRoyal allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create a _user account_
+- [ ] Create a _user_ account
 - [ ] Log in / Log out
+- [ ] Add financial _institutions_
 - [ ] Add and delete financial _accounts_
 - [ ] Create _transactions_, or receive them from financial _institutions_
-- [ ] Tag _transactions_ with multiple _tags_ and search _transactions_ by _tag_
+- [ ] Edit _transaction_ details
+- [ ] Create _budgets_ and apply monthly amount limits
 - [ ] Sort _transactions_ into _budget_ categories
-- [ ] Apply monthly amount limits to _budgets_
 - [ ] Observe monthly spending on _budgets_
-- [ ] Observe _budget_ spending histories
+- [ ] Observe _budget_ spending histories through _pastbudgets_
+- [ ] Tag _transactions_ with multiple _tags_ and search _transactions_ by _tag_
+- [ ] Receive _alerts_ on overview page regarding monthly overspending on _budgets_
 
 ## Design Docs
 * [View Wireframes][view]
@@ -30,23 +33,19 @@ and React.js. PennyRoyal allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Institution model, Account model(1.5 days)
+### Phase 1: User Authentication, Institution model, Account model (2 days)
 
-In Phase 1, I will begin by implementing user signup and authentication (using BCrypt). I will then create the Institution and Account models and controllers. Lastly, I will create the Account JSON API views.
+In Phase 1, I will begin by implementing _User_ signup and authentication (using BCrypt). I will then create the _Institution_ and _Account_ resources, including JSON API views(_Account_ only).  By the end of phase 1, a user should be able to
+* sign up for an account
+* log in and log out of their account
+* see an index of their current accounts
+
 
 [Details][phase-one]
 
 ### Phase 2: Flux Architecture and Note CRUD (2.5 days)
 
-Phase 2 is focused on setting up Flux, the React Router, and the React view
-structure for the main application. After the basic Flux architecture has been
-set up, a Note store will be implemented and a set of actions corresponding to
-the needed CRUD functionality created. Once this is done, I will create React
-views for the Notes `Index`, `IndexItem` and `Form`. At the end of Phase 2,
-Notes can be created, read, edited and destroyed in the browser. Notes should
-save to the database when the form loses focus or is left idle after editing.
-Lastly, while constructing the views I will start using basic bootstrap for
-styling.
+Phase 2 is focused on creating the _transaction_ and _budget_ resources, setting up Flux, the React Router, and the React view structure for the main application. _Transactions_ are the core of the app, so after the basic Flux architecture has been set up, a _Transaction_ store will be created.  _Transactions_ are organized by `TransactionIndex` which can be filtered by _Account_ at this point.
 
 [Details][phase-two]
 
