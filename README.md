@@ -18,7 +18,7 @@ and React.js. PennyRoyal allows users to:
 - [ ] Create _transactions_, or receive them from financial _institutions_
 - [ ] Edit _transaction_ details
 - [ ] Create _budgets_ and apply monthly amount limits
-- [ ] Sort _transactions_ into _budget_ categories
+- [ ] Sort _transactions_ into _categories_ and _budgets_ by association.
 - [ ] Observe monthly spending on _budgets_
 - [ ] Observe _budget_ spending histories through _pastbudgets_
 - [ ] Tag _transactions_ with multiple _tags_ and search _transactions_ by _tag_
@@ -35,58 +35,54 @@ and React.js. PennyRoyal allows users to:
 
 ### Phase 1: User Authentication, Institution model, Account model (2 days)
 
-In Phase 1, I will begin by implementing _User_ signup and authentication (using BCrypt). I will then create the _Institution_ and _Account_ resources, including JSON API views(_Account_ only).  By the end of phase 1, a user should be able to
-* sign up for an account
-* log in and log out of their account
-* see an index of their current accounts
+In Phase 1, I will begin by implementing _User_ signup and authentication (using BCrypt). I will then create the _Institution_ and _Account_ resources, including JSON API views(_Account_ only) and a temporary `new` view for _Account_.  By the end of phase 1, a user should be able to:
+
+* sign up for the app
+* log in and log out of their user account
+* create a new financial account from an available institution.
+* see an index of their current financial accounts (json)
 
 
 [Details][phase-one]
 
-### Phase 2: Flux Architecture and Note CRUD (2.5 days)
+### Phase 2: Flux Architecture and Transaction CRUD (3 days)
 
-Phase 2 is focused on creating the _transaction_ and _budget_ resources, setting up Flux, the React Router, and the React view structure for the main application. _Transactions_ are the core of the app, so after the basic Flux architecture has been set up, a _Transaction_ store will be created.  _Transactions_ are organized by `TransactionIndex` which can be filtered by _Account_ at this point.
+Phase 2 is focused on creating the _Transaction_, _Category_ and _Budget_ resources, setting up Flux, the React Router, and the React view structure for the main application. _Transactions_ are the core of the app, so after the basic Flux architecture has been set up, a _Transaction_ store and a _Budget_ store will be created.  By the end of phase 2:
+
+* user can navigate to (barebones) views for overview, transactions, and budgets.
+* Sample budgets properly collect amounts from all associated transactions (categories and sub-categories).
 
 [Details][phase-two]
 
-### Phase 3: Notebooks and Tags (2 days)
+### Phase 3: Forms for Transactions, Budgets, Accounts (1 day)
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook, which has
-its own `Index` view. Create JSON API for Notebooks. Notes can also now be
-tagged with multiple tags. Users can bring up notes in a separate `SearchIndex`
-view by searching for their tags. Once the tag search is implemented, I will
-extend this to a fuzzy search through every Note's content.
+Phase 3 adds forms for creating and editing _Transactions_, _Budgets_ and _Accounts_.  For _Budgets_ and _Transactions_ this includes inline forms within their respective index views and for _Accounts_ and _Budgets_ this includes the modal form views.  By the end of phase 3, a user should be able to utilize all forms and see the results updated immediately upon submission.
 
 [Details][phase-three]
 
-### Phase 4: Allow Complex Styling in Notes (1 day)
+### Phase 4: Budget histories (1 day)
 
-Using quill.js, allow for complex styling of notes.
+In Phase 4, I will incorporate calendar search by month into the BudgetIndex view.  By the end of phase 4, a user should be able to click on a month from the past year in the calendar search and have that month's budget replace the current budgets in the view.  Also the calendar search should have an indicator of whether money was gained or lost for a particular month.
 
 [Details][phase-four]
 
-### Phase 5: Reminders and Garbage Collection (1 day)
+### Phase 5: Alerts (1 day)
 
-Phase 5 introduces two new features. First, users can set reminders on notes
-which will at the time they are set for prompt the user to review and edit the
-given note. In addition, I will implement a feature that asks users to review
-notes once they reach a certain age and ask whether they should be kept,
-archived, or deleted.
+During Phase 5 I will incorporate _Alerts_ into the OverviewIndex view and _Tags_ into the _Transaction_ forms.  Tags will also be added to the AccountSmallIndex view with the same transaction filtering ability as accounts.  This will entail making _Alert_, _Tag_ and _TagLink_ resources and revisiting the respective views.
 
 [Details][phase-five]
 
 ### Phase 6: Styling Cleanup and Seeding (1 day)
 
-Bootstrap will have been used to keep things organized up until now, but in
-Phase 6 I will add styling flourishes and make modals out of some elements (like
-the NotebookForm).
+Creation of a root splash page if possible.  Addition of seed data from Yodlee if possible.
 
 ### Bonus Features (TBD)
-- [ ] Prettify transitions
-- [ ] Use javascript library for cleaner tag selection
-- [ ] Changelogs for Notes
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Multiple sessions
+#### Major
+- [ ] Goals as a subcategory of _Budget_ with Goal view
+#### Minor
+- [ ] Automatic logout if idle
+- [ ] Choice of how many transactions to show at once, along with numbered page-through
+- [ ] Splitting _Transactions_ up into separate categories
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
