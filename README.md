@@ -20,7 +20,7 @@ and React.js. PennyRoyal allows users to:
 - [ ] Create _budgets_ and apply monthly amount limits
 - [ ] Sort _transactions_ into _categories_ and _budgets_ by association.
 - [ ] Observe monthly spending on _budgets_
-- [ ] Observe past _budget_ spending on a month by month bases
+- [ ] Observe past _budget_ spending on a month by month basis
 - [ ] Tag _transactions_ with multiple _tags_ and search _transactions_ by _tag_
 - [ ] Receive _alerts_ on overview page regarding monthly overspending on _budgets_
 
