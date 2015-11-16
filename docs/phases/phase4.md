@@ -1,4 +1,4 @@
-# Phase 4: Allow Complex Styling in Notes (1 day)
+# Phase 4: Budget histories (1 day)
 
 ## Rails
 ### Models
@@ -9,10 +9,13 @@
 
 ## Flux
 ### Views (React Components)
+* BudgetCalendarNavbar
 
 ### Stores
+BudgetStore.calculateMonthBalance
 
 ### Actions
 
+### ApiUtil
+
 ## Gems/Libraries
-* Quill.js

@@ -1,4 +1,4 @@
-# Phase 2: Flux Architecture and Transaction CRUD (3 days)
+# Phase 2: Flux Architecture and Transaction CRUD (2.5 days)
 
 ## Rails
 ### Models
@@ -29,9 +29,6 @@ budget/show.html.erb
     - BudgetSmallIndex
       - BudgetSmallIndexItem
 
-* AccountEditForm
-* AccountNewForm
-
 * TransactionsIndex
   - TransactionMain
     - TransactionSearch
@@ -43,11 +40,10 @@ budget/show.html.erb
   - AccountSmallIndexItem
 
 * BudgetsIndex
-  - BudgetCalendarNavbar
   - BudgetIndex
     - BudgetIndexItem
   - BudgetSummary
-* BudgetForm
+
 
 ### Stores
 * Transaction
@@ -56,22 +52,16 @@ budget/show.html.erb
 ### Actions
 * ApiActions.receiveAllTransactions
 * ApiActions.receiveSingleTransaction
-* ApiActions.deleteTransaction
-* ApiActions.receiveAllCurrentBudgets
-* ApiActions.receiveSingleCurrentBudget
-* ApiActions.deleteBudget
+* ApiActions.receiveAllMonthBudgets
+* ApiActions.receiveSingleMonthBudget
+
 
 ### ApiUtil
 * ApiUtil.fetchAllTransactions
 * ApiUtil.fetchSingleTransaction
-* ApiUtil.createTransaction
-* ApiUtil.editTransaction
-* ApiUtil.destroyTransaction
-* ApiUtil.fetchAllCurrentBudgets
-* ApiUtil.fetchSingleCurrentBudget ?
-* ApiUtil.createBudget
-* ApiUtil.editBudget
-* ApiUtil.destroyBudget
+* ApiUtil.fetchAllMonthBudgets
+* ApiUtil.fetchSingleMonthBudget
+
 
 ## Gems/Libraries
 * Flux Dispatcher

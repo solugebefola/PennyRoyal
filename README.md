@@ -45,7 +45,7 @@ In Phase 1, I will begin by implementing _User_ signup and authentication (using
 
 [Details][phase-one]
 
-### Phase 2: Flux Architecture and Transaction CRUD (3 days)
+### Phase 2: Flux Architecture and Transaction CRUD (2.5 days)
 
 Phase 2 is focused on creating the _Transaction_, _Category_ and _Budget_ resources, setting up Flux, the React Router, and the React view structure for the main application. _Transactions_ are the core of the app, so after the basic Flux architecture has been set up, a _Transaction_ store and a _Budget_ store will be created.  By the end of phase 2:
 
@@ -54,7 +54,7 @@ Phase 2 is focused on creating the _Transaction_, _Category_ and _Budget_ resour
 
 [Details][phase-two]
 
-### Phase 3: Forms for Transactions, Budgets, Accounts (1 day)
+### Phase 3: Forms for Transactions, Budgets, Accounts (1.5 day)
 
 Phase 3 adds forms for creating and editing _Transactions_, _Budgets_ and _Accounts_.  For _Budgets_ and _Transactions_ this includes inline forms within their respective index views and for _Accounts_ and _Budgets_ this includes the modal form views.  By the end of phase 3, a user should be able to utilize all forms and see the results updated immediately upon submission.
 
@@ -82,7 +82,7 @@ Creation of a root splash page if possible.  Addition of seed data from Yodlee i
 #### Minor
 - [ ] Automatic logout if idle
 - [ ] Choice of how many transactions to show at once, along with numbered page-through
-- [ ] Splitting _Transactions_ up into separate categories
+- [ ] Option to split individual _Transactions_ up into separate categories
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

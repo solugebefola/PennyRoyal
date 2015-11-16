@@ -1,39 +1,32 @@
-# Phase 3: Notebooks and Tags (2 days)
+# Phase 3: Forms for Transactions, Budgets, Accounts (1 day)
 
 ## Rails
 ### Models
-* Notebook
-* Tag
-* Tagging
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
-* tags/show.json.jbuilder
+
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
-* SearchIndex
+* AccountEditForm
+* AccountNewForm
+* TransactionForm
+* BudgetForm
 
 ### Stores
-* Notebook
 
 ### Actions
-* ApiActions.receiveAllNotebooks
-* ApiActions.receiveSingleNotebook
-* ApiActions.deleteNotebook
+* ApiActions.deleteTransaction
+* ApiActions.deleteBudget
 
 ### ApiUtil
-* ApiUtil.fetchAllNotebooks
-* ApiUtil.fetchSingleNotebook
-* ApiUtil.createNotebook
-* ApiUtil.editNotebook
-* ApiUtil.destroyNotebook
+* ApiUtil.createTransaction
+* ApiUtil.editTransaction
+* ApiUtil.destroyTransaction
+* ApiUtil.createBudget
+* ApiUtil.editBudget
+* ApiUtil.destroyBudget
 
 ## Gems/Libraries
