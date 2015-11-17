@@ -1,4 +1,4 @@
-<h1>Here are your institutions <%= @current_user.email %></h1>
+<h1>Here are your institutions <%= @user.email %></h1>
 
 <% @institutions.try(:each) do |institution| %>
   <%= link_to "#{institution.name}", institution.url %>

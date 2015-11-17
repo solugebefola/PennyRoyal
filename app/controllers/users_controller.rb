@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @institutions = current_user.institutions
+    @user = User.find(params[:id])
+    @institutions = nil
+    render :show
   end
 
   def create
