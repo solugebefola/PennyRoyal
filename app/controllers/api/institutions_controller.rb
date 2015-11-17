@@ -1,21 +1,17 @@
-class InstitutionsController < ApplicationController
+class Api::InstitutionsController < ApplicationController
 
   def index
     @institutions = Institutions.all
-
-    render :index
   end
 
   def new
     @institution = Institution.new
-
-    render :new
   end
 
   def create
     @institution = Institution.create(institution_params)
     if @institution.save
-      redirect_to institution_url(@institution)
+      redirect_to api_institution_url(@institution)
     else
       flash.now[:errors] = ["Invalid name or url"]
       render :new

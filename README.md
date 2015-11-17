@@ -11,8 +11,8 @@ and React.js. PennyRoyal allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create a _user_ account
-- [ ] Log in / Log out
+- [x] Create a _user_ account
+- [x] Log in / Log out
 - [ ] Add financial _institutions_
 - [ ] Add and delete financial _accounts_
 - [ ] Create _transactions_, or receive them from financial _institutions_

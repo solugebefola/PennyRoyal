@@ -6,9 +6,27 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# 
-# Institution.create(
-#   name: "First Pirate Bank",
-#   url: "#",
-#   logou_url:
-# )
+#
+Institution.create(
+  name: "First Pirate Bank",
+  url: "#",
+  logo_url: "#",
+)
+
+Institution.create(
+  name: "Last Pirate Bank",
+  url: "#",
+  logo_url: "#",
+)
+
+Institution.create(
+  name: "Swashbuckler Bank",
+  url: "#",
+  logo_url: "#",
+)
+
+Institution.create(
+  name: "Ye Old Bank",
+  url: "#",
+  logo_url: "#",
+)
