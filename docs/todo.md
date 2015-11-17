@@ -10,16 +10,16 @@
   - [x] include regexp for proper email format
   - [x] views for log in and sign up
     - [ ] css styling for log in and sign up (night)
-  - [ ] views for user show
+  - [x] views for user show
 - [ ] Create Institution resources
   - [x] Institution table with indexes
-  - [ ] Institution model
+  - [x] Institution model
   - [ ] Institution controller
 - [ ] Create Account resources (indexes!) with associations
   - [ ] Account table, balance default 0
   - [ ] routes
   - [ ] Account model
-    - [ ] associations for Institutions and Users 
+    - [ ] associations for Institutions and Users
   - [ ] Account controller
   - [ ] Account JSON API views
     - [ ] index lists users accounts with name, associated bank, balance (default: 0)
