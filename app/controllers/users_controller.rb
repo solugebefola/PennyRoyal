@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def show
     @institutions = current_user.institutions
-    
   end
 
   def create
