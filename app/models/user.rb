@@ -34,5 +34,4 @@ end
 
 private
   def ensure_session_token
-    self.session_token ||= User.generate_token
-  end
+    self.session_token ||= self.reset_token!
