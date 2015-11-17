@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :require_logged_in, except: [:new, :create]
   helper_method :log_in, :logged_in?, :current_user
 
+
   def current_user
     @current_user ||= User.find_by_session_token(session[:session_token])
   end
@@ -12,10 +13,11 @@ class ApplicationController < ActionController::Base
   def log_in(user)
     session[:session_token] = user.reset_token!
     current_user = user
+    puts "CURRENT USER #{current_user.email}"
   end
 
   def logged_in?
-    !!@current_user
+    !!current_user
   end
 
   def log_out
@@ -25,6 +27,7 @@ class ApplicationController < ActionController::Base
 
   private
     def require_logged_in
+      puts "logged in? #{logged_in?}"
       redirect_to "session/new" unless logged_in?
     end
 end
