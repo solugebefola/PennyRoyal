@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  validates :email, :password_digest, :session_token, presence: true
+  validates :email, :password_digest, :session_token, presence: true, uniqueness: true
   validates :password length: {minimum: 8, allow_nil: true}
-#Addnote: additional validations for password
+  validates :email, format: { with: /\A([^@\s]+)@(([-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 end
 
 attr_reader :password
