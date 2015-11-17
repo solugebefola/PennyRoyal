@@ -77,8 +77,10 @@ During Phase 5 I will incorporate _Alerts_ into the OverviewIndex view and _Tags
 Creation of a root splash page if possible.  Addition of seed data from Yodlee if possible.
 
 ### Bonus Features (TBD)
+
 #### Major
 - [ ] Goals as a subcategory of _Budget_ with Goal view
+
 #### Minor
 - [ ] Automatic logout if idle
 - [ ] Choice of how many transactions to show at once, along with numbered page-through
