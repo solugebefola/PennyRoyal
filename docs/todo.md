@@ -17,13 +17,13 @@
   - [x] Institution controller
 - [ ] Create Account resources (indexes!) with associations
   - [x] Account table
-  - [ ] routes
+  - [x] routes
   - [ ] Account model
-    - [ ] associations for Institutions and Users
+    - [x] associations for Institutions and Users
   - [ ] Account controller
   - [ ] Account JSON API views
-    - [ ] index lists users accounts with name, associated bank, balance
-    - [ ] show lists users account, username, password?, bank name
+    - [ ] index lists: users accounts with name, associated bank, balance
+    - [ ] show lists: users account, username, password?, bank name
 
 ### Wednesday
 

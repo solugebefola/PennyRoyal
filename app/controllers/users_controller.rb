@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @institutions = nil
+    @accounts = @user.accounts
     render :show
   end
 
