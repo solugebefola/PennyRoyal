@@ -26,7 +26,7 @@ institution_id| integer | not null, foreign key (references institution), indexe
 username    | string    | not null
 user_password | string  | not null
 balance     | decimal   | not null, precision: 8, scale: 2
-account_type    | string    | not null, (model validations for inclusion in category)
+account_type| string    | not null, (model validations for inclusion in category)
 
 ## transactions
 column name | data type | details
