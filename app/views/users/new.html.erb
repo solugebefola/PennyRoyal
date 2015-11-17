@@ -1,0 +1,63 @@
+<% flash[:errors].try(:each) do |error| %>
+  <%= error %>
+<% end %>
+<h1>See all your finances in one place &amp; create a budget</h1>
+<form action="/users" method="POST">
+  <%= auth_token %>
+  <ul>
+    <li>
+      <label>Your Email
+      <input
+        type="text"
+        name="user[email]"
+        value="<%= flash[:errors] ? params[:user][:email] : ""  %>">
+      </label>
+    </li>
+    <li>
+      <label>Confirm Email
+      <input
+        type="text"
+        name="email_confirm"
+        value="">
+      </label>
+    </li>
+    <li>
+      <label>Country
+      <select name="user[country]">
+        <option value="United States">
+        <option value="Canada">
+      </select>
+      </label>
+    </li>
+    <li>
+      <label>Zip Code
+      <input
+        type="text"
+        name="user[zip_code]"
+        value="<%= flash[:errors] ? params[:user][:zip_code] : ""  %>">
+      </label>
+    </li>
+    <li>
+      <label>Password
+      <input
+        type="password"
+        name="user[password]]"
+        value="<%= flash[:errors] ? params[:user][:password] : ""  %>">
+      </label>
+    </li>
+    <li>
+      <label>Confirm Password
+      <input
+        type="text"
+        name="password_confirm"
+        value="">
+      </label>
+    </li>
+    <li>
+      <label>"Yes, I agree to the PennyRoyal terms of use."
+        <input type="checkbox"
+          name="user[confirm_terms]"/>
+      </label>
+    </li>
+  <button type="submit">SIGN UP</button>
+</form>

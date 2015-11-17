@@ -5,14 +5,31 @@ class UsersController < ApplicationController
     render :new
   end
 
+  def show
+    @institutions = current_user.institutions
+    
+  end
+
   def create
     @user = User.new
-    @user.create_password(params[:password])
-    if @user.save
-      log_in(@user)
+    if (params[:user][:password] == params[:password_confirm] &&
+      params[:user][:email] == params[:email_confirm])
+      @user.password=(params[:user][:password])
+      @user = User.create(user_params)
+      if @user.save
+        log_in(@user)
 
-      redirect_to institutions_url
+        redirect_to users_url(@user)
+      else
+        flash.now[:errors] = ["Invalid email or password"]
+        render :new
+      end
+    elsif (params[:user][:email] != params[:email_confirm])
+      puts params
+      flash.now[:errors] = ["Email and email confirm do not match"]
+      render :new
     else
+      flash.now[:errors] = ["Password and password confirm do not match"]
       render :new
     end
   end
@@ -29,6 +46,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :password, :password_digest)
     end
 end

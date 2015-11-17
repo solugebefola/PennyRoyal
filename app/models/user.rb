@@ -13,7 +13,7 @@ end
 
 def self.find_by_credentials(email, password)
   @user = User.find_by_email(email)
-  @user.valid_password?(password) ? @user : nil
+  (@user && @user.valid_password?(password)) ? @user : nil
 end
 
 def reset_token!
@@ -22,14 +22,13 @@ def reset_token!
   self.session_token
 end
 
-def valid_password?(password)
-  BCrypt::Password.new(self.password_digest).is_password?(password)
-end
-
-def create_password(password)
+def password=(password)
   @password = password
   self.password_digest = BCrypt::Password.create(password)
-  self.save
+end
+
+def valid_password?(password)
+  BCrypt::Password.new(self.password_digest).is_password?(password)
 end
 
 private

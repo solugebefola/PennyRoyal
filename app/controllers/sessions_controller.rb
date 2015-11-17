@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
       log_in(@user)
       redirect_to user_url(@user)
     else
+      flash.now[:errors] = ["Incorrect email or password"]
       render :new
-      flash.now[:errors] = @user.errors.full_messages
     end
   end
 
