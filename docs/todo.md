@@ -11,18 +11,18 @@
   - [x] views for log in and sign up
     - [ ] css styling for log in and sign up (night)
   - [x] views for user show
-- [ ] Create Institution resources
+- [x] Create Institution resources
   - [x] Institution table with indexes
   - [x] Institution model
-  - [ ] Institution controller
+  - [x] Institution controller
 - [ ] Create Account resources (indexes!) with associations
-  - [ ] Account table, balance default 0
+  - [x] Account table
   - [ ] routes
   - [ ] Account model
     - [ ] associations for Institutions and Users
   - [ ] Account controller
   - [ ] Account JSON API views
-    - [ ] index lists users accounts with name, associated bank, balance (default: 0)
+    - [ ] index lists users accounts with name, associated bank, balance
     - [ ] show lists users account, username, password?, bank name
 
 ### Wednesday

@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 8, allow_nil: true}
   validates :email, format: { with: /\A([^@\s]+)@(([-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   #Addnote: password regexp validation
+
+  has_many :accounts
+  has_many :institutions, through: :accounts
+
 attr_reader :password
 
 after_initialize :ensure_session_token
