@@ -30,7 +30,9 @@ gem 'react-rails', '~> 1.4.0'
 
 gem 'flux-rails-assets'
 
-gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
+end
 
 # Use Unicorn as the app server
 # gem 'unicorn'
