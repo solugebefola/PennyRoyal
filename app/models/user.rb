@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, presence: true, uniqueness: true
-  validates :password length: {minimum: 8, allow_nil: true}
+  validates :password, length: {minimum: 8, allow_nil: true}
   validates :email, format: { with: /\A([^@\s]+)@(([-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
-end
 
 attr_reader :password
 
@@ -28,6 +27,7 @@ def valid_password?(password)
 end
 
 def create_password(password)
+  @password = password
   self.password_digest = BCrypt::Password.create(password)
   self.save
 end
@@ -36,3 +36,4 @@ private
   def ensure_session_token
     self.session_token ||= self.reset_token!
   end
+end

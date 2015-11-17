@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     current_user = user
   end
 
+  def logged_in?
+    !!@current_user
+  end
+
   def log_out
     @current_user.session_token = User.generate_token
     session[:session_token] = nil

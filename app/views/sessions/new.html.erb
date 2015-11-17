@@ -1,0 +1,18 @@
+<h1>Log in to PennyRoyal</h1>
+
+<form action="/session" method="POST">
+  <%= auth_token %>
+  <label>Your Email
+  <input
+    type="text"
+    name="user[email]"
+    value="<%= @user.password ? user.password : "" %>">
+  </label>
+  <label>Password
+  <input
+    type="text"
+    name="user[password]"
+    value="<%= @user.password ? user.password : "" %>">
+  </label>
+  <button type="submit">LOG IN</button>
+</form>
