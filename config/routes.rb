@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root to: "sessions#new"
   resources :users
   namespace :api, format: 'json' do
     resources :institutions, only: [:index, :create]
