@@ -21,7 +21,7 @@
   - [x] Account model
     - [x] associations for Institutions and Users
   - [x] Accounts controller
-  - [ ] Account JSON API views
+  - [x] Account JSON API views
     - [x] index lists: users accounts with name, associated bank, balance
     - [x] show lists: users account, username, password?, bank name
 
