@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :users do
-    namespace :api do
-      resources :accounts
-    end
+  resources :users
+  namespace :api, format: 'json' do
+    resources :institutions, only: [:index, :create]
+    resources :accounts, only: [:create, :index, :show, :update, :destroy]
   end
-  resources :institutions
 
   resource :session, only: [:new, :create, :destroy]
 

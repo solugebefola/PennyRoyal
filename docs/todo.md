@@ -1,6 +1,6 @@
 ## Todo
 ### Tuesday
-- [ ] finish user auth
+- [x] finish user auth
   - [x] create user table, don't forget indexes
   - [x] routes for session, user
   - [x] Session controller
@@ -18,12 +18,12 @@
 - [ ] Create Account resources (indexes!) with associations
   - [x] Account table
   - [x] routes
-  - [ ] Account model
+  - [x] Account model
     - [x] associations for Institutions and Users
-  - [ ] Account controller
+  - [x] Accounts controller
   - [ ] Account JSON API views
-    - [ ] index lists: users accounts with name, associated bank, balance
-    - [ ] show lists: users account, username, password?, bank name
+    - [x] index lists: users accounts with name, associated bank, balance
+    - [x] show lists: users account, username, password?, bank name
 
 ### Wednesday
 

@@ -6,4 +6,8 @@ class Account < ActiveRecord::Base
   belongs_to :institution
   belongs_to :user
 
+  attr_reader :balance
+
+  
+
 end
