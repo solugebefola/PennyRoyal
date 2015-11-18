@@ -1,63 +1,80 @@
 <% flash[:errors].try(:each) do |error| %>
   <%= error %>
 <% end %>
-<h1>See all your finances in one place &amp; create a budget</h1>
-<form action="/users" method="POST">
-  <%= auth_token %>
-  <ul>
+<header class="login-header">
+  <ul class="signup-login-list">
     <li>
-      <label>Your Email
+      <%= link_to "Log in", new_session_url, class: "login link" %>
+    </li>
+    <li>
+      <%= link_to "Sign up", new_user_url, class: "signup link" %>
+    </li>
+  </ul>
+</header>
+<main class="login-main">
+<h1 class="login-text">See all your finances in one place &amp; create a budget</h1>
+<form class="login-form" action="/users" method="POST">
+  <%= auth_token %>
+  <ul class="login-form-list">
+    <li>
+      <label class="login-input-label">Your Email
       <input
+        class="login-input"
         type="text"
         name="user[email]"
         value="<%= flash[:errors] ? params[:user][:email] : ""  %>">
       </label>
     </li>
     <li>
-      <label>Confirm Email
+      <label class="login-input-label">Confirm Email
       <input
+        class="login-input"
         type="text"
         name="email_confirm"
         value="">
       </label>
     </li>
     <li>
-      <label>Country
-      <select name="user[country]">
-        <option value="United States">
-        <option value="Canada">
+      <label class="login-input-label">Country
+      <select class="login-input" name="user[country]">
+        <option value="United States">United States</option>
+        <option value="Canada">Canada</option>
       </select>
       </label>
     </li>
     <li>
-      <label>Zip Code
+      <label class="login-input-label">Zip Code
       <input
+        class="login-input zip"
         type="text"
         name="user[zip_code]"
         value="<%= flash[:errors] ? params[:user][:zip_code] : ""  %>">
       </label>
     </li>
     <li>
-      <label>Password
+      <label class="login-input-label">Password
       <input
+        class="login-input"
         type="password"
         name="user[password]]"
         value="<%= flash[:errors] ? params[:user][:password] : ""  %>">
       </label>
     </li>
     <li>
-      <label>Confirm Password
+      <label class="login-input-label">Confirm Password
       <input
+        class="login-input"
         type="text"
         name="password_confirm"
         value="">
       </label>
     </li>
     <li>
-      <label>"Yes, I agree to the PennyRoyal terms of use."
+      <label class="login-terms">
         <input type="checkbox"
           name="user[confirm_terms]"/>
-      </label>
+          "Yes, I agree to the PennyRoyal terms of use."</label>
     </li>
-  <button type="submit">SIGN UP</button>
+  <button class="log-in-button" type="submit">SIGN UP</button>
 </form>
+</main>
