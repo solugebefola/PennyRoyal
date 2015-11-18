@@ -51,7 +51,17 @@ Account.create(
 Account.create(
   name: "Swashy Savings",
   user_id: 1,
-  institution_id: 7,
+  institution_id: 8,
+  username: "solar",
+  user_password: "solarsolar",
+  balance: 500.00,
+  account_type: "savings",
+)
+
+Account.create(
+  name: "Yeomans Auto Loan",
+  user_id: 1,
+  institution_id: 9,
   username: "solar",
   user_password: "solarsolar",
   balance: 500.00,

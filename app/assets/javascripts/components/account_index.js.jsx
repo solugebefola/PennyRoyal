@@ -6,6 +6,7 @@ var AccountIndex = React.createClass({
 
   componentWillMount: function () {
     AccountStore.addChangeHandler(this._onChange);
+    ApiUtil.getAccounts();
   },
 
   _onChange: function () {
@@ -16,13 +17,15 @@ var AccountIndex = React.createClass({
     var indexes = [];
     for (var accountKey in this.state.accounts) {
       indexes.push(
-        <li>
+        <li key={accountKey}>
           <AccountTypeIndex
-            accountType={accountKey}
-              accounts={this.state.accounts[accountKey]} />
+          accountType={accountKey}
+          accounts={this.state.accounts[accountKey]}
+          />
         </li>
       );
     }
+
     return (
       <div>
         <h1>These are the indexes</h1>
