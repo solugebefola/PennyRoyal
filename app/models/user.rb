@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :accounts
   has_many :institutions, through: :accounts
+  has_many :transactions, through: :accounts
 
 attr_reader :password
 
@@ -34,6 +35,8 @@ end
 def valid_password?(password)
   BCrypt::Password.new(self.password_digest).is_password?(password)
 end
+
+def 
 
 private
   def ensure_session_token

@@ -4,7 +4,7 @@
 - [x] InstitutionStore
   - [x] Ajax requests for Institutions, reset Institutions
 - [x] AccountStore
-- [ ] React components
+- [x] React components
   - [x] OverviewIndex
     - [x] AccountIndex - (instore) split account data into type
       - [x] AccountTypeIndex
@@ -13,14 +13,13 @@
 #### Afternoon
   - [x] OverviewMain
 - [ ] Transaction resources
-  - [ ] Table
-  - [ ] Model with validations/associations
-  - [ ] Controller
-  - [ ] Api json.jbuilder views
-    - [ ] index
-    - [ ] show
-    - [ ] update
-  - [ ] TransactionStore
+  - [x] Table
+  - [x] Model with validations/associations
+  - [x] Controller
+  - [x] Api json.jbuilder views
+    - [x] index
+    - [x] show
+  - [x] TransactionStore
   - [ ] React Components
     - [ ] AccountEditForm
     - [ ] AccountNewForm - choose from institutions to set up account
