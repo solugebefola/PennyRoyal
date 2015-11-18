@@ -2,11 +2,10 @@
   var _institutions = [];
   var resetInstitutions = function (institutions) {
     _institutions = institutions;
-  }
+  };
 
   InstitutionStore = root.InstitutionStore = {
     getInstitutions: function () {
-      debugger
       $.ajax({
         url: "api/institutions",
         method: "GET",
@@ -14,7 +13,7 @@
           debugger
           return institutions;
         }
-      })
+      });
     }
-  }
+  };
 })(this);
