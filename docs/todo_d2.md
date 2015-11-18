@@ -5,16 +5,15 @@
   - [x] Ajax requests for Institutions, reset Institutions
 - [x] AccountStore
 - [ ] React components
-  - [ ] OverviewIndex
-    - [ ] AccountIndex
+  - [x] OverviewIndex
+    - [ ] AccountIndex - (instore) split account data into type
       - [ ] AccountTypeIndex
         - [ ] AccountIndexItem
-    - [ ] OverviewMain
-  - [ ] AccountEditForm
-  - [ ] AccountNewForm - choose from institutions to set up account
-- [ ] user auth include additional password validations with regexp
 
 #### Afternoon
+  - [ ] OverviewMain
+  - [ ] AccountEditForm
+  - [ ] AccountNewForm - choose from institutions to set up account
 - [ ] Transaction resources
   - [ ] Table
   - [ ] Model with validations/associations
@@ -32,3 +31,4 @@
   - [ ] AccountIndex
     - [ ] AccountTypeIndex
       - [ ] AccountIndexItem
+- [ ] user auth include additional password validations with regexp

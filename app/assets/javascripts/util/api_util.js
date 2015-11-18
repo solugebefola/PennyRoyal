@@ -15,12 +15,14 @@
     },
 
     getInstitutions: function () {
-      var insts;
       $.ajax({
         url: "api/institutions",
         method: "GET",
         success: function (institutions) {
-          resetInstitutions(institutions);
+          AppDispatcher.dispatch({
+            actionType: fluxConstants.INSTITUTIONS_RECEIVED,
+            institutions: institutions
+          });
         }
       });
     }

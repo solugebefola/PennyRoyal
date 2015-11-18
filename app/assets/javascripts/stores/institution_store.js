@@ -11,8 +11,6 @@
       return _institutions.slice(0);
     },
 
-
-
     addChangeHandler: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },
@@ -25,11 +23,13 @@
       this.emit(CHANGE_EVENT);
     },
 
-    // dispatcherID: AppDispatcher.register(function(payload) {
-    //   switch (payload.actionType){
-    //     case:
-    //   }
-    // })
+    dispatcherID: AppDispatcher.register(function(payload) {
+      switch (payload.actionType){
+        case fluxConstants.INSTITUTIONS_RECEIVED:
+          _resetInstitutions(payload.institutions);
+          break;
+      }
+    })
 
   })
 
