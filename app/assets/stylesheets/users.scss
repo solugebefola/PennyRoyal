@@ -23,6 +23,7 @@ body {
 ul.login-form-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .login-form-list > li:first-child {
@@ -49,7 +50,7 @@ div.login-errors {
   z-index: 3;
 }
 
-.login-main {
+.signup-main {
   display: block;
   width: 590px;
   height: 650px;
@@ -75,8 +76,9 @@ div.login-errors {
   display: block;
   border-radius: 5px;
   border: 1px solid grey;
-  width: 250px;
+  width: 260px;
   height: 25px;
+  margin: 5px 0px;
   box-shadow: inset 0px 2px 2px #eee;
 }
 
@@ -87,11 +89,20 @@ div.login-errors {
 .login-form {
   display: block;
   width: 500px;
-  margin: 50px 0 0 0;
+  margin: 30px 0 0 0;
 }
 
 .login-terms {
-  font-size: 10px;
+  font-size: 14px;
+}
+
+.login-terms > a {
+  text-decoration: none;
+  color: #b0f;
+}
+
+.login-checkbox {
+  margin: 30px 0px;
 }
 
 .signup-login-list {
