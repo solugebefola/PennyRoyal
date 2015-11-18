@@ -28,6 +28,6 @@ class ApplicationController < ActionController::Base
   private
     def require_logged_in
       puts "logged in? #{logged_in?}"
-      redirect_to "session/new" unless logged_in?
+      redirect_to "/session/new" unless logged_in?
     end
 end

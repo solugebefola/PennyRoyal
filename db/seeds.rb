@@ -30,3 +30,10 @@ Institution.create(
   url: "#",
   logo_url: "#",
 )
+
+User.create(
+  id: 1,
+  email:"solar@solar.com",
+  password_digest: "$2a$10$tB8EJ485joiZtAAmgDA.3.ZaaJY6PEtR8Krb5DS0OqlxSvM9q5JH6",
+  session_token: "OMSczi-YPj0ACv4WViztAw"
+)
