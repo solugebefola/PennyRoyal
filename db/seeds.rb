@@ -37,3 +37,23 @@ User.create(
   password_digest: "$2a$10$tB8EJ485joiZtAAmgDA.3.ZaaJY6PEtR8Krb5DS0OqlxSvM9q5JH6",
   session_token: "OMSczi-YPj0ACv4WViztAw"
 )
+
+Account.create(
+  name: "Pirate Best Savings",
+  user_id: 1,
+  institution_id: 6,
+  username: "solar",
+  user_password: "solarsolar",
+  balance: 20.00,
+  account_type: "savings",
+)
+
+Account.create(
+  name: "Swashy Savings",
+  user_id: 1,
+  institution_id: 7,
+  username: "solar",
+  user_password: "solarsolar",
+  balance: 500.00,
+  account_type: "savings",
+)

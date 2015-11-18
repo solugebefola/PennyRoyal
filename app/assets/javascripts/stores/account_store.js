@@ -1,14 +1,25 @@
 (function (root) {
-  var _accounts = [];
+  var _accounts = {};
+  accountConstants.accountType.map(function (type){
+    _accounts[type] = [];
+  });
   var _resetAccounts = function (newAccounts) {
-    _accounts = newAccounts;
+    newAccounts.forEach(function(account) {
+      _accounts[account.type].push(account);
+      console.log(_accounts[account.type]);
+    });
   };
   var CHANGE_EVENT = "change_event";
 
   AccountStore = root.AccountStore = $.extend({}, EventEmitter.prototype, {
 
     all: function () {
-      return _accounts.slice(0);
+      var _accountsClone = {};
+      for (var key in _accounts) {
+        _accountsClone[key] = _accounts[key].slice(0);
+        console.log(_accountsClone[key]);
+      }
+      return _accountsClone;
     },
 
     addChangeHandler: function (callback) {
