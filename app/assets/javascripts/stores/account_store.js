@@ -3,11 +3,12 @@
   accountConstants.accountType.map(function (type){
     _accounts[type] = [];
   });
+
   var _resetAccounts = function (newAccounts) {
     newAccounts.forEach(function(account) {
-      _accounts[account.type].push(account);
-      console.log(_accounts[account.type]);
+      _accounts[account.account_type].push(account);
     });
+    AccountStore.changed();
   };
   var CHANGE_EVENT = "change_event";
 
@@ -17,7 +18,6 @@
       var _accountsClone = {};
       for (var key in _accounts) {
         _accountsClone[key] = _accounts[key].slice(0);
-        console.log(_accountsClone[key]);
       }
       return _accountsClone;
     },

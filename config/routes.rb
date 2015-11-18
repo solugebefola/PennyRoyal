@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :transactions
   root to: "static_pages#root"
 
   resources :users

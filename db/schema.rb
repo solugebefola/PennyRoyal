@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117171957) do
+ActiveRecord::Schema.define(version: 20151118212858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,23 @@ ActiveRecord::Schema.define(version: 20151117171957) do
   end
 
   add_index "institutions", ["name"], name: "index_institutions_on_name", unique: true, using: :btree
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "account_id",                           null: false
+    t.string   "category_id",                          null: false
+    t.datetime "date",                                 null: false
+    t.decimal  "amount",      precision: 10, scale: 2, null: false
+    t.string   "description",                          null: false
+    t.text     "notes"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  add_index "transactions", ["account_id"], name: "index_transactions_on_account_id", using: :btree
+  add_index "transactions", ["amount"], name: "index_transactions_on_amount", using: :btree
+  add_index "transactions", ["category_id"], name: "index_transactions_on_category_id", using: :btree
+  add_index "transactions", ["date"], name: "index_transactions_on_date", using: :btree
+  add_index "transactions", ["description"], name: "index_transactions_on_description", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false

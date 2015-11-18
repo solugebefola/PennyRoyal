@@ -6,14 +6,12 @@
 - [x] AccountStore
 - [ ] React components
   - [x] OverviewIndex
-    - [ ] AccountIndex - (instore) split account data into type
-      - [ ] AccountTypeIndex
-        - [ ] AccountIndexItem
+    - [x] AccountIndex - (instore) split account data into type
+      - [x] AccountTypeIndex
+        - [x] AccountIndexItem
 
 #### Afternoon
-  - [ ] OverviewMain
-  - [ ] AccountEditForm
-  - [ ] AccountNewForm - choose from institutions to set up account
+  - [x] OverviewMain
 - [ ] Transaction resources
   - [ ] Table
   - [ ] Model with validations/associations
@@ -23,6 +21,9 @@
     - [ ] show
     - [ ] update
   - [ ] TransactionStore
+  - [ ] React Components
+    - [ ] AccountEditForm
+    - [ ] AccountNewForm - choose from institutions to set up account
 
 #### Evening
 - [ ] CSS Styling
