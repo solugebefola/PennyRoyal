@@ -1,23 +1,36 @@
 <% flash[:errors].try(:each) do |error| %>
   <%= error  %>
 <% end %>
-<h1>Log in to PennyRoyal</h1>
+<header class="login-header">
+  <ul class="signup-login-list">
+    <li>
+      <%= link_to "Log in", new_session_url, class: "login link" %>
+    </li>
+    <li>
+      <%= link_to "Sign up", new_user_url, class: "signup link" %>
+    </li>
+  </ul>
+</header>
+<main class="login-main">
 
-<form action="/session" method="POST">
+<h1 class="login-text">Log in to PennyRoyal</h1>
+
+<form class="login-form" action="/session" method="POST">
   <%= auth_token %>
-  <label>Your Email
+  <label class="login-input-label">Your Email
   <input
+    class="login-input"
     type="text"
     name="user[email]"
     value="<%= flash[:errors] ? params[:user][:email] : "" %>">
   </label>
-  <label>Password
+  <label class="login-input-label">Password
   <input
+    class="login-input"
     type="password"
     name="user[password]"
     value="<%= flash[:errors] ? params[:user][:password] : "" %>">
   </label>
-  <button type="submit">LOG IN</button>
+  <button class="log-in-button" type="submit">LOG IN</button>
 </form>
-<br>
-<%= link_to "Sign Up", new_user_url %>
+</main>
