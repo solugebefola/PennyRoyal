@@ -1,13 +1,26 @@
 var Institutions = React.createClass({
+  getInitialState: function() {
+    return {};
+  },
 
-  render: function () {
-    var insts = InstitutionStore.getInstitutions().map(function(inst){
-      return <li>{inst.name}</li>;
-    });
-    return(
+  componentWillMount: function() {
+    
+  },
+
+  componentDidMount: function() {
+
+  },
+
+  componentWillUnmount: function() {
+
+  },
+
+  render: function() {
+    return (
       <div>
         {insts}
       </div>
+
     );
   }
-})
+});

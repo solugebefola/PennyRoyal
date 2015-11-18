@@ -1,7 +1,7 @@
 class Api::InstitutionsController < ApplicationController
 
   def index
-    @institutions = Institutions.all
+    @institutions = Institution.all
   end
 
   def new

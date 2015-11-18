@@ -2,7 +2,7 @@
   $(document).on('ready', function (){
     if (document.getElementById('content')){
     ReactDOM.render(
-      <Institutions />,
+      <OverviewIndex />,
       document.getElementById('content')
     )}
   });

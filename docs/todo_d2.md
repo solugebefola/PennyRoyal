@@ -1,9 +1,9 @@
 ## Todo
 ### Wednesday
 #### Morning
-- [ ] InstitutionStore
-  - [ ] Ajax requests for Institutions, reset Institutions
-- [ ] AccountStore
+- [x] InstitutionStore
+  - [x] Ajax requests for Institutions, reset Institutions
+- [x] AccountStore
 - [ ] React components
   - [ ] OverviewIndex
     - [ ] AccountIndex
