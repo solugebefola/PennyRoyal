@@ -28,6 +28,16 @@ body {
   position: relative;
 }
 
+div.login-errors {
+  display: block;
+  width: 670px;
+  padding: 5px 10px;
+  margin: auto;
+  color: #fff;
+  background: #f0e;
+  z-index: 3;
+}
+
 .login-main {
   display: block;
   width: 590px;

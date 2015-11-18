@@ -15,7 +15,7 @@
   - [x] Institution table with indexes
   - [x] Institution model
   - [x] Institution controller
-- [ ] Create Account resources (indexes!) with associations
+- [x] Create Account resources (indexes!) with associations
   - [x] Account table
   - [x] routes
   - [x] Account model
