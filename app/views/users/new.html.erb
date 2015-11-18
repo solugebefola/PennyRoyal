@@ -11,7 +11,7 @@
     </li>
   </ul>
 </header>
-<main class="login-main">
+<main class="signup-main">
 <h1 class="login-text">See all your finances in one place &amp; create a budget</h1>
 <form class="login-form" action="/users" method="POST">
   <%= auth_token %>
@@ -71,9 +71,11 @@
     </li>
     <li>
       <label class="login-terms">
-        <input type="checkbox"
+        <input
+          class="login-checkbox"
+          type="checkbox"
           name="user[confirm_terms]"/>
-          "Yes, I agree to the PennyRoyal terms of use."</label>
+          Yes, I agree to the PennyRoyal <a href="#">Terms of Use</a>.</label>
     </li>
   <button class="log-in-button" type="submit">SIGN UP</button>
 </form>
