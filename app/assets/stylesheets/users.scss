@@ -1,3 +1,136 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body,main,  h1, h2, p, button, form, div {
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  font-style: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+body {
+  font-family: avenir next, helvetica, sans-serif;
+  background: white;
+}
+
+ul.login-form-list {
+  list-style: none;
+  padding: 0;
+}
+
+.login-form-list > li:first-child {
+  border: 0;
+  font-weight: inherit;
+}
+
+.login-header {
+  width: 690px;
+  margin: 25px auto 25px;
+  height: 62px;
+  text-align: right;
+  vertical-align: bottom;
+  position: relative;
+}
+
+div.login-errors {
+  display: block;
+  width: 670px;
+  padding: 5px 10px;
+  margin: auto;
+  color: #fff;
+  background: #f0e;
+  z-index: 3;
+}
+
+.login-main {
+  display: block;
+  width: 590px;
+  height: 650px;
+  margin: auto;
+  padding: 43px 50px 50px 50px;
+  box-shadow: 0px 3px 10px #ccc;
+}
+
+.login-text {
+  font-weight: 600;
+  font-size: 30px;
+  width: 380px;
+}
+
+.login-input-label {
+  font-size: 14px;
+  display:block;
+  margin: 30px 0 0 0;
+  height: 50px;
+}
+
+.login-input {
+  display: block;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 250px;
+  height: 25px;
+  box-shadow: inset 0px 2px 2px #eee;
+}
+
+.login-input.zip {
+  width: 100px;
+}
+
+.login-form {
+  display: block;
+  width: 500px;
+  margin: 50px 0 0 0;
+}
+
+.login-terms {
+  font-size: 10px;
+}
+
+.signup-login-list {
+  list-style: none;
+  float: right;
+  position: absolute;
+  bottom: -25px;
+  right: 0px;
+}
+
+.signup-login-list > li {
+  padding: 0px 10px;
+  display: block;
+  float: right;
+  font-size: 15px;
+}
+
+.signup-login-list > li > a{
+  text-decoration: none;
+  color: #000;
+}
+
+li:first-child{
+  border-left: 1px solid #ccc;
+  font-weight: 600;
+}
+
+li:last-child {
+  font-weight: 400;
+  padding: 0px 15px
+}
+
+button {
+  font-size: 14px;
+  border-radius: 3px;
+  background: #b0f;
+  color: #fff;
+  width: 85px;
+  height: 40px;
+  text-align: center;
+  margin: 20px 0;
+}
