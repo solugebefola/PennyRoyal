@@ -4,8 +4,12 @@ var OverviewIndex = React.createClass({
     return (
       <div>
         <h1>OverviewIndex</h1>
-        <OverviewMain />
-        <AccountIndex />
+        <section className="overview-main">
+          <OverviewMain />
+        </section>
+        <section className="account-index">
+          <AccountIndex />
+        </section>
       </div>
     );
   }
