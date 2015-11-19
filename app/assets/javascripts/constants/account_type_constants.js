@@ -8,5 +8,11 @@ var accountConstants = {
     loan: "Loans",
     investment: "Investments",
     property: "Property"
+  },
+
+  accountSmallGroupType: {
+    cashCredit: ["cash", "savings", "checking", "credit_card"],
+    invest: ["investment"],
+    cashOnly: ["cash"]
   }
 };

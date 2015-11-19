@@ -7,14 +7,28 @@ var AccountSmallIndex = React.createClass({
   },
   componentDidMount: function() {
     AccountStore.addChangeHandler(this._onChange);
+    ApiUtil.getAccounts();
   },
   componentWillUnmount: function() {
 
   },
   render: function() {
-    accts = this.state.accounts.map(function (account){
-      return <li key={account.id}><AccountSmallIndexItem account={account}/></li>;
-    });
+    var accts = [];
+    var acctItems;
+    if (!AccountStore.isEmpty()){
+      for(var type in this.state.accounts){
+        accts = accts.concat(this.state.accounts[type].slice(0));
+      }
+      acctItems = accts.map(function(acctItem){
+        return(
+          <li className="account-small-item" key={acctItem.id}>
+            <AccountSmallIndexItem account={acctItem}/>
+          </li>
+        );
+
+      });
+    }
+
     return(
       <div>
         <ul>
@@ -29,7 +43,7 @@ var AccountSmallIndex = React.createClass({
           </li>
           <li>
             <ul>
-              {accts}
+              {acctItems}
             </ul>
           </li>
         </ul>

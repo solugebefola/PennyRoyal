@@ -9,7 +9,17 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require reset
+ *= require transactions
+ *= require institutions
+ *= require account_small_index
+ *= require sessions
+ *= require overview_index
+ *= require categories
+ *= require accounts
+ *= require account_form
+ *= require users
+ *= require defaults
  *= require_tree .
  *= require_self
  */
