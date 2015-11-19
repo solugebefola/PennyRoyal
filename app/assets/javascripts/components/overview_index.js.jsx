@@ -16,7 +16,12 @@ var OverviewIndex = React.createClass({
         <section>
           <AccountNewForm />
         </section>
+        <button onClick={this.recheckTheStores}>Refresh</button>
       </div>
     );
+  },
+
+  recheckTheStores: function () {
+    ApiUtil.getInstitutions();
   }
 });

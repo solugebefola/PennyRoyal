@@ -11,7 +11,7 @@ class Api::AccountsController < ApplicationController
   end
 
   def create
-    @account = Account.create!(account_params)
+    @account = current_user.accounts.create!(account_params)
   end
 
   def update
