@@ -15,14 +15,14 @@ var AccountNewForm = React.createClass({
   componentDidMount: function() {
     InstitutionStore.addChangeHandler(this._onChange);
   },
-  
+
   componentWillUnmount: function() {
 
   },
 
   render: function() {
     var instOptions = this.state.institutions.map(function (inst) {
-      return <option value={inst.id}>{inst.name}</option>;
+      return <option key={inst.id} value={inst.id}>{inst.name}</option>;
     });
 
     return (
@@ -44,7 +44,7 @@ var AccountNewForm = React.createClass({
           <label className="account-form input-label">Password
           <input
             className="account-form edit input"
-            type="text"
+            type="password"
             name="password"
             onChange={this.inputChangeHandler}
             value={this.state.password}/>
@@ -71,5 +71,28 @@ var AccountNewForm = React.createClass({
 
   _onChange: function () {
     this.setState({ institutions: InstitutionStore.all() });
+  },
+
+  inputChangeHandler: function (e) {
+    e.preventDefault();
+    newState = {};
+    propKey = e.target.name;
+    newState[propKey] = e.target.value;
+    this.setState(newState);
+  },
+
+  submitChangeHandler: function (e) {
+    e.preventDefault();
+    var accountProps = {};
+    var inst = this.state.institutions.find(function(institution) {
+      return (institution.id === parseInt(e.target.institution.value));
+    });
+    accountProps.name = inst.name + " " + e.target.account_type.value;
+    accountProps.institution_id = e.target.institution.value;
+    accountProps.username = e.target.username.value;
+    accountProps.user_password = e.target.password.value;
+    accountProps.account_type = e.target.account_type.value;
+    accountProps.balance = 1.00;
+    ApiUtil.createAccount(accountProps);
   }
 });

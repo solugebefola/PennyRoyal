@@ -19,6 +19,7 @@
 - [ ] TransactionsIndex
 #### Flux/React controls
 - [ ] CategoryStore
+- [ ] ApiActions -> move over all ApiUtil AppDispatcher calls
 
 #### Evening
 #### CSS
