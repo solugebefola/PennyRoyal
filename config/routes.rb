@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories
   resources :transactions
   root to: "static_pages#root"
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     resources :institutions, only: [:index, :create, :show]
     resources :accounts, only: [:create, :index, :show, :update, :destroy]
     resources :transactions, only: [:create, :index, :show, :update, :destroy]
+    resources :categories
   end
 
   resource :session, only: [:new, :create, :destroy]
