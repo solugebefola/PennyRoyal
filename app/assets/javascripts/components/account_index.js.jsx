@@ -20,8 +20,7 @@ var AccountIndex = React.createClass({
         <li key={accountKey}>
           <AccountTypeIndex
           accountType={accountKey}
-          accounts={this.state.accounts[accountKey]}
-          />
+          accounts={this.state.accounts[accountKey]} />
         </li>
       );
     }
