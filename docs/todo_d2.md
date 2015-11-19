@@ -12,7 +12,7 @@
 
 #### Afternoon
   - [x] OverviewMain
-- [ ] Transaction resources
+- [x] Transaction resources
   - [x] Table
   - [x] Model with validations/associations
   - [x] Controller
@@ -26,9 +26,9 @@
 
 #### Evening
 - [ ] CSS Styling
-  - [ ] Sign up page
+  - [x] Sign up page
   - [ ] OverviewIndex
-  - [ ] AccountIndex
-    - [ ] AccountTypeIndex
-      - [ ] AccountIndexItem
+  - [x] AccountIndex
+    - [x] AccountTypeIndex
+      - [x] AccountIndexItem
 - [ ] user auth include additional password validations with regexp
