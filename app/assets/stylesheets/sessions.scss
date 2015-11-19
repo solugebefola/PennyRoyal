@@ -93,12 +93,12 @@ div.login-errors {
   color: #000;
 }
 
-li:first-child{
+.signup-login-list > li:first-child{
   border-left: 1px solid #ccc;
   font-weight: 600;
 }
 
-li:last-child {
+.signup-login-list > li:last-child {
   font-weight: 400;
   padding: 0px 15px
 }

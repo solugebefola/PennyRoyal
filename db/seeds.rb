@@ -32,7 +32,6 @@ Institution.create(
 )
 
 User.create(
-  id: 1,
   email:"solar@solar.com",
   password_digest: "$2a$10$tB8EJ485joiZtAAmgDA.3.ZaaJY6PEtR8Krb5DS0OqlxSvM9q5JH6",
   session_token: "OMSczi-YPj0ACv4WViztAw"
@@ -41,7 +40,7 @@ User.create(
 Account.create(
   name: "Pirate Best Savings",
   user_id: 1,
-  institution_id: 6,
+  institution_id: 1,
   username: "solar",
   user_password: "solarsolar",
   balance: 20.00,
@@ -51,7 +50,7 @@ Account.create(
 Account.create(
   name: "Swashy Savings",
   user_id: 1,
-  institution_id: 8,
+  institution_id: 2,
   username: "solar",
   user_password: "solarsolar",
   balance: 500.00,
@@ -61,7 +60,7 @@ Account.create(
 Account.create(
   name: "Yeomans Auto Loan",
   user_id: 1,
-  institution_id: 9,
+  institution_id: 3,
   username: "solar",
   user_password: "solarsolar",
   balance: 500.00,
