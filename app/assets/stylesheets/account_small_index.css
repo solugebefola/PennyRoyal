@@ -5,3 +5,13 @@
 .account-small-item .account-small-lesser  {
   font-size: 8px;
 }
+
+.account-small-greater:hover {
+  color: #22c531;
+  cursor: pointer;
+}
+
+.account-small-item:hover {
+  color: #22c531;
+  cursor: pointer;
+}
