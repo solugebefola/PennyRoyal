@@ -1,6 +1,6 @@
 var AccountEditForm = React.createClass({
   getInitialState: function() {
-    return {username: "", password: ""};
+    return {username: "", password: "", id: this.props.account_id};
   },
   componentWillMount: function() {
 
@@ -13,37 +13,43 @@ var AccountEditForm = React.createClass({
   },
 
   inputChangeHandler: function (e) {
+    e.preventDefault();
     newState = {};
     propKey = e.target.name;
     newState[propKey] = e.target.value;
     this.setState(newState);
   },
 
-  submitChangeHandler: function () {
-
+  submitChangeHandler: function (e) {
+    e.preventDefault();
+    ApiUtil.editAccount(this.state);
   },
 
   render: function() {
     return (
       <div>
-        <form className="account-form edit">
+        <form onSubmit={this.submitChangeHandler} action="">
+          <label className="account-form input-label">Username
           <input
             className="account-form edit input"
             type="text"
             name="username"
-            onChange={inputChangeHandler}
+            onChange={this.inputChangeHandler}
             value={this.state.username} />
+          </label>
+          <label className="account-form input-label">Password
           <input
             className="account-form edit input"
             type="text"
             name="password"
-            onChange={inputChangeHandler}
+            onChange={this.inputChangeHandler}
             value={this.state.password}/>
+          </label>
           <button
-            type="submit"
-            onSubmit={submitChangeHandler}>Add Account</button>
+            className="account-edit-submit"
+            type="submit">Add Account
+          </button>
         </form>
-
       </div>
     );
   }
