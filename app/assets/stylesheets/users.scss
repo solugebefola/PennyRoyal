@@ -2,18 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html, body,main,  h1, h2, p, button, form, div {
-  padding: 0;
-  margin: 0;
-  border: 0;
-
-  font-style: inherit;
-  font-size: inherit;
-  text-align: inherit;
-  text-decoration: inherit;
-  color: inherit;
-  background: transparent;
-}
 
 .group:after {
   content: "";

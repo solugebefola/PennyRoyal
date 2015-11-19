@@ -5,6 +5,9 @@
   });
 
   var _resetAccounts = function (newAccounts) {
+    accountConstants.accountType.map(function (type){
+      _accounts[type] = [];
+    });
     newAccounts.forEach(function(account) {
       _accounts[account.account_type].push(account);
     });
@@ -20,6 +23,14 @@
         _accountsClone[key] = _accounts[key].slice(0);
       }
       return _accountsClone;
+    },
+
+    isEmpty: function () {
+      var empty = true;
+      for (var subArray in _accounts){
+        if (subArray.length !== 0){ empty = false; }
+      }
+      return empty;
     },
 
     addChangeHandler: function (callback) {

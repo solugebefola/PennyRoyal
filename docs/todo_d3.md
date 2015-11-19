@@ -13,7 +13,7 @@
   - [x] Controller
 #### Afternoon
   - [x] Jbuilder views
-- [ ] AccountSmallIndex
+- [x] AccountSmallIndex
   - [ ] AccountTypeNavbar
   - [ ] AccountSmallIndexItem
 - [ ] TransactionsIndex
