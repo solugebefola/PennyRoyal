@@ -12,21 +12,25 @@ class Api::AccountsController < ApplicationController
 
   def create
     @account = current_user.accounts.create!(account_params)
+    @institution = @account.institution
+    render :show
   end
 
   def update
     @account = Account.find(params[:id])
     @account.update!(account_params)
+    render :show
   end
 
   def destroy
     @account = Account.find(params[:id])
     @account.destroy!
+    render :index
   end
 
   private
     def account_params
-      params.require(:account).permit(:name, :user_id, :institution_id, :username, :password, :balance, :account_type)
+      params.require(:account).permit(:name, :user_id, :institution_id, :username, :user_password, :balance, :account_type)
     end
 
 end

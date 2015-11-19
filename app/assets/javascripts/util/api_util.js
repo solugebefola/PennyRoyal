@@ -31,8 +31,7 @@
       $.ajax({
         url: "api/accounts",
         method: "POST",
-        data: "json",
-        dataType: "json",
+        data: {account: params},
         success: function (account) {
           AppDispatcher.dispatch({
             actionType: fluxConstants.ACCOUNT_RECEIVED,
@@ -50,6 +49,19 @@
           AppDispatcher.dispatch({
             actionType: fluxConstants.INSTITUTIONS_RECEIVED,
             institutions: institutions
+          });
+        }
+      });
+    },
+
+    getTransactions: function () {
+      $.ajax({
+        url: "api/transactions",
+        method: "GET",
+        success: function (transactions) {
+          AppDispatcher.dispatch({
+            actionType: fluxConstants.TRANSACTIONS_RECEIVED,
+            transactions: transactions
           });
         }
       });
