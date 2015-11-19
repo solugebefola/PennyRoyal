@@ -15,6 +15,12 @@ html, body,main,  h1, h2, p, button, form, div {
   background: transparent;
 }
 
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 body {
   font-family: avenir next, helvetica, sans-serif;
   background: white;
@@ -53,7 +59,7 @@ div.login-errors {
 .signup-main {
   display: block;
   width: 590px;
-  height: 650px;
+  height: 680px;
   margin: auto;
   padding: 43px 50px 50px 50px;
   box-shadow: 0px 3px 10px #ccc;
@@ -73,6 +79,7 @@ div.login-errors {
 }
 
 .login-input {
+  font-size: 14px;
   display: block;
   border-radius: 5px;
   border: 1px solid grey;
@@ -107,10 +114,12 @@ div.login-errors {
 
 .signup-login-list {
   list-style: none;
+  display: block;
   float: right;
   position: absolute;
-  bottom: -25px;
+  bottom: 0px;
   right: 0px;
+  vertical-align: baseline;
 }
 
 .signup-login-list > li {
