@@ -37,7 +37,7 @@ var AccountTypeIndex = React.createClass({
       <div>
         <ul className={"account-type-index " + this.props.accountType}>
           <li className="summary group">
-            <p className="summary-type">{this.props.accountType}</p>
+            <p className="summary-type">{this.props.accountGroupType}</p>
             <p className="summary-sum">${this.state.accountsSum}</p>
           </li>
           {accounts}

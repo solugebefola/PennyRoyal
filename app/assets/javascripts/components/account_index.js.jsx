@@ -15,12 +15,24 @@ var AccountIndex = React.createClass({
 
   render: function() {
     var indexes = [];
-    for (var accountKey in this.state.accounts) {
+    var accountGroups = {};
+    var currentType;
+    var currentGroup;
+    for (var accKey in accountConstants.accountGroupType){
+      currentType = this.state.accounts[accKey];
+      currentGroup = accountConstants.accountGroupType[accKey];
+      if(accountGroups[currentGroup]){
+        accountGroups[currentGroup] = accountGroups[currentGroup].concat(currentType);
+      }else{
+        accountGroups[currentGroup] = currentType;
+      }
+    }
+    for (var accountGroupKey in accountGroups) {
       indexes.push(
-        <li key={accountKey}>
+        <li key={accountGroupKey}>
           <AccountTypeIndex
-          accountType={accountKey}
-          accounts={this.state.accounts[accountKey]} />
+          accountGroupType={accountGroupKey}
+          accounts={accountGroups[accountGroupKey]} />
         </li>
       );
     }

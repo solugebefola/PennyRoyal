@@ -63,6 +63,6 @@ Account.create(
   institution_id: 3,
   username: "solar",
   user_password: "solarsolar",
-  balance: 500.00,
+  balance: -500.00,
   account_type: "loan",
 )
