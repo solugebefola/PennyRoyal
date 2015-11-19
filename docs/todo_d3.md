@@ -7,12 +7,12 @@
 - [x] Rewire AccountTypeIndex to fit Mint categories
   - [x] Cash(savings, checking, credit), Loans, Investments
 #### Back end resources
-- [ ] Category
+- [x] Category
   - [x] Table
   - [x] Model
   - [x] Controller
-  - [ ] Jbuilder views
 #### Afternoon
+  - [x] Jbuilder views
 - [ ] AccountSmallIndex
   - [ ] AccountTypeNavbar
   - [ ] AccountSmallIndexItem
