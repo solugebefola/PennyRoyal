@@ -64,5 +64,5 @@ Account.create(
   username: "solar",
   user_password: "solarsolar",
   balance: 500.00,
-  account_type: "savings",
+  account_type: "loan",
 )
