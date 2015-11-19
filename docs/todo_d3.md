@@ -4,13 +4,13 @@
 #### React Components
 - [x] AccountEditForm
 - [x] AccountNewForm
-- [ ] Rewire AccountTypeIndex to fit Mint categories
-  - [ ] Cash(savings, checking, credit), Loans, Investments
+- [x] Rewire AccountTypeIndex to fit Mint categories
+  - [x] Cash(savings, checking, credit), Loans, Investments
 #### Back end resources
 - [ ] Category
-  - [ ] Table
-  - [ ] Model
-  - [ ] Controller
+  - [x] Table
+  - [x] Model
+  - [x] Controller
   - [ ] Jbuilder views
 #### Afternoon
 - [ ] AccountSmallIndex
