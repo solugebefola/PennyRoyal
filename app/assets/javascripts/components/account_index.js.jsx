@@ -27,8 +27,8 @@ var AccountIndex = React.createClass({
     }
 
     return (
-      <div>
-        <h1>These are the indexes</h1>
+      <div className="account-index-list">
+        <h1>Accounts</h1>
         <ul>
           {indexes}
         </ul>
