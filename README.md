@@ -2,7 +2,7 @@
 
 The [live site][heroku] will be up soon!
 
-[heroku]: [https://pennyroyal.herokuapp.com/]
+[heroku]:https://pennyroyal.herokuapp.com/
 
 ## Minimum Viable Product
 
