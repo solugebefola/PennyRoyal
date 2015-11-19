@@ -2,8 +2,8 @@
 ### Thursday
 #### Morning
 #### React Components
-- [ ] AccountEditForm
-- [ ] AccountNewForm
+- [x] AccountEditForm
+- [x] AccountNewForm
 - [ ] Rewire AccountTypeIndex to fit Mint categories
   - [ ] Cash(savings, checking, credit), Loans, Investments
 #### Back end resources
