@@ -1,12 +1,6 @@
 var AccountNewForm = React.createClass({
   getInitialState: function() {
-    return {
-      username: "",
-      password: "",
-      accountType: "",
-      institution: {},
-      institutions: InstitutionStore.all()
-    };
+    return {username: "", user_password: "", institutions: InstitutionStore.all() };
   },
 
   componentWillMount: function() {
@@ -14,6 +8,7 @@ var AccountNewForm = React.createClass({
 
   componentDidMount: function() {
     InstitutionStore.addChangeHandler(this._onChange);
+    ApiUtil.getInstitutions();
   },
 
   componentWillUnmount: function() {
@@ -45,7 +40,7 @@ var AccountNewForm = React.createClass({
           <input
             className="account-form edit input"
             type="password"
-            name="password"
+            name="user_password"
             onChange={this.inputChangeHandler}
             value={this.state.password}/>
           </label>

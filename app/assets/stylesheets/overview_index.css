@@ -3,3 +3,7 @@ section {
   float: left;
   margin: 0 10px;
 }
+
+.account-form.edit{
+  display: none;
+}
