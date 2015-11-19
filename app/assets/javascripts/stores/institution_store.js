@@ -2,6 +2,7 @@
   var _institutions = [];
   var _resetInstitutions = function (newinstitutions) {
     _institutions = newinstitutions;
+    InstitutionStore.changed();
   };
   var CHANGE_EVENT = "change_event";
 
@@ -31,6 +32,6 @@
       }
     })
 
-  })
+  });
 
 })(this);

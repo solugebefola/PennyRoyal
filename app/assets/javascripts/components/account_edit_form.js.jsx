@@ -1,6 +1,10 @@
 var AccountEditForm = React.createClass({
   getInitialState: function() {
-    return {username: "", password: "", id: this.props.account_id};
+    return {
+      username: "",
+      password: "",
+      id: this.props.account_id,
+    };
   },
   componentWillMount: function() {
 
@@ -47,7 +51,7 @@ var AccountEditForm = React.createClass({
           </label>
           <button
             className="account-edit-submit"
-            type="submit">Add Account
+            type="submit">Update Account
           </button>
         </form>
       </div>

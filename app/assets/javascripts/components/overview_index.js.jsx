@@ -13,6 +13,9 @@ var OverviewIndex = React.createClass({
         <section className="account-form edit">
           <AccountEditForm />
         </section>
+        <section>
+          <AccountNewForm />
+        </section>
       </div>
     );
   }
