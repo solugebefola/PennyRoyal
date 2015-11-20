@@ -17,8 +17,7 @@ var AccountIndex = React.createClass({
     this.setState({ accounts: AccountStore.all() });
   },
 
-  render: function() {
-    var indexes = [];
+  makeAccountGroups: function () {
     var accountGroups = {};
     var currentType;
     var currentGroup;
@@ -31,6 +30,12 @@ var AccountIndex = React.createClass({
         accountGroups[currentGroup] = currentType;
       }
     }
+    return accountGroups;
+  },
+
+  render: function() {
+    var indexes = [];
+    var accountGroups = this.makeAccountGroups();
     for (var accountGroupKey in accountGroups) {
       indexes.push(
         <li key={accountGroupKey}>
