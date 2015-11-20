@@ -10,7 +10,7 @@
   - [x] InstitutionApiActions
 - [x] Write out behavior diagram for components Overview and Transactions
 - [x] ActiveAccountStore - for highlighting
-- [ ] ActiveCategoryStore
+- [x] ActiveCategoryStore
 #### React Components
 - [ ] TransactionIndex + children
 #### Afternoon
