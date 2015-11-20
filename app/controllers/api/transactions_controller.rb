@@ -1,7 +1,7 @@
 class Api::TransactionsController < ApplicationController
 
   def index
-    @transactions = current_user.transactions
+    @transactions = Transactions.param_search #Addnote: use scope in model to control this.
   end
 
   def show

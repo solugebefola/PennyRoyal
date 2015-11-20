@@ -20,12 +20,11 @@
 
 #### Evening
 #### CSS
-- [ ] Disassemble CSS into separate files
-- [ ] AccountSmallIndex
-  - [ ] AccountTypeNavbar
-  - [ ] AccountSmallIndexItem
+- [x] Disassemble CSS into separate files
+- [x] AccountSmallIndex
+  - [x] AccountTypeNavbar
+  - [x] AccountSmallIndexItem
 #### Flux/React controls
-- [ ] CategoryStore
-- [ ] ApiActions -> move over all ApiUtil AppDispatcher calls
+
 #### Misc
 - [ ] user auth include additional password validations with regexp
