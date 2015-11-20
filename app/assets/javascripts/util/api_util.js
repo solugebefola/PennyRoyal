@@ -6,10 +6,7 @@
         url: "api/accounts",
         method: "GET",
         success: function (accounts) {
-          AppDispatcher.dispatch({
-            actionType: fluxConstants.ACCOUNTS_RECEIVED,
-            accounts: accounts
-          });
+          AccountApiActions.accountsReceived(accounts);
         }
       });
     },
@@ -19,10 +16,8 @@
         url: "api/account/" + params[id],
         method: "PATCH",
         success: function (account) {
-          AppDispatcher.dispatch({
-            actionType: fluxConstants.ACCOUNT_RECEIVED,
-            account: account
-          });
+          AccountApiActions.singleAccountReceived(account);
+
         }
       });
     },
@@ -33,10 +28,7 @@
         method: "POST",
         data: {account: params},
         success: function (account) {
-          AppDispatcher.dispatch({
-            actionType: fluxConstants.ACCOUNT_RECEIVED,
-            account: account
-          });
+          AccountApiActions.singleAccountReceived(account);
         }
       });
     },
@@ -46,10 +38,7 @@
         url: "api/institutions",
         method: "GET",
         success: function (institutions) {
-          AppDispatcher.dispatch({
-            actionType: fluxConstants.INSTITUTIONS_RECEIVED,
-            institutions: institutions
-          });
+          InstitutionApiActions.institutionsReceived(institutions);
         }
       });
     },
@@ -59,10 +48,7 @@
         url: "api/transactions",
         method: "GET",
         success: function (transactions) {
-          AppDispatcher.dispatch({
-            actionType: fluxConstants.TRANSACTIONS_RECEIVED,
-            transactions: transactions
-          });
+          TransactionApiActions.transactionsReceived(transactions);
         }
       });
     }
