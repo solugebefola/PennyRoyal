@@ -43,8 +43,9 @@ var AccountSmallIndex = React.createClass({
           </li>
           <li>
             <ul>
-            <li>
-              
+            <li className="account-small-item">
+              <p>All Accounts</p>
+              <p>{acctItems.length} Accounts</p>
             </li>
               {acctItems}
             </ul>
