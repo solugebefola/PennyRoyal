@@ -34,7 +34,7 @@ var AccountSmallIndex = React.createClass({
           <li
             className={ "account-small-item " + activeClass }
             id={ acctItem.id }
-            onClick={ this._setActive }
+            onClick={this._setActive}
             key={ acctItem.id }
             disabled={disabled}>
             <AccountSmallIndexItem account={ acctItem }/>

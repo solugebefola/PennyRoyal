@@ -1,4 +1,6 @@
 var AccountIndexItem = React.createClass({
+  mixins: [ReactRouter.History],
+
   render: function() {
     return (
       <div>
@@ -26,5 +28,6 @@ var AccountIndexItem = React.createClass({
 
   _setActive: function () {
     ActiveAccountActions.setActiveAccount(this.props.accountItem);
+    this.history.pushState(null, "/transactions");
   }
 });

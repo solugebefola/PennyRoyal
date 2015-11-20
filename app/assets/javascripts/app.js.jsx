@@ -3,6 +3,7 @@
   Route = ReactRouter.Route;
   IndexRoute = ReactRouter.IndexRoute;
   Router = ReactRouter.Router;
+  history = ReactRouter.History;
 })(this);
 
 var App = React.createClass({

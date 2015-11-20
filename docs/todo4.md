@@ -14,7 +14,7 @@
 #### React Components
 - [ ] TransactionIndex + children
 #### Afternoon
-- [ ] Begin React router (Incorporate all currently built components)
+- [x] Begin React router (Incorporate all currently built components)
 #### Back end resources
 - [ ] Custom indexing for transactions for selected search params
   - [ ] params skeleton (accounts:[id1, id2, id3...], categories:[id1, id3, id5...])
