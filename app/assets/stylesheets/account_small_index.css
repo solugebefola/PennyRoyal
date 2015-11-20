@@ -1,8 +1,8 @@
 
-/*.account-small-greater:hover {
+.account-small-greater:hover {
   color: #22c531;
   cursor: pointer;
-}*/
+}
 
 
 .account-small-index li {
@@ -25,6 +25,7 @@
   font-size: 10px;
   color: #aaa;
 }
+
 .account-small-index > li{
   padding: 10px;
 }
@@ -39,6 +40,6 @@
   color: #fff;
 }
 
-.account-small-item:disabled > p{
+.account-small-item.active:hover {
   color: #fff
 }
