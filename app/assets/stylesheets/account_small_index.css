@@ -1,8 +1,8 @@
 
-.account-small-greater:hover {
+/*.account-small-greater:hover {
   color: #22c531;
   cursor: pointer;
-}
+}*/
 
 
 .account-small-index li {
@@ -32,4 +32,13 @@
 .account-small-item:hover {
   color: #22c531;
   cursor: pointer;
+}
+
+.account-small-item.active {
+  background: #22c531;
+  color: #fff;
+}
+
+.account-small-item:disabled > p{
+  color: #fff
 }

@@ -14,7 +14,6 @@ var AccountTypeIndex = React.createClass({
 
   getAccountsSum: function (props) {
     var accountsSum = 0;
-    console.log(props);
     if (props.accounts){
       props.accounts.forEach(function(account){
         accountsSum += parseFloat(account.balance);
@@ -24,7 +23,6 @@ var AccountTypeIndex = React.createClass({
   },
 
   render: function() {
-    console.log("account sum "+ this.state.accountsSum);
     var accounts = this.props.accounts.map(function(account){
       return (
         <li className="account-type-index-items" key={account.id}>

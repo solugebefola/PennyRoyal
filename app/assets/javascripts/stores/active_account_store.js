@@ -1,15 +1,17 @@
 (function (root) {
-  var _activeAccounts = [];
-  var _resetActiveAccounts = function (newActiveAccounts) {
-    _activeAccounts = newActiveAccounts;
+  var _activeAccount = { id: 0 };
+  var _resetActiveAccount = function (newActiveAccount) {
+    _activeAccount = newActiveAccount;
     ActiveAccountStore.changed();
   };
   var CHANGE_EVENT = "change_event";
 
   ActiveAccountStore = root.ActiveAccountStore = $.extend({}, EventEmitter.prototype, {
 
-    all: function () {
-      return _activeAccounts.slice(0);
+    one: function () {
+      if (_activeAccount) {
+        return ($.extend({}, _activeAccount));
+      }
     },
 
     addChangeHandler: function (callback) {
@@ -26,8 +28,8 @@
 
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
-        case fluxConstants.ACTIVE_ACCOUNTS_RECEIVED:
-          _resetActiveAccounts();
+        case fluxConstants.ACTIVE_ACCOUNT_RECEIVED:
+          _resetActiveAccount(payload.newActiveAccount);
           break;
       }
     })
