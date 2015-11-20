@@ -7,3 +7,7 @@ section {
 .account-form.edit{
   display: none;
 }
+
+.account-form.new{
+  display: none;
+}
