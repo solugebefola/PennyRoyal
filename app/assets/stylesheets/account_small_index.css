@@ -4,10 +4,6 @@
   cursor: pointer;
 }
 
-.account-small-item:hover {
-  color: #22c531;
-  cursor: pointer;
-}
 
 .account-small-index li {
   padding: 10px 0;
@@ -21,15 +17,19 @@
   font-weight: 500;
 }
 
+.account-small-item p:first-child {
+  font-size: 16px;
+}
 
+.account-small-item p:last-child {
+  font-size: 10px;
+  color: #aaa;
+}
 .account-small-index > li{
   padding: 10px;
 }
 
-.account-small-index p.account-small-greater  {
-  font-size: 14px;
-}
-
-.account-small-index p.account-small-lesser  {
-  font-size: 8px;
+.account-small-item:hover {
+  color: #22c531;
+  cursor: pointer;
 }
