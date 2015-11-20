@@ -8,8 +8,8 @@
   - [x] TransactionApiActions
   - [x] AccountApiActions
   - [x] InstitutionApiActions
-- [ ] Write out behavior diagram for components
-- [ ] ActiveAccountStore - for highlighting
+- [x] Write out behavior diagram for components Overview and Transactions
+- [x] ActiveAccountStore - for highlighting
 - [ ] ActiveCategoryStore
 #### React Components
 - [ ] TransactionIndex + children
