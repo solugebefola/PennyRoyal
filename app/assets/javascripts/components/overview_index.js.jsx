@@ -16,10 +16,9 @@ var OverviewIndex = React.createClass({
         <section className="account-form edit">
           <AccountEditForm />
         </section>
-        <section>
+        <section className="account-form new">
           <AccountNewForm />
         </section>
-        <button onClick={this.recheckTheStores}>Refresh</button>
       </div>
     );
   },
