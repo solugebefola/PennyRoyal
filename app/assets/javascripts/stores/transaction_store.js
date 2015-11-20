@@ -27,7 +27,7 @@
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
         case fluxConstants.TRANSACTIONS_RECEIVED:
-          _resetTransactions(payload.transactions);
+          _resetTransactions(payload.newTransactions);
           break;
       }
     })

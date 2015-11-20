@@ -48,7 +48,7 @@
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
         case fluxConstants.ACCOUNTS_RECEIVED:
-        _resetAccounts(payload.accounts);
+        _resetAccounts(payload.newAccounts);
         break;
       }
     })

@@ -3,8 +3,8 @@
 #### Morning
 - [ ] ask about params scopes
 #### Flux/React controls
-- [ ] CategoryStore
-- [ ] ApiActions -> move over all ApiUtil AppDispatcher calls
+- [x] CategoryStore
+- [x] ApiActions -> move over all ApiUtil AppDispatcher calls
   - [x] TransactionApiActions
   - [x] AccountApiActions
   - [x] InstitutionApiActions
