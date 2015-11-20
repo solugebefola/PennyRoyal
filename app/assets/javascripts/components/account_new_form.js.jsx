@@ -12,7 +12,7 @@ var AccountNewForm = React.createClass({
   },
 
   componentWillUnmount: function() {
-
+    InstitutionStore.removeChangeHandler(this._onChange);
   },
 
   render: function() {

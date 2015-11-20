@@ -4,9 +4,13 @@ var AccountIndex = React.createClass({
     return { accounts: AccountStore.all() };
   },
 
-  componentWillMount: function () {
+  componentDidMount: function () {
     AccountStore.addChangeHandler(this._onChange);
     ApiUtil.getAccounts();
+  },
+
+  componentWillUnmount: function () {
+    AccountStore.removeChangeHandler(this._onChange);
   },
 
   _onChange: function () {

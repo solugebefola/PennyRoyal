@@ -12,10 +12,10 @@ var App = React.createClass({
         <h1>PennyRoyal!</h1>
         <ul>
           <li>
-            <Link to="/overview">Overview</Link>
+            <Link to="/">Overview</Link>
           </li>
           <li>
-
+            <Link to="/transactions">Transactions</Link>
           </li>
           <li>
             {this.props.children}
@@ -28,13 +28,15 @@ var App = React.createClass({
 
 (function (root) {
   $(document).on('ready', function (){
-    ReactDOM.render((
-      <Router>
-        <Route path="/" component={App}>
-          <IndexRoute path="/overview" component={OverviewIndex} />
-        </Route>
-      </Router>
-    ),document.getElementById('content'));
+    if(document.getElementById('content')){
+      ReactDOM.render((
+        <Router>
+          <Route path="/" component={App}>
+            <IndexRoute component={OverviewIndex} />
+            <Route path="transactions" component={TransactionsIndex} />
+          </Route>
+        </Router>
+      ),document.getElementById('content'));
+    }
   });
 })(this);
-        

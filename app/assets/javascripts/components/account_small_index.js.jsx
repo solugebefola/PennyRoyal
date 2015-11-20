@@ -11,7 +11,8 @@ var AccountSmallIndex = React.createClass({
     ApiUtil.getAccounts();
   },
   componentWillUnmount: function() {
-
+    AccountStore.removeChangeHandler(this._onChange);
+    ActiveAccountStore.removeChangeHandler(this._onActiveChange);
   },
   render: function() {
     var accts = [];

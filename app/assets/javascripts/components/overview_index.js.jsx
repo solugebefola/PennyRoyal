@@ -6,9 +6,6 @@ var OverviewIndex = React.createClass({
         <section className="account-index">
           <AccountIndex />
         </section>
-        <section>
-          <AccountSmallIndex />
-        </section>
         <section className="overview-main">
           <OverviewMain />
         </section>
