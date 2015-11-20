@@ -31,18 +31,21 @@ var AccountSmallIndex = React.createClass({
 
     return(
       <div>
-        <ul>
+        <ul className="account-small-index">
           <li>
-            <h1>Type</h1>
+            <p>Type</p>
           </li>
           <li>
             <AccountTypeNavbar />
           </li>
           <li>
-            <h1>Accounts</h1>
+            <p>Accounts</p>
           </li>
           <li>
             <ul>
+            <li>
+              
+            </li>
               {acctItems}
             </ul>
           </li>

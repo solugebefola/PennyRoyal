@@ -12,13 +12,13 @@
  *= require reset
  *= require transactions
  *= require institutions
- *= require account_small_index
  *= require sessions
  *= require overview_index
  *= require categories
  *= require accounts
  *= require account_form
  *= require users
+ *= require account_small_index
  *= require defaults
  *= require_tree .
  *= require_self

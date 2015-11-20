@@ -7,24 +7,6 @@ body {
   background: white;
 }
 
-.login-header {
-  width: 690px;
-  margin: 25px auto 25px;
-  height: 62px;
-  text-align: right;
-  position: relative;
-}
-
-div.login-errors {
-  display: block;
-  width: 670px;
-  padding: 5px 10px;
-  margin: auto;
-  color: #fff;
-  background: #f0e;
-  z-index: 3;
-}
-
 .login-main {
   display: block;
   width: 590px;
@@ -37,13 +19,6 @@ div.login-errors {
 .login-text {
   font-weight: 600;
   font-size: 30px;
-}
-
-.login-input-label {
-  font-size: 14px;
-  display:block;
-  margin: 30px 0 0 0;
-  height: 50px;
 }
 
 .login-input {
