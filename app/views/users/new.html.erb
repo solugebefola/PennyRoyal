@@ -1,6 +1,4 @@
-<% flash[:errors].try(:each) do |error| %>
-  <%= error %>
-<% end %>
+
 <header class="login-header">
   <ul class="signup-login-list group">
     <li>
@@ -11,6 +9,9 @@
     </li>
   </ul>
 </header>
+<% flash[:errors].try(:each) do |error| %>
+  <div class="login-errors"><%= error  %></div>
+<% end %>
 <main class="signup-main">
 <h1 class="login-text">See all your finances in one place &amp; create a budget</h1>
 <form class="login-form" action="/users" method="POST">

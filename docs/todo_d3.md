@@ -17,9 +17,6 @@
   - [ ] AccountTypeNavbar
   - [ ] AccountSmallIndexItem
 - [ ] TransactionsIndex
-#### Flux/React controls
-- [ ] CategoryStore
-- [ ] ApiActions -> move over all ApiUtil AppDispatcher calls
 
 #### Evening
 #### CSS
@@ -27,5 +24,8 @@
 - [ ] AccountSmallIndex
   - [ ] AccountTypeNavbar
   - [ ] AccountSmallIndexItem
+#### Flux/React controls
+- [ ] CategoryStore
+- [ ] ApiActions -> move over all ApiUtil AppDispatcher calls
 #### Misc
 - [ ] user auth include additional password validations with regexp
