@@ -50,8 +50,11 @@ var AccountIndex = React.createClass({
       <div className="account-index-list">
         <h1>Accounts</h1>
         <ul>
-          {indexes}
+          { indexes }
         </ul>
+        <div>
+          { this.props.children }
+        </div>
       </div>
     );
   }

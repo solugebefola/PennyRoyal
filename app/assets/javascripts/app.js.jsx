@@ -19,7 +19,7 @@ var App = React.createClass({
             <Link to="/transactions">Transactions</Link>
           </li>
           <li>
-            {this.props.children}
+            { this.props.children }
           </li>
         </ul>
       </div>
@@ -33,10 +33,12 @@ var App = React.createClass({
       ReactDOM.render((
         <Router>
           <Route path="/" component={App}>
-            <IndexRoute component={OverviewIndex} />
+            <IndexRoute component={AccountIndex} >
+              <Route component={OverviewMain} />
+            </IndexRoute>
             <Route path="transactions" component={TransactionsIndex} >
-              <IndexRoute  component={AccountSmallIndex} />
-              <Route path="main" component={TransactionMain}>
+              <IndexRoute component={AccountSmallIndex} />
+                <Route path="main" component={TransactionMain}>
                 <Route path="search" component={TransactionSearch} />
                 <Route path="index" component={TransactionIndex} />
               </Route>

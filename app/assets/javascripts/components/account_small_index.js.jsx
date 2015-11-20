@@ -57,7 +57,7 @@ var AccountSmallIndex = React.createClass({
           </li>
           <li>
             <ul>
-            <li className="account-small-item">
+            <li className="account-small-item" onClick={this._emptyActiveAccount}>
               <p>All Accounts</p>
               <p>{acctItems.length} Accounts</p>
             </li>
@@ -88,5 +88,9 @@ var AccountSmallIndex = React.createClass({
       }
       ActiveAccountActions.setActiveAccount(newActiveAccount);
     }
+  },
+
+  _emptyActiveAccount: function () {
+    ActiveAccountActions.emptyActiveAccount();
   }
 });

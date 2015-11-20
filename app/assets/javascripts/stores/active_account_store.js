@@ -31,6 +31,9 @@
         case fluxConstants.ACTIVE_ACCOUNT_RECEIVED:
           _resetActiveAccount(payload.newActiveAccount);
           break;
+        case fluxConstants.ACTIVE_ACCOUNT_EMPTY:
+          _resetActiveAccount({ id:0 });
+          break;
       }
     })
 
