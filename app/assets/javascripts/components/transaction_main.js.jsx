@@ -1,7 +1,9 @@
 var TransactionMain = React.createClass({
   render: function() {
     return (
-      {this.props.children}
+      <div>
+        { this.props.children }
+      </div>
     );
   }
 });

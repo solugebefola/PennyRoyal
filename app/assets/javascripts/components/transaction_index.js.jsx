@@ -14,19 +14,35 @@ var TransactionIndex = React.createClass({
     ActiveTransactionStore.removeChangeHandler(this._onActiveChange);
     TransactionStore.removeChangeHandler(this._onChange);
   },
-  render: function() {
-    var transactionsList = this.state.transactions.map(function (transaction) {
-      if (transaction.id == activeTransaction.id){
-        return <li><TransactionSmallForm /></li>
-      }else{
-      return <li><TransactionIndexItem /><li>
-      }
-    })
 
+  _makeComponents: function () {
+    var transactionsList = this.state.transactions.map(function (transaction) {
+      if (transaction.id == activeTransaction.id) {
+        return (
+          <li>
+            <TransactionForm />
+          </li>
+        );
+      }else{
+        return (
+          <li>
+            <TransactionIndexItem />
+          </li>
+        );
+      }
+    });
+    return transactionsList;
+  },
+
+  render: function() {
+    var transactionsList = this._makeComponents();
     return (
-      <ul>
-        { transactionsList }
-      </ul>
-    )
+      <div>
+        <h1>Transactions Index</h1>
+        <ul>
+          { transactionsList }
+        </ul>
+      </div>
+    );
   }
 });

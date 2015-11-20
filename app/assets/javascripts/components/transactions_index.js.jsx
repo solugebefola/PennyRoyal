@@ -3,9 +3,7 @@ var TransactionsIndex = React.createClass({
     return (
       <div>
       <h1>Transactions Index</h1>
-        <section>
-          <AccountSmallIndex />
-        </section>
+        { this.props.children }
       </div>
     );
   }

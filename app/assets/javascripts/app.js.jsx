@@ -34,7 +34,13 @@ var App = React.createClass({
         <Router>
           <Route path="/" component={App}>
             <IndexRoute component={OverviewIndex} />
-            <Route path="transactions" component={TransactionsIndex} />
+            <Route path="transactions" component={TransactionsIndex} >
+              <IndexRoute  component={AccountSmallIndex} />
+              <Route path="main" component={TransactionMain}>
+                <Route path="search" component={TransactionSearch} />
+                <Route path="index" component={TransactionIndex} />
+              </Route>
+            </Route>
           </Route>
         </Router>
       ),document.getElementById('content'));

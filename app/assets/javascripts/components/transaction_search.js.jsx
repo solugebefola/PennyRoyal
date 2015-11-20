@@ -13,7 +13,7 @@ var TransactionSearch = React.createClass({
   },
   render: function() {
     return (
-      <div>TransactionSearch</div>
+      <div><h1>TransactionSearch</h1></div>
     );
   }
 });
