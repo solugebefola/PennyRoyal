@@ -1,7 +1,9 @@
 json.array! @transactions,
+:id,
 :account_id,
 :category_id,
-:date,
 :amount,
 :description,
-:notes
+:notes,
+:created_at,
+:updated_at
