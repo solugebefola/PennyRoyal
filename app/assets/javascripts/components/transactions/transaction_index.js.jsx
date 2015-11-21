@@ -38,7 +38,7 @@ var TransactionIndex = React.createClass({
     var transactionsList = this._makeComponents();
     return (
       <div>
-        <h1>Transactions Index</h1>
+        <h1>Transaction Index</h1>
         <ul>
           { transactionsList }
         </ul>

@@ -58,11 +58,19 @@ Account.create(
 )
 
 Account.create(
-  name: "Yeomans Auto Loan",
+  name: "Yeomans Boat Loan",
   user_id: 1,
   institution_id: 3,
   username: "solar",
   user_password: "solarsolar",
   balance: -500.00,
   account_type: "loan",
+)
+
+Transaction.create(
+name: "Cannonballs",
+account_id: 2,
+category_id: null,
+
+
 )
