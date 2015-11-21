@@ -52,9 +52,6 @@ var AccountIndex = React.createClass({
         <ul>
           { indexes }
         </ul>
-        <div>
-          { this.props.children }
-        </div>
       </div>
     );
   }

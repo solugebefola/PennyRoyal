@@ -1,5 +1,5 @@
 ## Todo
-### Thursday
+### Friday
 #### Morning
 - [ ] ask about params scopes
 #### Flux/React controls

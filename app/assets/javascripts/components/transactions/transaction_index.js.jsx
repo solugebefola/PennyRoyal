@@ -44,5 +44,13 @@ var TransactionIndex = React.createClass({
         </ul>
       </div>
     );
+  },
+
+  _onChange: function () {
+    this.setState({transactions: TransactionStore.all()});
+  },
+
+  _onActiveChange: function () {
+    this.setState({activeTransaction: ActiveTransactionStore.one()});
   }
 });

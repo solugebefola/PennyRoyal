@@ -55,7 +55,6 @@ name        | string    | not null
 category_id | integer   | not null, foreign key (references category), indexed
 limit       | integer   | not null, scale: 2
 balance     | decimal   | not null, scale: 2
-date        | datetime  | not null, indexed
 
 ## tags
 column name | data type | details

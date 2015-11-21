@@ -55,14 +55,13 @@ var AccountSmallIndex = React.createClass({
           </li>
           <li>
             <ul>
-
-            <li
-              className="account-small-item"
-              onClick={this._emptyActiveAccount}>
-                <p>All Accounts</p>
-                <p>{acctItems.length} Accounts</p>
-            </li>
-              {acctItems}
+              <li
+                className="account-small-item"
+                onClick={ this._emptyActiveAccount }>
+                  <p>All Accounts</p>
+                  <p>{ acctItems.length } Accounts</p>
+              </li>
+              { acctItems }
             </ul>
           </li>
         </ul>
@@ -92,6 +91,7 @@ var AccountSmallIndex = React.createClass({
   },
 
   _emptyActiveAccount: function () {
+    debugger
     ActiveAccountActions.emptyActiveAccount();
   }
 });
