@@ -1,5 +1,5 @@
 class Transaction < ActiveRecord::Base
-  validates :account_id, :category_id, :date, :amount, :description, presence: true
+  validates :account_id, :category_id, :amount, :description, presence: true
   validates :amount, :account_id, :category_id, numericality: true
 
   belongs_to :account
@@ -7,7 +7,4 @@ class Transaction < ActiveRecord::Base
   has_one :user, through: :account
   has_one :institution, through: :account
 
-  def self.params_search(transactions)
-    
-  end
 end

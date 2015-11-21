@@ -1,7 +1,7 @@
 class Api::TransactionsController < ApplicationController
 
   def index
-    @transactions = Transaction.all
+    @transactions = current_user.transactions
   end
 
   def show

@@ -1,12 +1,7 @@
 class Category < ActiveRecord::Base
   validates :name, presence: true
 
-  belongs_to{
-    :parent_category,
-    class_name: "Category",
-    foreign_key: :category_id,
-    primary_key: :id
-  }
+  belongs_to :parent_category
 
   has_many :transactions
   has_many :subcategories, foreign_key: :category_id

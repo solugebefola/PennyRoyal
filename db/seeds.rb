@@ -67,10 +67,27 @@ Account.create(
   account_type: "loan",
 )
 
-Transaction.create(
-name: "Cannonballs",
-account_id: 2,
-category_id: null,
+Category.create!(
+  name: "UNCATEGORIZED"
+)
 
+Transaction.create!(
+  category_id: 1,
+  account_id: 2,
+  amount: -223.23,
+  description: "Cannonballs from Cannonball Alley"
+)
 
+Transaction.create!(
+  category_id: 1,
+  account_id: 1,
+  amount: -100.32,
+  description: "Sails from Sails r us"
+)
+
+Transaction.create!(
+  category_id: 1,
+  account_id: 1,
+  amount: -100.32,
+  description: "Pirate Hat from Skullo"
 )
