@@ -34,7 +34,7 @@ var App = React.createClass({
         <Router>
           <Route path="/" component={App}>
             <IndexRoute component={OverviewIndex} />
-            <Route path="transactions" component={TransactionsIndex} />
+            <Route path="transactions" component={TransactionsPage} />
           </Route>
         </Router>
       ),document.getElementById('content'));

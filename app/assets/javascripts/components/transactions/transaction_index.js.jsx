@@ -17,20 +17,20 @@ var TransactionIndex = React.createClass({
 
   _makeComponents: function () {
     var transactionsList = this.state.transactions.map(function (transaction) {
-      if (transaction.id == activeTransaction.id) {
+      if (transaction.id == this.state.activeTransaction.id) {
         return (
-          <li>
-            <TransactionForm />
+          <li key={ transaction.id } >
+            <TransactionForm transaction={ transaction }/>
           </li>
         );
       }else{
         return (
-          <li>
-            <TransactionIndexItem />
+          <li key={ transaction.id }>
+            <TransactionIndexItem transaction={ transaction }/>
           </li>
         );
       }
-    });
+    }.bind(this));
     return transactionsList;
   },
 

@@ -1,4 +1,4 @@
-var TransactionsIndex = React.createClass({
+var TransactionsPage = React.createClass({
   render: function() {
     return (
       <div>
