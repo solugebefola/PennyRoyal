@@ -1,3 +1,5 @@
+// Reset
+
 html, head, body, header, main, section, h1, h2, h3, ul, li, div, button, p {
   margin: 0;
   padding: 0;
@@ -11,4 +13,12 @@ html, head, body, header, main, section, h1, h2, h3, ul, li, div, button, p {
 
   color: inherit;
   background: transparent;
+}
+
+// Clearfix
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
 }

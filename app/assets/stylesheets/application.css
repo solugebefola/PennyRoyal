@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *= require reset
+ *= require defaults
  *= require transactions
  *= require institutions
  *= require sessions
@@ -19,7 +20,6 @@
  *= require account_form
  *= require users
  *= require account_small_index
- *= require defaults
  *= require_tree .
  *= require_self
  */

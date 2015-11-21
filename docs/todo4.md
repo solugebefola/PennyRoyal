@@ -16,9 +16,6 @@
 #### Afternoon
 - [x] Begin React router (Incorporate all currently built components)
 #### Back end resources
-- [ ] Custom indexing for transactions for selected search params
-  - [ ] params skeleton (accounts:[id1, id2, id3...], categories:[id1, id3, id5...])
-  - [ ] use rails __scopes__ for search with default to all
 #### Evening
 - [ ] Category jbuilder views
 - [ ] Budgets - Table Only For Now
