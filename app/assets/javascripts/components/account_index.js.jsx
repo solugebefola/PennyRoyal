@@ -4,17 +4,20 @@ var AccountIndex = React.createClass({
     return { accounts: AccountStore.all() };
   },
 
-  componentWillMount: function () {
+  componentDidMount: function () {
     AccountStore.addChangeHandler(this._onChange);
     ApiUtil.getAccounts();
+  },
+
+  componentWillUnmount: function () {
+    AccountStore.removeChangeHandler(this._onChange);
   },
 
   _onChange: function () {
     this.setState({ accounts: AccountStore.all() });
   },
 
-  render: function() {
-    var indexes = [];
+  makeAccountGroups: function () {
     var accountGroups = {};
     var currentType;
     var currentGroup;
@@ -27,6 +30,12 @@ var AccountIndex = React.createClass({
         accountGroups[currentGroup] = currentType;
       }
     }
+    return accountGroups;
+  },
+
+  render: function() {
+    var indexes = [];
+    var accountGroups = this.makeAccountGroups();
     for (var accountGroupKey in accountGroups) {
       indexes.push(
         <li key={accountGroupKey}>
@@ -41,8 +50,11 @@ var AccountIndex = React.createClass({
       <div className="account-index-list">
         <h1>Accounts</h1>
         <ul>
-          {indexes}
+          { indexes }
         </ul>
+        <div>
+          { this.props.children }
+        </div>
       </div>
     );
   }

@@ -1,14 +1,10 @@
 var OverviewIndex = React.createClass({
   render: function() {
-    console.log("OverviewIndex");
     return (
       <div>
         <h1>OverviewIndex</h1>
         <section className="account-index">
           <AccountIndex />
-        </section>
-        <section>
-          <AccountSmallIndex />
         </section>
         <section className="overview-main">
           <OverviewMain />

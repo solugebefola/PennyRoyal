@@ -1,8 +1,10 @@
 var AccountIndexItem = React.createClass({
+  mixins: [ReactRouter.History],
+
   render: function() {
     return (
       <div>
-        <ul className="group">
+        <ul className="group" onClick={this._setActive}>
           <li className="account-text">
             <p className="account-institution">
               {this.props.accountItem.institution.name}
@@ -22,5 +24,10 @@ var AccountIndexItem = React.createClass({
         </ul>
       </div>
     );
+  },
+
+  _setActive: function () {
+    ActiveAccountActions.setActiveAccount(this.props.accountItem);
+    this.history.pushState(null, "/transactions");
   }
 });

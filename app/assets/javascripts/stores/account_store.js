@@ -25,6 +25,14 @@
       return _accountsClone;
     },
 
+    allAsArray: function () {
+      var accts = [];
+      for(var type in _accounts){
+        accts = accts.concat(_accounts[type].slice(0));
+      }
+      return accts;
+    },
+
     isEmpty: function () {
       var empty = true;
       for (var subArray in _accounts){
@@ -48,7 +56,7 @@
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
         case fluxConstants.ACCOUNTS_RECEIVED:
-        _resetAccounts(payload.accounts);
+        _resetAccounts(payload.newAccounts);
         break;
       }
     })

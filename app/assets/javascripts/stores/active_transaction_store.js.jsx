@@ -1,15 +1,15 @@
 (function (root) {
-  var _institutions = [];
-  var _resetInstitutions = function (newinstitutions) {
-    _institutions = newinstitutions;
-    InstitutionStore.changed();
+  var _activeTransaction = {id: 0};
+  var _resetActiveTransaction = function (newActiveTransaction) {
+    _activeTransaction = newActiveTransaction;
+    ActiveTransactionStore.changed();
   };
   var CHANGE_EVENT = "change_event";
 
-  InstitutionStore = root.InstitutionStore = $.extend({}, EventEmitter.prototype, {
+  ActiveTransactionStore = root.ActiveTransactionStore = $.extend({}, EventEmitter.prototype, {
 
-    all: function () {
-      return _institutions.slice(0);
+    one: function () {
+      return $.extend({}, _activeTransaction);
     },
 
     addChangeHandler: function (callback) {
@@ -26,8 +26,8 @@
 
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
-        case fluxConstants.INSTITUTIONS_RECEIVED:
-          _resetInstitutions(payload.newInstitutions);
+        case fluxConstants.ACTIVE_TRANSACTION_RECEIVED:
+          _resetActiveTransaction(payload.activeTransaction);
           break;
       }
     })

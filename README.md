@@ -1,6 +1,6 @@
 # PennyRoyal
 
-The [live site][heroku] will be up soon!
+The [live site][heroku] is here.
 
 [heroku]:https://pennyroyal.herokuapp.com/
 
@@ -14,7 +14,7 @@ and React.js. PennyRoyal allows users to:
 - [x] Create a _user_ account
 - [x] Log in / Log out
 - [ ] Add financial _institutions_
-- [ ] Add and delete financial _accounts_
+- [x] Add and delete financial _accounts_
 - [ ] Create _transactions_, or receive them from financial _institutions_
 - [ ] Edit _transaction_ details
 - [ ] Create _budgets_ and apply monthly amount limits

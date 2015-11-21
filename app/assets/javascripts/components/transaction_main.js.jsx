@@ -1,8 +1,7 @@
-var TransactionsIndex = React.createClass({
+var TransactionMain = React.createClass({
   render: function() {
     return (
       <div>
-      <h1>Transactions Index</h1>
         { this.props.children }
       </div>
     );
