@@ -26,7 +26,7 @@ var TransactionIndex = React.createClass({
       }else{
         return (
           <li key={ transaction.id } onClick={this._setActive} id={ transaction.id }>
-            <TransactionIndexItem transaction={ transaction } new="false"/>
+            <TransactionIndexItem transaction={ transaction } newT="false"/>
           </li>
         );
       }
@@ -59,7 +59,6 @@ var TransactionIndex = React.createClass({
     var newActive = this.state.transactions.find(function(transaction) {
       return (transaction.id == e.currentTarget.id);
     });
-    debugger
     ActiveTransactionActions.getActiveTransaction(newActive);
   }
 });
