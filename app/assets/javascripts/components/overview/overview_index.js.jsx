@@ -3,16 +3,16 @@ var OverviewIndex = React.createClass({
     return (
       <div>
         <h1>OverviewIndex</h1>
-        <section className="account-index">
+        <section className="account-index overview">
           <AccountIndex />
         </section>
-        <section className="overview-main">
+        <section className="overview-main overview">
           <OverviewMain />
         </section>
-        <section className="account-form edit">
+        <section className="account-form edit overview">
           <AccountEditForm />
         </section>
-        <section className="account-form new">
+        <section className="account-form new overview">
           <AccountNewForm />
         </section>
       </div>

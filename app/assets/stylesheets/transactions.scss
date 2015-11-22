@@ -19,9 +19,28 @@
 
 .transaction-item-attributes {
   display: block;
+  font-size: 12px;
 }
 
-li.transaction-item {
+.transaction-item-attributes > li {
   display: block;
   float: left;
+  padding: 5px;
+  border-right: 1px solid #000;
+}
+
+.transaction-item-attributes > li:first-child {
+  border-right: 1px solid #000;
+}
+
+.transaction-item.date {
+  width: 100px;
+}
+
+.transaction-item.description {
+  width: 200px;
+}
+
+.transaction-item.amount {
+  width: 75px;
 }

@@ -1,7 +1,7 @@
 class Api::TransactionsController < ApplicationController
 
   def index
-    @transactions = current_user.transactions.order(created_at: :desc)
+    @transactions = current_user.transactions.order(created_at: :desc).limit(500)
   end
 
   def show

@@ -1,5 +1,6 @@
 (function (root) {
   var _transactions = [];
+  var CHANGE_EVENT = "change_event";
   var _resetTransactions = function (newTransactions) {
     _transactions = newTransactions;
     TransactionStore.changed();
@@ -16,7 +17,13 @@
     }
     TransactionStore.changed();
   };
-  var CHANGE_EVENT = "change_event";
+
+  _filterTransactionsOnAccounts = function (accounts) {
+    var accountIDs = accounts.map(function(acct) { return acct.id; });
+      return _transactions.filter(function (transaction) {
+        return (accountIDs.includes(transaction.id));
+      });
+  };
 
   TransactionStore = root.TransactionStore = $.extend({}, EventEmitter.prototype, {
 
@@ -36,6 +43,7 @@
       this.emit(CHANGE_EVENT);
     },
 
+
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
         case fluxConstants.TRANSACTIONS_RECEIVED:
@@ -43,6 +51,10 @@
           break;
         case fluxConstants.SINGLE_TRANSACTION_RECEIVED:
           _takeSingleTransaction(payload.newTransaction);
+          break;
+        case fluxConstants.ACTIVE_ACCOUNT_RECEIVED:
+          TransactionStore.filterTransactionsOnAccounts(payload.newAccounts);
+          break;
       }
     })
 
