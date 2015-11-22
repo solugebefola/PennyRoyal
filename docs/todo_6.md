@@ -12,10 +12,13 @@
 - [ ] App - header
 - [ ] Modal for AccountNewForm (include delete form)
 - [ ] Modal for AccountEditForm (include delete form)
-- [ ] Fix date display for TransactionForm
 #### Evening
 #### CSS
 - [ ] AccountNewForm
 - [ ] AccountEditForm
 #### Misc
+#### React Components
+- [ ] Fix date display for TransactionForm
+- [ ] Add category column for TransactionForm/TransactionIndexItem
+  - [ ] jQuery-based?
 - [ ] Alerts - Table Only For Now (Maybe no back end?)

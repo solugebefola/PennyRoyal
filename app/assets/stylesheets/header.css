@@ -22,6 +22,7 @@
 .app-header {
   width: 100%;
   background: #eee;
+  font-size: 12px;
   padding: 10px 0px 10px 0px;
 }
 
@@ -34,12 +35,20 @@
 .app-header.list > li {
   display: block;
   float: right;
-  padding-bottom: 10px;
+}
+
+.app-header-link:hover {
+  border-bottom: 3px solid #aaa;
+}
+
+.app-header-link {
+  height: 100%;
+  padding: 10px 0px 20px 0px;
   margin: 5px 10px;
 }
 
-.app-header.list > li:hover {
-  border-bottom: 3px solid #aaa;
+.app-header-link.current {
+  border-bottom: 3px solid #fdda85;
 }
 
 .logo {

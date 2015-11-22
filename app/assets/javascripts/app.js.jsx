@@ -8,16 +8,29 @@
 
 var App = React.createClass({
   render: function () {
+    var overviewCurrent = "";
+    var transactionCurrent = "";
+    if (this.props.location.pathname === "/"){
+      overviewCurrent = "current";
+    }else{
+      transactionCurrent = "current";
+    }
     return(
       <div>
         <header className="app-header">
           <Link to="/" className="logo"><img src="#" />Penny<br/>Royal</Link>
           <ul className="app-header list">
             <li>
-              <Link to="/">Overview</Link>
+              <Link
+                className={ "app-header-link " + overviewCurrent }
+                to="/">OVERVIEW
+              </Link>
             </li>
             <li>
-              <Link to="/transactions">Transactions</Link>
+              <Link
+                className={ "app-header-link " + transactionCurrent }
+                to="/transactions">TRANSACTIONS
+              </Link>
             </li>
           </ul>
         </header>
