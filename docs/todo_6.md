@@ -12,6 +12,7 @@
 - [ ] App - header
 - [ ] Modal for AccountNewForm (include delete form)
 - [ ] Modal for AccountEditForm (include delete form)
+- [ ] Fix date display for TransactionForm
 #### Evening
 #### CSS
 - [ ] AccountNewForm

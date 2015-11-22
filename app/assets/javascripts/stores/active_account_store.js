@@ -1,17 +1,15 @@
 (function (root) {
-  var _activeAccount = { id: 0 };
-  var _resetActiveAccount = function (newActiveAccount) {
-    _activeAccount = newActiveAccount;
+  var _activeAccounts = [{ id: 0 }];
+  var _resetActiveAccounts = function (newActiveAccounts) {
+    _activeAccounts = newActiveAccounts;
     ActiveAccountStore.changed();
   };
   var CHANGE_EVENT = "change_event";
 
   ActiveAccountStore = root.ActiveAccountStore = $.extend({}, EventEmitter.prototype, {
 
-    one: function () {
-      if (_activeAccount) {
-        return ($.extend({}, _activeAccount));
-      }
+    all: function () {
+      return _activeAccounts.slice(0);
     },
 
     addChangeHandler: function (callback) {
@@ -28,11 +26,11 @@
 
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
-        case fluxConstants.ACTIVE_ACCOUNT_RECEIVED:
-          _resetActiveAccount(payload.newActiveAccount);
+        case fluxConstants.ACTIVE_ACCOUNTS_RECEIVED:
+          _resetActiveAccounts(payload.newActiveAccounts);
           break;
-        case fluxConstants.ACTIVE_ACCOUNT_EMPTY:
-          _resetActiveAccount({ id:0 });
+        case fluxConstants.ACTIVE_ACCOUNTS_EMPTY:
+          _resetActiveAccounts([{ id:0 }]);
           break;
       }
     })

@@ -1,6 +1,6 @@
 var AccountTypeNavbar = React.createClass({
   getInitialState: function() {
-    return {};
+    return {group: ""};
   },
   componentWillMount: function() {
 
@@ -14,11 +14,11 @@ var AccountTypeNavbar = React.createClass({
   render: function() {
     return (
       <div>
-        <ul>
-          <li className="account-small-greater " name="cashCredit" onClick={this.clickChangeHandler}>Cash &amp; Credit</li>
-          <li className="account-small-greater" name="invest" onClick={this.clickChangeHandler}>Investment</li>
-          <li className="account-small-greater" name="cashOnly" onClick={this.clickChangeHandler}>Cash Only</li>
-          <li className="account-small-greater" name="loan" onClick={this.clickChangeHandler}>Loan</li>
+        <ul onClick={ this.clickChangeHandler }>
+          <li className="account-small-greater" name="cashCredit">Cash &amp; Credit</li>
+          <li className="account-small-greater" name="invest">Investment</li>
+          <li className="account-small-greater" name="cashOnly">Cash Only</li>
+          <li className="account-small-greater" name="loan">Loan</li>
         </ul>
       </div>
     );
@@ -27,6 +27,6 @@ var AccountTypeNavbar = React.createClass({
   clickChangeHandler: function (e) {
     e.preventDefault();
     var targetName = e.target.attributes.name.value;
-
+    debugger
   }
 });

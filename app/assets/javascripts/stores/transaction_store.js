@@ -18,18 +18,25 @@
     TransactionStore.changed();
   };
 
-  _filterTransactionsOnAccounts = function (accounts) {
-    var accountIDs = accounts.map(function(acct) { return acct.id; });
-      return _transactions.filter(function (transaction) {
-        return (accountIDs.includes(transaction.id));
-      });
-  };
 
   TransactionStore = root.TransactionStore = $.extend({}, EventEmitter.prototype, {
 
     all: function () {
       return _transactions.slice(0);
     },
+
+    filterTransactionsOnAccounts: function (accounts) {
+      if(accounts[0].id === 0){
+        return TransactionStore.all();
+      }else{
+        return _transactions.filter( function (t) {
+          return accounts.find(function (account){
+            return account.id === t.account_id;
+          });
+        });
+      }
+    },
+
 
     addChangeHandler: function (callback) {
       this.on(CHANGE_EVENT, callback);
@@ -52,8 +59,8 @@
         case fluxConstants.SINGLE_TRANSACTION_RECEIVED:
           _takeSingleTransaction(payload.newTransaction);
           break;
-        case fluxConstants.ACTIVE_ACCOUNT_RECEIVED:
-          TransactionStore.filterTransactionsOnAccounts(payload.newAccounts);
+        case fluxConstants.ACTIVE_ACCOUNTS_RECEIVED:
+          TransactionStore.filterTransactionsOnAccounts(payload.newActiveAccounts);
           break;
       }
     })

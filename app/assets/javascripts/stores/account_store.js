@@ -33,6 +33,12 @@
       return accts;
     },
 
+    filterByGroup: function (accountGroup) {
+      return AccountStore.allAsArray.filter(function (acct) {
+        accountGroup.includes(acct.account_type);
+      });
+    },
+
     isEmpty: function () {
       var empty = true;
       for (var subArray in _accounts){

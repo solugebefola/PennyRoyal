@@ -27,7 +27,7 @@ var AccountIndexItem = React.createClass({
   },
 
   _setActive: function () {
-    ActiveAccountActions.setActiveAccount(this.props.accountItem);
+    ActiveAccountsActions.setActiveAccounts([this.props.accountItem]);
     this.history.pushState(null, "/transactions");
   }
 });

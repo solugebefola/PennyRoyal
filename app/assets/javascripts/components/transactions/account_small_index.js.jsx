@@ -1,6 +1,6 @@
 var AccountSmallIndex = React.createClass({
   getInitialState: function() {
-    return { accounts: AccountStore.all(), activeAccount: ActiveAccountStore.one() };
+    return { accounts: AccountStore.allAsArray(), activeAccounts: ActiveAccountStore.all() };
   },
   componentWillMount: function() {
 
@@ -10,31 +10,27 @@ var AccountSmallIndex = React.createClass({
     ActiveAccountStore.addChangeHandler(this._onActiveChange);
     ApiUtil.getAccounts();
   },
+
   componentWillUnmount: function() {
     AccountStore.removeChangeHandler(this._onChange);
     ActiveAccountStore.removeChangeHandler(this._onActiveChange);
   },
+
   render: function() {
-    var accts = [];
-    var acctItems;
-    if (!AccountStore.isEmpty()){
-      for(var type in this.state.accounts){
-        accts = accts.concat(this.state.accounts[type].slice(0));
-      }
-      acctItems = accts.map(function(acctItem){
+    var acctItems = [];
+    var activeIDs = this.state.activeAccounts.map(function(a){return a.id;});
+    if (this.state.accounts.length > 0){
+      acctItems = this.state.accounts.map(function(acctItem){
         var activeClass = "";
-        var disabled = "";
-        if(acctItem.id == this.state.activeAccount.id){
+        if(activeIDs.find(function (id) {return acctItem.id == id;})){
           activeClass = "active";
-          disabled = "disabled";
         }
         return(
           <li
             className={ "account-small-item " + activeClass }
             id={ acctItem.id }
             onClick={this._setActive}
-            key={ acctItem.id }
-            disabled={disabled}>
+            key={ acctItem.id }>
             <AccountSmallIndexItem account={ acctItem }/>
           </li>
         );
@@ -57,7 +53,7 @@ var AccountSmallIndex = React.createClass({
             <ul>
               <li
                 className="account-small-item"
-                onClick={ this._emptyActiveAccount }>
+                onClick={ this._emptyActiveAccounts }>
                   <p>All Accounts</p>
                   <p>{ acctItems.length } Accounts</p>
               </li>
@@ -70,27 +66,27 @@ var AccountSmallIndex = React.createClass({
   },
 
   _onChange: function () {
-    this.setState({ accounts: AccountStore.all() });
+    this.setState({ accounts: AccountStore.allAsArray() });
   },
 
   _onActiveChange: function () {
-    this.setState({ activeAccount: ActiveAccountStore.one() });
+    this.setState({ activeAccounts: ActiveAccountStore.all() });
   },
 
   _setActive: function (e) {
     var newActiveAccount;
-    if(e && ActiveAccountStore.one()){
+    var newActiveAccounts = [];
+    if(e && ActiveAccountStore.all()){
       e.preventDefault();
-      if (e.currentTarget.id !== ActiveAccountStore.one().id) {
-        newActiveAccount = AccountStore.allAsArray().find(function (account) {
-          return (account.id == e.currentTarget.id);
-        });
-      }
-      ActiveAccountActions.setActiveAccount(newActiveAccount);
+      newActiveAccount = AccountStore.allAsArray().find(function (account) {
+        return (account.id == e.currentTarget.id);
+      });
+      newActiveAccounts.push(newActiveAccount);
+      ActiveAccountsActions.setActiveAccounts(newActiveAccounts);
     }
   },
 
-  _emptyActiveAccount: function () {
-    ActiveAccountActions.emptyActiveAccount();
+  _emptyActiveAccounts: function () {
+    ActiveAccountsActions.emptyActiveAccounts();
   }
 });

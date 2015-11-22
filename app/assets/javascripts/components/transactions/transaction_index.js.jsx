@@ -1,6 +1,9 @@
 var TransactionIndex = React.createClass({
   getInitialState: function() {
-    return { transactions: TransactionStore.all(), activeTransaction: ActiveTransactionStore.one() };
+    return {
+      transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all()),
+      activeTransaction: ActiveTransactionStore.one()
+    };
   },
   componentWillMount: function() {
 
@@ -8,15 +11,16 @@ var TransactionIndex = React.createClass({
   componentDidMount: function() {
     ActiveTransactionStore.addChangeHandler(this._onActiveChange);
     TransactionStore.addChangeHandler(this._onChange);
+    ActiveAccountStore.addChangeHandler(this._onActiveChange);
     ApiUtil.getTransactions();
   },
   componentWillUnmount: function() {
     ActiveTransactionStore.removeChangeHandler(this._onActiveChange);
     TransactionStore.removeChangeHandler(this._onChange);
+    ActiveAccountStore.removeChangeHandler(this._onActiveChange);
   },
 
   _makeComponents: function () {
-    // debugger
     var transactionsList = this.state.transactions.map(function (transaction) {
       if (transaction.id == this.state.activeTransaction.id) {
         return (
@@ -48,11 +52,15 @@ var TransactionIndex = React.createClass({
   },
 
   _onChange: function () {
-    this.setState({transactions: TransactionStore.all()});
+    this.setState({transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all())});
   },
 
   _onActiveChange: function () {
-    this.setState({ activeTransaction: ActiveTransactionStore.one() });
+    debugger
+    this.setState({
+      transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all()),
+      activeTransaction: ActiveTransactionStore.one()
+    });
   },
 
   _setActive: function (e) {

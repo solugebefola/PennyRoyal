@@ -1,15 +1,15 @@
 (function (root){
-  ActiveAccountActions = root.ActiveAccountActions = {
-    setActiveAccount: function (newAccount) {
+  ActiveAccountsActions = root.ActiveAccountsActions = {
+    setActiveAccounts: function (newAccounts) {
       AppDispatcher.dispatch({
-        actionType: fluxConstants.ACTIVE_ACCOUNT_RECEIVED,
-        newActiveAccount: newAccount
+        actionType: fluxConstants.ACTIVE_ACCOUNTS_RECEIVED,
+        newActiveAccounts: newAccounts
       });
     },
 
-    emptyActiveAccount: function () {
+    emptyActiveAccounts: function () {
       AppDispatcher.dispatch({
-        actionType: fluxConstants.ACTIVE_ACCOUNT_EMPTY
+        actionType: fluxConstants.ACTIVE_ACCOUNTS_EMPTY
       });
     }
   };
