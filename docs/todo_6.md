@@ -2,9 +2,9 @@
 ### Sunday
 #### Morning
 #### Flux/React controls
-- [ ] get Transactions account type navbar to filter correct transactions
-  - [ ] TransactionsNavBar separates by groupsubject
-  - [ ] TransactionsStore filterByGroup function
+- [x] get Transactions account type navbar to filter correct transactions
+  - [x] TransactionsNavBar separates by groupsubject
+  - [x] TransactionsStore filterByGroup function
   - [x] ActiveTransactionStore modified to store multiple transactions, return array
 #### Back end resources
 #### Afternoon
