@@ -30,21 +30,21 @@ var TransactionForm = React.createClass({
     nowDate = this.formatDate();
     return (
       <div>
-        <form>
+        <form className="group">
           <input
-            className="transaction-item-date"
+            className="transaction-item date"
             type="date"
             onChange={this.handleInput}
             name="date"
             value={ this.props.newT ? nowDate : createdDate }/>
           <input
-            className="transaction-item-description"
+            className="transaction-item description"
             type="text"
             onChange={this.handleInput}
             name="description"
             value={ this.state.description }/>
           <input
-            className="transaction-item-amount"
+            className="transaction-item amount"
             type="text"
             onChange={this.handleInput}
             name="amount"
@@ -61,6 +61,7 @@ var TransactionForm = React.createClass({
     }else{
       var newProps = $.extend({}, this.state);
       newProps.date = new Date(newProps.date);
+      debugger
       ApiUtil.editTransaction(newProps);
     }
   },

@@ -11,7 +11,6 @@
  * file per style scope.
  *= require reset
  *= require defaults
- *= require transactions
  *= require institutions
  *= require sessions
  *= require overview_index
@@ -19,6 +18,7 @@
  *= require accounts
  *= require account_form
  *= require users
+ *= require transactions
  *= require account_small_index
  *= require_tree .
  *= require_self

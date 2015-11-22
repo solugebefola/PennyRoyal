@@ -26,7 +26,7 @@ var TransactionIndex = React.createClass({
         );
       }else{
         return (
-          <li key={ transaction.id } onClick={this._setActive} id={ transaction.id }>
+          <li key={ transaction.id } className="transaction group" onClick={this._setActive} id={ transaction.id }>
             <TransactionIndexItem transaction={ transaction } newT="false"/>
           </li>
         );

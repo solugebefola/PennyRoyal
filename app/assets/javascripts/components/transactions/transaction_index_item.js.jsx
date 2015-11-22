@@ -7,14 +7,14 @@ var TransactionIndexItem = React.createClass({
     return (
       <div>
         <ul className="transaction-item-attributes">
-          <li className="transaction-item-date">
-            { createdDate.getDate()}
+          <li className="transaction-item date">
+            { createdDate.getDate() }
             { shortMonthNames[monthNum] }
           </li>
-          <li className="transaction-item-description">
+          <li className="transaction-item description">
             { this.props.transaction.description }
           </li>
-          <li className="transaction-item-amount">
+          <li className="transaction-item amount">
             { this.props.transaction.amount }
           </li>
         </ul>
