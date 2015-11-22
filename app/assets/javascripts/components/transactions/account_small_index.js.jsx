@@ -91,7 +91,6 @@ var AccountSmallIndex = React.createClass({
   },
 
   _emptyActiveAccount: function () {
-    debugger
     ActiveAccountActions.emptyActiveAccount();
   }
 });

@@ -1,5 +1,6 @@
 json.(@transaction,
 :id,
+:date,
 :account_id,
 :category_id,
 :amount,

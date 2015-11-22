@@ -9,7 +9,7 @@
 
     singleTransactionReceived: function (newTransaction) {
       AppDispatcher.dispatch({
-        actionType: fluxConstants.TRANSACTION_RECEIVED,
+        actionType: fluxConstants.SINGLE_TRANSACTION_RECEIVED,
         newTransaction: newTransaction
       });
     }

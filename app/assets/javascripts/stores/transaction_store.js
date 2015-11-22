@@ -4,6 +4,18 @@
     _transactions = newTransactions;
     TransactionStore.changed();
   };
+
+  var _takeSingleTransaction = function (newTransaction) {
+    var transIndex = _transactions.findIndex(function (el) {
+      return (el.id == newTransaction.id);
+    });
+    if (transIndex === -1) {
+      _transactions.push(newTransaction);
+    }else{
+      _transactions.splice(transIndex, 1, newTransaction);
+    }
+    TransactionStore.changed();
+  };
   var CHANGE_EVENT = "change_event";
 
   TransactionStore = root.TransactionStore = $.extend({}, EventEmitter.prototype, {
@@ -29,6 +41,8 @@
         case fluxConstants.TRANSACTIONS_RECEIVED:
           _resetTransactions(payload.newTransactions);
           break;
+        case fluxConstants.SINGLE_TRANSACTION_RECEIVED:
+          _takeSingleTransaction(payload.newTransaction);
       }
     })
 

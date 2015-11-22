@@ -74,6 +74,7 @@ Category.create!(
 Transaction.create!(
   category_id: 1,
   account_id: 2,
+  date: Date.new,
   amount: -223.23,
   description: "Cannonballs from Cannonball Alley"
 )
@@ -81,6 +82,7 @@ Transaction.create!(
 Transaction.create!(
   category_id: 1,
   account_id: 1,
+  date: Date.new,
   amount: -100.32,
   description: "Sails from Sails r us"
 )
@@ -88,6 +90,7 @@ Transaction.create!(
 Transaction.create!(
   category_id: 1,
   account_id: 1,
+  date: Date.new,
   amount: -100.32,
   description: "Pirate Hat from Skullo"
 )

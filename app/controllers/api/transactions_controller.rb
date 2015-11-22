@@ -1,7 +1,7 @@
 class Api::TransactionsController < ApplicationController
 
   def index
-    @transactions = current_user.transactions.order(created_at: :asc)
+    @transactions = current_user.transactions.order(created_at: :desc)
   end
 
   def show

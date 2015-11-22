@@ -51,6 +51,28 @@
           TransactionApiActions.transactionsReceived(transactions);
         }
       });
+    },
+
+    createTransaction: function (transaction) {
+      $.ajax({
+        url: "api/transactions/",
+        method: "POST",
+        data: { transaction: transaction },
+        success: function (transaction) {
+          TransactionApiActions.singleTransactionReceived(transaction);
+        }
+      });
+    },
+
+    editTransaction: function (transaction) {
+      $.ajax({
+        url: "api/transactions/" + transaction.id,
+        method: "PATCH",
+        data: {transaction: transaction},
+        success: function (transaction) {
+          TransactionApiActions.singleTransactionReceived(transaction);
+        }
+      });
     }
   };
 })(this);

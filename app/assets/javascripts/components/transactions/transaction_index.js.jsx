@@ -16,6 +16,7 @@ var TransactionIndex = React.createClass({
   },
 
   _makeComponents: function () {
+    // debugger
     var transactionsList = this.state.transactions.map(function (transaction) {
       if (transaction.id == this.state.activeTransaction.id) {
         return (
@@ -51,7 +52,7 @@ var TransactionIndex = React.createClass({
   },
 
   _onActiveChange: function () {
-    this.setState({activeTransaction: ActiveTransactionStore.one()});
+    this.setState({ activeTransaction: ActiveTransactionStore.one() });
   },
 
   _setActive: function (e) {

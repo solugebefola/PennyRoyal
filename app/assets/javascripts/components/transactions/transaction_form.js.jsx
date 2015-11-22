@@ -10,12 +10,12 @@ var TransactionForm = React.createClass({
 
   },
   componentWillUnmount: function() {
-
+    this.handleSubmit();
   },
 
   formatDate: function (date) {
     var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
+        month = '' + (d.getUTCMonth() + 1),
         day = '' + d.getDate(),
         year = d.getFullYear();
 
@@ -26,43 +26,50 @@ var TransactionForm = React.createClass({
   },
 
   render: function() {
-    createdDate = this.formatDate(this.state.created_at);
+    createdDate = this.formatDate(this.state.date);
     nowDate = this.formatDate();
     return (
       <div>
-      <span onBlur={this.handleSubmit}>
         <form>
           <input
             className="transaction-item-date"
             type="date"
             onChange={this.handleInput}
+            name="date"
             value={ this.props.newT ? nowDate : createdDate }/>
           <input
             className="transaction-item-description"
             type="text"
             onChange={this.handleInput}
+            name="description"
             value={ this.state.description }/>
           <input
             className="transaction-item-amount"
             type="text"
             onChange={this.handleInput}
+            name="amount"
             value={ this.state.amount }/>
         </form>
-        </span>
         <span onClick={this.showDetailForm}>Edit details</span>
       </div>
     );
   },
 
-  handleSubmit: function (e) {
-    e.preventDefault();
-    debugger
+  handleSubmit: function () {
+    if (this.props.newT){
+      console.log("new item, not made yet!");
+    }else{
+      var newProps = $.extend({}, this.state);
+      newProps.date = new Date(newProps.date);
+      ApiUtil.editTransaction(newProps);
+    }
   },
 
   handleInput: function (e) {
-    debugger
-    var newProps = {};
-    newProps[e.currentTarget.name] = e.currentTarget.value;
-    this.setState(newProps);
+    if (this.props.newT || (e.currentTarget.name !== "amount")){
+      var newProps = {};
+      newProps[e.currentTarget.name] = e.currentTarget.value;
+      this.setState(newProps);
+    }
   }
 });

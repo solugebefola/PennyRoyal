@@ -5,5 +5,4 @@ json.array! @transactions,
 :amount,
 :description,
 :notes,
-:created_at,
-:updated_at
+:date
