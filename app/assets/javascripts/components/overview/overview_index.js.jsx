@@ -9,12 +9,6 @@ var OverviewIndex = React.createClass({
         <section className="overview-main overview">
           <OverviewMain />
         </section>
-        <section className="account-form edit overview">
-          <AccountEditForm />
-        </section>
-        <section className="account-form new overview">
-          <AccountNewForm />
-        </section>
       </div>
     );
   },

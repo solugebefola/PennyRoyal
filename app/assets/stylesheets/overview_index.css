@@ -10,10 +10,20 @@ section.overview-main {
   width: 600px;
 }
 
-.account-form.edit{
+.modal {
   display: none;
+  border-radius: 25px;
+  padding:20px
 }
 
-.account-form.new{
-  display: none;
+.modal.is-active {
+  display: block;
+  width: 260px;
+  height: 300px;
+  border: 1px solid red;
+  position: absolute;
+  background: #fff;
+  top: 25%;
+  left: 50%;
+  z-index: 50;
 }

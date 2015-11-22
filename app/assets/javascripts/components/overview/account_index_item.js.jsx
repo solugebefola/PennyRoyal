@@ -4,7 +4,7 @@ var AccountIndexItem = React.createClass({
   render: function() {
     return (
       <div>
-        <ul className="group" onClick={this._setActive}>
+        <ul className="group account-index-item" onClick={this._setActive}>
           <li className="account-text">
             <p className="account-institution">
               {this.props.accountItem.institution.name}

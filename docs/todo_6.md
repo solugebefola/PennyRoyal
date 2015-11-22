@@ -9,7 +9,7 @@
 #### Back end resources
 #### Afternoon
 #### React Components
-- [ ] App - header
+- [x] App - header
 - [ ] Modal for AccountNewForm (include delete form)
 - [ ] Modal for AccountEditForm (include delete form)
 #### Evening
