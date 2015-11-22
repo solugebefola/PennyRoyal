@@ -27,6 +27,7 @@ var AccountTypeNavbar = React.createClass({
   clickChangeHandler: function (e) {
     e.preventDefault();
     var targetName = e.target.attributes.name.value;
-    debugger
+    var newGroup = accountConstants.accountSmallGroupType[targetName];
+    ActiveAccountsActions.setActiveAccounts(AccountStore.filterByGroup(newGroup));
   }
 });

@@ -34,8 +34,10 @@
     },
 
     filterByGroup: function (accountGroup) {
-      return AccountStore.allAsArray.filter(function (acct) {
-        accountGroup.includes(acct.account_type);
+      return AccountStore.allAsArray().filter(function (acct) {
+        return accountGroup.find(function(type){
+          return acct.account_type === type;
+        });
       });
     },
 

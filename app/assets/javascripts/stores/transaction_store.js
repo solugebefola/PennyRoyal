@@ -26,7 +26,9 @@
     },
 
     filterTransactionsOnAccounts: function (accounts) {
-      if(accounts[0].id === 0){
+      if (accounts.length === 0){
+        return [];
+      }else if(accounts[0].id === 0){
         return TransactionStore.all();
       }else{
         return _transactions.filter( function (t) {
