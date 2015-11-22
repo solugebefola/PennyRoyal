@@ -6,7 +6,7 @@ var TransactionIndexItem = React.createClass({
     monthNum = createdDate.getUTCMonth();
     return (
       <div>
-        <ul className="transaction-item-attributes">
+        <ul className="transaction-item-attributes group">
           <li className="transaction-item date">
             { createdDate.getDate() }
             { shortMonthNames[monthNum] }

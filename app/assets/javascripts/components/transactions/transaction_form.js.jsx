@@ -30,7 +30,7 @@ var TransactionForm = React.createClass({
     nowDate = this.formatDate();
     return (
       <div>
-        <form className="group">
+        <form className="transaction-inputs group">
           <input
             className="transaction-item date"
             type="date"
@@ -50,7 +50,7 @@ var TransactionForm = React.createClass({
             name="amount"
             value={ this.state.amount }/>
         </form>
-        <span onClick={this.showDetailForm}>Edit details</span>
+        <span onClick={this.showDetailForm}>EDIT DETAILS</span>
       </div>
     );
   },
