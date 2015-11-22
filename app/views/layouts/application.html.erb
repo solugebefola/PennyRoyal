@@ -8,13 +8,13 @@
 </head>
 <body>
 <% if logged_in? %>
-  <header class="user-header">
+  <header class="user-header group">
     <ul>
       <li>
-        <%= button_to "Logout", session_url, method: :delete, class: "logout-button" %>
+        <%= button_to "Logout", session_url, method: :delete, class: "header-link" %>
       </li>
       <li>
-
+        <a href="#/transactions" class="header-link">hi <%= current_user.email %>!</a>
       </li>
   </ul>
   </header>

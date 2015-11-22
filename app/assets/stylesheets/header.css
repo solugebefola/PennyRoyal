@@ -5,26 +5,41 @@
   color: #eee;
 }
 
-.logout-button {
-  
+.header-link {
+  float: right;
+  font-size: 12px;
+  padding: 0px;
+  border: 0;
+  margin: 0px 10px;
+  background: #111;
+  color: #aaa;
+}
+
+.header-link:hover {
+  color: #fff;
 }
 
 .app-header {
   width: 100%;
   background: #eee;
-  height: 50px;
-  padding: 10px 0px 30px 0px;
+  padding: 10px 0px 10px 0px;
 }
 
 .app-header.list {
   width: 800px;
+  height: 40px;
   margin: auto;
 }
 
 .app-header.list > li {
   display: block;
   float: right;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  margin: 5px 10px;
+}
+
+.app-header.list > li:hover {
+  border-bottom: 3px solid #aaa;
 }
 
 .logo {

@@ -10,7 +10,7 @@ var App = React.createClass({
   render: function () {
     return(
       <div>
-        <header className="app-header group">
+        <header className="app-header">
           <Link to="/" className="logo"><img src="#" />Penny<br/>Royal</Link>
           <ul className="app-header list">
             <li>
@@ -22,7 +22,7 @@ var App = React.createClass({
           </ul>
         </header>
         <ul>
-          <li>
+          <li className="main-content">
             { this.props.children }
           </li>
         </ul>

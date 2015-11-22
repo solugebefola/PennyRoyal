@@ -61,7 +61,6 @@ var TransactionForm = React.createClass({
     }else{
       var newProps = $.extend({}, this.state);
       newProps.date = new Date(newProps.date);
-      debugger
       ApiUtil.editTransaction(newProps);
     }
   },
