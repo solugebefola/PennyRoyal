@@ -56,7 +56,6 @@ var TransactionIndex = React.createClass({
   },
 
   _onActiveChange: function () {
-    debugger
     this.setState({
       transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all()),
       activeTransaction: ActiveTransactionStore.one()

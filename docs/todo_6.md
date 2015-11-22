@@ -5,7 +5,7 @@
 - [ ] get Transactions account type navbar to filter correct transactions
   - [ ] TransactionsNavBar separates by groupsubject
   - [ ] TransactionsStore filterByGroup function
-  - [ ] ActiveTransactionStore modified to store multiple transactions, return array
+  - [x] ActiveTransactionStore modified to store multiple transactions, return array
 #### Back end resources
 #### Afternoon
 #### React Components
