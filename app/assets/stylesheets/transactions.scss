@@ -25,6 +25,7 @@
   display: block;
   font-size: 14px;
   border-bottom: 1px solid #000;
+  width: 600px;
 }
 
 .transaction-item-attributes > li {
@@ -39,15 +40,15 @@
 }
 
 .transaction-item.date {
-  width: 100px;
+  width: 65px;
 }
 
 .transaction-item.description {
-  width: 400px;
+  width: 450px;
 }
 
 .transaction-item.amount {
-  width: 75px;
+  width: 50px;
 }
 
 .transaction-form {
@@ -73,6 +74,6 @@
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
   padding: 0 5px 5px 5px;
-  background: #99c;
+  background: #999;
   color: #eee;
 }
