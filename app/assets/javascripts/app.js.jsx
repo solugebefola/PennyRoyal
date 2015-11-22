@@ -10,14 +10,18 @@ var App = React.createClass({
   render: function () {
     return(
       <div>
-        <h1>PennyRoyal!</h1>
+        <header className="app-header group">
+          <Link to="/" className="logo"><img src="#" />Penny<br/>Royal</Link>
+          <ul className="app-header list">
+            <li>
+              <Link to="/">Overview</Link>
+            </li>
+            <li>
+              <Link to="/transactions">Transactions</Link>
+            </li>
+          </ul>
+        </header>
         <ul>
-          <li>
-            <Link to="/">Overview</Link>
-          </li>
-          <li>
-            <Link to="/transactions">Transactions</Link>
-          </li>
           <li>
             { this.props.children }
           </li>
