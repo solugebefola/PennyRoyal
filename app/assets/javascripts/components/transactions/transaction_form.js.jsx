@@ -33,7 +33,7 @@ var TransactionForm = React.createClass({
         <form className="transaction-inputs group">
           <input
             className="transaction-item date"
-            type="date"
+            type="text"
             onChange={this.handleInput}
             name="date"
             value={ this.props.newT ? nowDate : createdDate }/>
