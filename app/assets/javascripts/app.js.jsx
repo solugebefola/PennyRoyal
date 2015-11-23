@@ -4,6 +4,7 @@
   IndexRoute = ReactRouter.IndexRoute;
   Router = ReactRouter.Router;
   history = ReactRouter.History;
+  LinkedStateMixin = React.addons.LinkedStateMixin;
 })(this);
 
 var App = React.createClass({

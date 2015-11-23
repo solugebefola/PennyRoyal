@@ -1,4 +1,6 @@
 var TransactionForm = React.createClass({
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState: function() {
     accountProps = $.extend({}, this.props.transaction);
     accountProps.category = CategoryStore.single(accountProps.category_id) || "uncategorized";
@@ -35,27 +37,23 @@ var TransactionForm = React.createClass({
           <input
             className="transaction-item date"
             type="text"
-            onChange={this.handleInput}
+            onChange={ this.handleInput }
             name="date"
             value={ this.props.newT ? nowDate : createdDate }/>
           <input
             className="transaction-item description"
             type="text"
-            onChange={this.handleInput}
-            name="description"
-            value={ this.state.description }/>
+            valueLink={ this.linkState('description') }/>
           <input
             className="transaction-item category"
             type="text"
-            onChange={this.handleInput}
             name="category"
-            value={ this.state.category }/>
+            valueLink={ this.linkState('category') }/>
           <input
             className="transaction-item amount"
             type="text"
-            onChange={this.handleInput}
             name="amount"
-            value={ this.state.amount }/>
+            valueLink={ this.linkState('amount') }/>
         </form>
         <span onClick={this.showDetailForm}>EDIT DETAILS</span>
       </div>
