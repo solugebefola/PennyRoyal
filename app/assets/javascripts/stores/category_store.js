@@ -20,9 +20,14 @@
       return _categories.slice(0);
     },
 
-    single: function (id) {
+    single: function (categoryOrID) {
+      if (isNaN(categoryOrID)){
+        return _categories.find(function (cat) {
+          return cat.name === categoryOrID;
+        });
+      }else
       return _categories.find(function (cat) {
-        return cat.id == id;
+        return cat.id == categoryOrID;
       });
     },
 

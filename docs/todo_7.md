@@ -2,14 +2,14 @@
 ### Monday
 #### Morning
 #### React Components
-- [ ] Add category column for TransactionForm/TransactionIndexItem
+- [x] Add category column for TransactionForm/TransactionIndexItem
 - [ ] Modal for AccountNewForm
 - [ ] Modal for AccountEditForm (include delete form)
 #### CSS
 #### Afternoon
 #### React Components
 - [ ] Fix date display for TransactionForm
-  - [ ] jQuery-based?
+- [ ] New Account form
 - [ ] User Profile
   - [ ] Paperclip incorporation
 #### Evening

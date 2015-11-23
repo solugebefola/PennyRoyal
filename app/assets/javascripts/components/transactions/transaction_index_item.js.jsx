@@ -4,7 +4,7 @@ var TransactionIndexItem = React.createClass({
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     createdDate = new Date(this.props.transaction.created_at);
     monthNum = createdDate.getUTCMonth();
-    cat = "uncategorized" || CategoryStore.single(this.props.transaction.category_id);
+    cat = CategoryStore.single(this.props.transaction.category_id) || "uncategorized";
 
     return (
       <div>

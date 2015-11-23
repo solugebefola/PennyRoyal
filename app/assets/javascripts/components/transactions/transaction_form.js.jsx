@@ -1,6 +1,7 @@
 var TransactionForm = React.createClass({
   getInitialState: function() {
     accountProps = $.extend({}, this.props.transaction);
+    accountProps.category = CategoryStore.single(accountProps.category_id) || "uncategorized";
     return accountProps;
   },
   componentWillMount: function() {
@@ -28,7 +29,6 @@ var TransactionForm = React.createClass({
   render: function() {
     createdDate = this.formatDate(this.state.date);
     nowDate = this.formatDate();
-    cat = "uncategorized" || CategoryStore.single(this.state.category_id);
     return (
       <div>
         <form className="transaction-inputs group">
@@ -48,8 +48,8 @@ var TransactionForm = React.createClass({
             className="transaction-item category"
             type="text"
             onChange={this.handleInput}
-            name="description"
-            value={ cat }/>
+            name="category"
+            value={ this.state.category }/>
           <input
             className="transaction-item amount"
             type="text"
