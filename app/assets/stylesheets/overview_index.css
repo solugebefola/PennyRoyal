@@ -15,7 +15,7 @@ section.overview-main {
   border: 1px solid #000;
   border-radius: 5px;
   padding:20px;
-  5px 5px 10px #aaa
+  box-shadow: 0 5px 10px #aaa;
 }
 
 .modal.screen {
@@ -26,16 +26,11 @@ section.overview-main {
 
 .modal.is-active {
   display: block;
-  width: 260px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   position: absolute;
   background: #fff;
-  top: 200px;
-  left: 300px;
-  z-index: 50;
-}
-
-.modal.is-active.new {
-  top: 400px;
+  top: 100px;
   left: 500px;
+  z-index: 50;
 }

@@ -51,10 +51,12 @@ var App = React.createClass({
       ReactDOM.render((
         <Router>
           <Route path="/" component={App}>
-            <IndexRoute component={OverviewIndex} />
+            <IndexRoute component={OverviewIndex}>
+              <Route path="accountpre" component={AccountPreForm} />
+              <Route path="accountedit" component={AccountEditForm} />
+              <Route path="accountnew/:inst_id" component={AccountNewForm} />
+            </IndexRoute>
             <Route path="transactions" component={TransactionsPage} />
-            <Route path="accountedit" component={AccountEditForm} />
-            <Route path="accountnew" component={AccountNewForm} />
           </Route>
         </Router>
       ),document.getElementById('content'));

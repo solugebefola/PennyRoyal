@@ -3,7 +3,6 @@ var AccountNewForm = React.createClass({
     return {
       username: "",
       user_password: "",
-      institutions: InstitutionStore.all(),
       institution_id: "",
       accountType: "",
     };
@@ -22,18 +21,9 @@ var AccountNewForm = React.createClass({
   },
 
   render: function() {
-    var instOptions = this.state.institutions.map(function (inst) {
-      return <option key={inst.id} value={inst.id}>{inst.name}</option>;
-    });
-
     return (
       <div>
         <form onSubmit={this.submitChangeHandler} action="">
-          <label>Institution
-            <select onChange={this.inputChangeHandler} name="institution">
-              {instOptions}
-            </select>
-          </label>
           <label className="account-form input-label">Username
           <input
             className="account-form edit input"

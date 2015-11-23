@@ -83,6 +83,16 @@
           TransactionApiActions.singleTransactionReceived(transaction);
         }
       });
+    },
+
+    getAccountBases: function () {
+      $.ajax({
+        url: "api/account_bases/",
+        method: "GET",
+        success: function (accountBases) {
+          AccountBaseApiActions.accountBasesReceived(accountBases);
+        }
+      });
     }
   };
 })(this);

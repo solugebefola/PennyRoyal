@@ -6,7 +6,7 @@
 #### CSS
 #### Afternoon
 #### Back end resources
-- [ ] AccountBase resources
+- [x] AccountBase resources
 - [ ] New Account form
 - [ ] User Profile
   - [ ] Paperclip incorporation

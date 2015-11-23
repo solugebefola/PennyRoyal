@@ -1,7 +1,5 @@
 class Api::AccountBasesController < ApplicationController
   def index
-    @institution = Institution.find(params[:id])
-    puts @institution
-    @account_bases = @institution.account_bases
+    @account_bases = AccountBase.all
   end
 end
