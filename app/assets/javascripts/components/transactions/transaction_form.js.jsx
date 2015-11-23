@@ -28,6 +28,7 @@ var TransactionForm = React.createClass({
   render: function() {
     createdDate = this.formatDate(this.state.date);
     nowDate = this.formatDate();
+    cat = "uncategorized" || CategoryStore.single(this.state.category_id);
     return (
       <div>
         <form className="transaction-inputs group">
@@ -43,6 +44,12 @@ var TransactionForm = React.createClass({
             onChange={this.handleInput}
             name="description"
             value={ this.state.description }/>
+          <input
+            className="transaction-item category"
+            type="text"
+            onChange={this.handleInput}
+            name="description"
+            value={ cat }/>
           <input
             className="transaction-item amount"
             type="text"

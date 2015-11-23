@@ -2,12 +2,10 @@
 ### Monday
 #### Morning
 #### React Components
-- [ ] Modal for AccountNewForm (include delete form)
-- [ ] Modal for AccountEditForm (include delete form)
 - [ ] Add category column for TransactionForm/TransactionIndexItem
+- [ ] Modal for AccountNewForm
+- [ ] Modal for AccountEditForm (include delete form)
 #### CSS
-- [ ] AccountNewForm
-- [ ] AccountEditForm
 #### Afternoon
 #### React Components
 - [ ] Fix date display for TransactionForm
@@ -21,3 +19,5 @@
 #### Back end resources
 #### Misc
 - [ ] Alerts - Table Only For Now (Maybe no back end?)
+- [ ] AccountNewForm
+- [ ] AccountEditForm

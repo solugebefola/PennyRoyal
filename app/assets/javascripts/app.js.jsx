@@ -52,6 +52,8 @@ var App = React.createClass({
           <Route path="/" component={App}>
             <IndexRoute component={OverviewIndex} />
             <Route path="transactions" component={TransactionsPage} />
+            <Route path="accountedit" component={AccountEditForm} />
+            <Route path="accountnew" component={AccountNewForm} />
           </Route>
         </Router>
       ),document.getElementById('content'));

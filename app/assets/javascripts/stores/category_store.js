@@ -20,6 +20,12 @@
       return _categories.slice(0);
     },
 
+    single: function (id) {
+      return _categories.find(function (cat) {
+        return cat.id == id;
+      });
+    },
+
     addChangeHandler: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },
