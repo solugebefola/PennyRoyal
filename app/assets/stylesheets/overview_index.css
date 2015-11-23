@@ -16,6 +16,12 @@ section.overview-main {
   padding:20px
 }
 
+.modal.screen {
+  width: 100%;
+  height: 100%;
+  
+}
+
 .modal.is-active {
   display: block;
   width: 260px;
