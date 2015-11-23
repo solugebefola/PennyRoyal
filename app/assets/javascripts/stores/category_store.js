@@ -25,10 +25,11 @@
         return _categories.find(function (cat) {
           return cat.name === categoryOrID;
         });
-      }else
-      return _categories.find(function (cat) {
-        return cat.id == categoryOrID;
-      });
+      }else{
+        return _categories.find(function (cat) {
+          return cat.id == categoryOrID;
+        });
+      }
     },
 
     addChangeHandler: function (callback) {
