@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121233659) do
+ActiveRecord::Schema.define(version: 20151123193851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "account_bases", force: :cascade do |t|
+    t.integer  "institution_id", null: false
+    t.string   "name",           null: false
+    t.string   "account_type",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "account_bases", ["institution_id"], name: "index_account_bases_on_institution_id", using: :btree
 
   create_table "accounts", force: :cascade do |t|
     t.string   "name",                                   null: false

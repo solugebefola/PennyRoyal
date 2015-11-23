@@ -10,7 +10,7 @@
 - [ ] New Account form
 - [ ] User Profile
   - [ ] Paperclip incorporation
-    -[ ] Modify user model to incorporate photo, fname, lname, age, 
+    -[ ] Modify user model to incorporate photo, fname, lname, age, gender
 #### React Components
 - [ ] Fix date display for TransactionForm
 #### Evening

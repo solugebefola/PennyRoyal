@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :account_bases
   resources :budgets
   resources :categories
   resources :transactions
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
     resources :accounts, only: [:create, :index, :show, :update, :destroy]
     resources :transactions, only: [:create, :index, :show, :update, :destroy]
     resources :categories
+    resources :account_bases only: [:index]
   end
 
   resource :session, only: [:new, :create, :destroy]
