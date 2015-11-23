@@ -3,7 +3,7 @@ var AccountEditForm = React.createClass({
     return {
       username: "",
       password: "",
-      id: this.props.account_id,
+      name: this.props.name,
       accountType: this.props.account_type
     };
   },
@@ -34,6 +34,13 @@ var AccountEditForm = React.createClass({
     this.setState({ accountType: e.target.value });
   },
 
+  deleteButtonChangeHandler: function (e) {
+    e.preventDefault();
+    if(this.props.account.id){
+      AccountApiActions.deleteAccount({ id: this.props.account.id });
+    }
+  },
+
   render: function() {
     var accountTypes = accountConstants.accountType.map(function (type) {
       return <option key={ type } value={ type }>{ type }</option>;
@@ -48,7 +55,7 @@ var AccountEditForm = React.createClass({
             type="text"
             name="name"
             onChange={this.inputChangeHandler}
-            value={this.state.username} />
+            value={this.state.name} />
           </label>
           <label className="account-form input-label">Username
           <input
@@ -74,8 +81,13 @@ var AccountEditForm = React.createClass({
             </select>
           </label>
           <button
-            className="account-edit-submit"
+            className="account-form-button submit"
             type="submit">Update Account
+          </button>
+          <button
+            className="account-form-button delete"
+            type="delete"
+            onClick={ this.deleteButtonChangeHandler }>Delete Account
           </button>
         </form>
       </div>

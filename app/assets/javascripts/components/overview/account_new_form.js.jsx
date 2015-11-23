@@ -1,6 +1,12 @@
 var AccountNewForm = React.createClass({
   getInitialState: function() {
-    return {username: "", user_password: "", institutions: InstitutionStore.all() };
+    return {
+      username: "",
+      user_password: "",
+      institutions: InstitutionStore.all(),
+      institution_id: "",
+      accountType: "",
+    };
   },
 
   componentWillMount: function() {
@@ -24,7 +30,7 @@ var AccountNewForm = React.createClass({
       <div>
         <form onSubmit={this.submitChangeHandler} action="">
           <label>Institution
-            <select name="institution">
+            <select onChange={this.inputChangeHandler} name="institution">
               {instOptions}
             </select>
           </label>
@@ -45,7 +51,7 @@ var AccountNewForm = React.createClass({
             value={this.state.password}/>
           </label>
           <label>Account type
-            <select name="account_type">
+            <select onChange={this.inputChangeHandler} name="account_type">
               <option value="">Select a type</option>
               <option value="savings">Savings</option>
               <option value="checking">Checking</option>
@@ -55,10 +61,10 @@ var AccountNewForm = React.createClass({
               <option value="cash">Cash</option>
             </select>
           </label>
-            <button
-              className="account-edit-submit"
-              type="submit">Add Account
-            </button>
+          <button
+            className="account-form-button submit"
+            type="submit">Add Account
+          </button>
         </form>
       </div>
     );
@@ -80,14 +86,17 @@ var AccountNewForm = React.createClass({
     e.preventDefault();
     var accountProps = {};
     var inst = this.state.institutions.find(function(institution) {
-      return (institution.id === parseInt(e.target.institution.value));
+      return (institution.id === this.state.institution_id);
     });
-    accountProps.name = inst.name + " " + e.target.account_type.value;
-    accountProps.institution_id = e.target.institution.value;
-    accountProps.username = e.target.username.value;
-    accountProps.user_password = e.target.password.value;
-    accountProps.account_type = e.target.account_type.value;
-    accountProps.balance = 1.00;
+    accountProps.name = inst.name + " " + this.state.account_type.value;
+    accountProps.institution_id = this.state.institution.value;
+    accountProps.username = this.state.username.value;
+    accountProps.user_password = this.state.user_password.value;
+    accountProps.account_type = this.state.account_type.value;
+    accountProps.balance = 1.00; //Addnote: change this to random value?
     ApiUtil.createAccount(accountProps);
-  }
+  },
+
+
+
 });

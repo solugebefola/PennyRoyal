@@ -8,7 +8,7 @@ var OverviewMain = React.createClass({
           <AccountEditForm />
         </section>
         <span id="modal-screen" className="modal screen"></span>
-        <section id="new-modal" className="modal new">
+        <section id="new-modal" className="modal is-active new">
           <AccountNewForm />
         </section>
       </div>

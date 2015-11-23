@@ -22,6 +22,16 @@
       });
     },
 
+    deleteAccount: function(params) {
+      $.ajax({
+        url: "api/account/" + params[id],
+        method: "DELETE",
+        success: function (accounts) {
+          AccountApiActions.accountsReceived(accounts);
+        }
+      });
+    },
+
     createAccount: function(params) {
       $.ajax({
         url: "api/accounts",
