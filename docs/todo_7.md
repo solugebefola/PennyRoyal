@@ -14,7 +14,7 @@
 #### React Components
 - [ ] Fix date display for TransactionForm
 #### Evening
-- [ ] Make site look professional
+- [ ] Make site look more professional
 - [ ] Sign in as guest user button
 #### Flux/React controls
 #### Misc
