@@ -18,4 +18,5 @@
 //= require components
 //= require jquery
 //= require jquery_ujs
+//= require date
 //= require_tree .

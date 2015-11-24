@@ -22,6 +22,7 @@
 
 .transaction-main section {
   display: block;
+  padding-left: 10px;
 }
 
 .transaction {
@@ -34,10 +35,18 @@
   background: #fdda30;
 }
 
+.transaction-list {
+  border: 1px solid #eee;
+}
+
+.transaction-index-header {
+  text-align: center;
+}
+
 .transaction-item-attributes {
   display: block;
   font-size: 14px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #eee;
   // width: 800px;
 }
 
@@ -45,14 +54,15 @@
   display: block;
   float: left;
   padding: 5px;
-  border-right: 1px solid #000;
+  border-right: 1px solid #eee;
 }
 
 .transaction-item {
+  text-align: center;
 }
 
 .transaction-item-attributes > li:first-child {
-  border-right: 1px solid #000;
+  border-left: 1px solid #eee;
 }
 
 .transaction-item.date {

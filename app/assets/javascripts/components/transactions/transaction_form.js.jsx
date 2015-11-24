@@ -24,7 +24,6 @@ var TransactionForm = React.createClass({
 
     if (month.length < 2) month = '0' + month;
     if (day.length < 2) day = '0' + day;
-
     return [year, month, day].join('-');
   },
 
@@ -65,6 +64,7 @@ var TransactionForm = React.createClass({
       console.log("new item, not made yet!");
     }else{
       var newProps = $.extend({}, this.state);
+      debugger
       newProps.date = new Date(newProps.date);
       ApiUtil.editTransaction(newProps);
     }

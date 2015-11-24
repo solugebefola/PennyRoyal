@@ -16,8 +16,4 @@ var OverviewIndex = React.createClass({
       </div>
     );
   },
-
-  recheckTheStores: function () {
-    ApiUtil.getInstitutions();
-  }
 });

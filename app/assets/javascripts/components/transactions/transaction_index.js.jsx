@@ -44,7 +44,7 @@ var TransactionIndex = React.createClass({
     return (
       <div>
         <h1 className="transaction-title">Transactions</h1>
-        <ul>
+        <ul className="transaction-list">
           <li className="transaction-index-header">
             <ul className="transaction-item-attributes group">
               <li className="transaction-item date">

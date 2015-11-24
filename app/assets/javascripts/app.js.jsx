@@ -4,7 +4,7 @@
   IndexRoute = ReactRouter.IndexRoute;
   Router = ReactRouter.Router;
   history = ReactRouter.History;
-  LinkedStateMixin = React.addons.LinkedStateMixin;
+  createBrowserHistory = ReactRouter.createBrowserHistory;
 })(this);
 
 var App = React.createClass({
@@ -49,7 +49,7 @@ var App = React.createClass({
   $(document).on('ready', function (){
     if(document.getElementById('content')){
       ReactDOM.render((
-        <Router>
+        <Router history={createBrowserHistory}>
           <Route path="/" component={App}>
             <IndexRoute component={OverviewIndex}>
               <Route path="accountpre" component={AccountPreForm} />
