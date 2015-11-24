@@ -3,7 +3,7 @@
   var ApiUtil = root.ApiUtil = {
     getAccounts: function () {
       $.ajax({
-        url: "api/accounts",
+        url: "/api/accounts",
         method: "GET",
         success: function (accounts) {
           AccountApiActions.accountsReceived(accounts);
@@ -13,7 +13,7 @@
 
     editAccount: function(params) {
       $.ajax({
-        url: "api/account/" + params[id],
+        url: "/api/account/" + params[id],
         method: "PATCH",
         success: function (account) {
           AccountApiActions.singleAccountReceived(account);
@@ -24,7 +24,7 @@
 
     deleteAccount: function(params) {
       $.ajax({
-        url: "api/account/" + params[id],
+        url: "/api/account/" + params[id],
         method: "DELETE",
         success: function (accounts) {
           AccountApiActions.accountsReceived(accounts);
@@ -34,7 +34,7 @@
 
     createAccount: function(params) {
       $.ajax({
-        url: "api/accounts",
+        url: "/api/accounts",
         method: "POST",
         data: {account: params},
         success: function (account) {
@@ -45,7 +45,7 @@
 
     getInstitutions: function () {
       $.ajax({
-        url: "api/institutions",
+        url: "/api/institutions",
         method: "GET",
         success: function (institutions) {
           InstitutionApiActions.institutionsReceived(institutions);
@@ -65,7 +65,7 @@
 
     createTransaction: function (transaction) {
       $.ajax({
-        url: "api/transactions/",
+        url: "/api/transactions/",
         method: "POST",
         data: { transaction: transaction },
         success: function (transaction) {
@@ -76,7 +76,7 @@
 
     editTransaction: function (transaction) {
       $.ajax({
-        url: "api/transactions/" + transaction.id,
+        url: "/api/transactions/" + transaction.id,
         method: "PATCH",
         data: {transaction: transaction},
         success: function (transaction) {
@@ -87,7 +87,7 @@
 
     getAccountBases: function () {
       $.ajax({
-        url: "api/account_bases/",
+        url: "/api/account_bases/",
         method: "GET",
         success: function (accountBases) {
           AccountBaseApiActions.accountBasesReceived(accountBases);
@@ -96,7 +96,7 @@
     },
     getCategories: function () {
       $.ajax({
-        url: "api/categories/",
+        url: "/api/categories/",
         method: "GET",
         success: function (categories) {
           CategoryApiActions.categoriesReceived(categories);
@@ -105,7 +105,7 @@
     },
     getCategory: function (id) {
       $.ajax({
-        url: "api/category/" + id,
+        url: "/api/category/" + id,
         method: "GET",
         success: function (category) {
           CategoryApiActions.categoryReceived(category);

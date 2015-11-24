@@ -8,6 +8,12 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+gem 'paperclip'
+
+gem 'figaro'
+
+gem 'aws-sdk', '~>1.6'
+
 gem 'datejs-rails'
 
 gem 'kaminari'

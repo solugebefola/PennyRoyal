@@ -6,10 +6,13 @@
 #### React Components
 #### CSS
 #### Afternoon
-- [ ] AccountPreForm
+- [x] AccountPreForm
+- [ ] Add User profile form to ReactRouter
+  - [ ] Add to modal form
+  - [ ] Add fname, lname, age, gender columns to table
 - [ ] AccountNewForm
 - [ ] AccountEditForm
-- [ ] User Profile
+- [ ] User Profile -> tomorrow
   - [ ] Paperclip incorporation
     -[ ] Modify user model to incorporate photo, fname, lname, age, gender
 #### Evening
