@@ -51,7 +51,7 @@ var TransactionForm = React.createClass({
               className="transaction-item date"
               type="text"
               value={ new Date(this.state.date ).toString('MMM d') } disabled/>
-            <ul className="transaction-item dates" id="dates" onClick={ this.handleDate }>
+            <ul className="transaction-item dropdown dates" id="dates" onClick={ this.handleDate }>
               { this.makeDateDropdown() }
             </ul>
           </div>
@@ -60,12 +60,13 @@ var TransactionForm = React.createClass({
             type="text"
             onChange={ this.handleInput }
             value={ this.state.description }/>
-          <input
-            className="transaction-item category"
-            type="text"
-            name="category"
-            onChange={ this.handleInput }
-            value={ this.state.category }/>
+          <div className="transaction-item category">
+            <input
+              className="transaction-item category"
+              type="text"
+              name="category"
+              value={ this.state.category } disabled/>
+          </div>
           <input
             className="transaction-item amount"
             type="text"
@@ -73,7 +74,8 @@ var TransactionForm = React.createClass({
             onChange={ this.handleInput }
             value={ this.state.amount }/>
         </form>
-        <span onClick={this.showDetailForm}>EDIT DETAILS</span>
+            <CategoryDropdown setCategory={ this.setCategory } currentCategoryID={ this.state.category_id }/>
+        <span onClick={ this.showDetailForm }>EDIT DETAILS</span>
       </div>
     );
   },
@@ -105,6 +107,9 @@ var TransactionForm = React.createClass({
     this.setState({ category: category.name });
   },
 
+  setCategory: function (id) {
+    this.setState({ category_id: id }).bind(this);
+  },
   showDetailForm: function () {
 
   }
