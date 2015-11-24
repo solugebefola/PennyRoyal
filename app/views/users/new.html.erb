@@ -80,4 +80,15 @@
     </li>
   <button class="log-in-button" type="submit">SIGN UP</button>
 </form>
+<form action"/session" method="POST">
+  <%= auth_token %>
+  <input
+    type="hidden"
+    name="user[email]"
+    value="guest@ourfineestablishment.com">
+  <input type="hidden"
+  name="user[email]"
+  value="guestpassword">
+  <button class="guest-button" type="submit">SIGN IN AS GUEST</button>
+</form>
 </main>

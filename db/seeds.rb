@@ -37,6 +37,8 @@ User.create(
   session_token: "OMSczi-YPj0ACv4WViztAw"
 )
 
+
+
 Account.create(
   name: "Pirate Best Savings",
   user_id: 1,

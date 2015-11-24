@@ -5,6 +5,16 @@
   color: #eee;
 }
 
+.logo {
+  font-size: 16px;
+  color: #aa7700;
+  vertical-align: baseline;
+  padding: 5px 0px 0px 20px;  
+}
+
+.app-header h1 {
+}
+
 .header-link {
   float: right;
   font-size: 12px;

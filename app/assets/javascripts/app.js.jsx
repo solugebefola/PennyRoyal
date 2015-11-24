@@ -19,7 +19,7 @@ var App = React.createClass({
     return(
       <div>
         <header className="app-header">
-          <Link to="/" className="logo"><img src="#" />Penny<br/>Royal</Link>
+          <Link to="/" className="logo"><h1>👑PennyRoyal</h1></Link>
           <ul className="app-header list">
             <li>
               <Link

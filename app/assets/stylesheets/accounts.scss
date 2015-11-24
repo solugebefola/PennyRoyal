@@ -5,6 +5,7 @@
 .account-index-list {
   width: 300px;
   box-shadow: 3px 3px 5px #ccc;
+  padding-top: 10px;
 }
 
 .account-index {
@@ -12,8 +13,9 @@
 }
 
 .account-index-list > h1{
-  padding-left: 30px;
+  padding: 0 0 10px 30px;
   font-size: 18px;
+  font-weight: 500;
 }
 
 .summary {

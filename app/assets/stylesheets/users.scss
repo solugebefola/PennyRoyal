@@ -132,6 +132,8 @@ div.login-errors {
 }
 
 button {
+  display: block;
+  float: left;
   font-size: 14px;
   border-radius: 3px;
   background: #b0f;
@@ -139,5 +141,12 @@ button {
   width: 85px;
   height: 40px;
   text-align: center;
+  cursor: pointer;
+}
+.log-in-button {
   margin: 20px 0;
+}
+.guest-button {
+  margin: 20px 20px;
+  background: #d2f;
 }
