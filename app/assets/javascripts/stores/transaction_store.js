@@ -24,6 +24,12 @@
     all: function () {
       return _transactions.slice(0);
     },
+    
+    singleByID: function (id) {
+      return _transactions.find(function (transaction) {
+        return transaction.id == id;
+      });
+    },
 
     filterTransactionsOnAccounts: function (accounts) {
       if (accounts.length === 0){

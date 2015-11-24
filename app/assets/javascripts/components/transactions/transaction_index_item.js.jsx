@@ -1,28 +1,41 @@
 var TransactionIndexItem = React.createClass({
+  getInitialState: function() {
+    accountProps = $.extend({}, this.props.transaction);
+    accountProps.category = CategoryStore
+      .single(accountProps.category_id) || "uncategorized";
+    return accountProps;
+  },
+
+  componentWillMount: function() {
+    CategoryStore.addChangeHandler(this._onChange);
+    ApiUtil.getCategories();
+  },
+
   render: function() {
-    var shortMonthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    createdDate = new Date(this.props.transaction.date);
-    monthNum = createdDate.getUTCMonth();
-    cat = CategoryStore.single(this.props.transaction.category_id) || "uncategorized";
+    createdDate = (new Date(this.state.date)).toString('MMM d');
 
     return (
       <div>
         <ul className="transaction-item-attributes group">
           <li className="transaction-item date">
-            { createdDate.getDate() + " " + shortMonthNames[monthNum] }
+            { createdDate }
           </li>
           <li className="transaction-item description">
-            { this.props.transaction.description }
+            { this.state.description }
           </li>
           <li className="transaction-item category">
-            { cat }
+            { this.state.category }
           </li>
           <li className="transaction-item amount">
-            { this.props.transaction.amount }
+            { this.state.amount }
           </li>
         </ul>
       </div>
     );
-  }
+  },
+  _onChange: function () {
+    accountProps = $.extend({}, this.state);
+    accountProps.category = CategoryStore.single(accountProps.category_id) || "uncategorized";
+    this.setState(accountProps);
+  },
 });

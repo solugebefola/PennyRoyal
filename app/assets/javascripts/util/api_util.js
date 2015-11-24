@@ -93,6 +93,25 @@
           AccountBaseApiActions.accountBasesReceived(accountBases);
         }
       });
+    },
+    getCategories: function () {
+      $.ajax({
+        url: "api/categories/",
+        method: "GET",
+        success: function (categories) {
+          CategoryApiActions.categoriesReceived(categories);
+        }
+      });
+    },
+    getCategory: function (id) {
+      $.ajax({
+        url: "api/category/" + id,
+        method: "GET",
+        success: function (category) {
+          CategoryApiActions.categoryReceived(category);
+        }
+      });
     }
+
   };
 })(this);

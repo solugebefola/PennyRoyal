@@ -1,8 +1,8 @@
 # PennyRoyal
 
-The [live site][heroku] is here.
+The [live site][pennyroyal] is here.
 
-[heroku]:https://pennyroyal.herokuapp.com/
+[pennyroyal]:https://pennyroyal.money/
 
 ## Minimum Viable Product
 
@@ -16,9 +16,9 @@ and React.js. PennyRoyal allows users to:
 - [ ] Add financial _institutions_
 - [x] Add and delete financial _accounts_
 - [ ] Create _transactions_, or receive them from financial _institutions_
-- [ ] Edit _transaction_ details
-- [ ] Create _budgets_ and apply monthly amount limits
+- [x] Edit _transaction_ details
 - [ ] Sort _transactions_ into _categories_ and _budgets_ by association
+- [ ] Create _budgets_ and apply monthly amount limits
 - [ ] Observe monthly spending on _budgets_
 - [ ] Observe past _budget_ spending on a month by month basis
 - [ ] Tag _transactions_ with multiple _tags_ and search _transactions_ by _tag_

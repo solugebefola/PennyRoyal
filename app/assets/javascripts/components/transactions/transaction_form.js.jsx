@@ -2,12 +2,18 @@ var TransactionForm = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
 
   getInitialState: function() {
-    accountProps = $.extend({}, this.props.transaction);
-    accountProps.category = CategoryStore.single(accountProps.category_id) || "uncategorized";
-    return accountProps;
+    var transaction = TransactionStore.singleByID(this.props.transaction_id);
+    var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
+    return {
+      category: category.name,
+      date: transaction.date,
+      description: transaction.description,
+      amount: transaction.amount
+    };
   },
   componentWillMount: function() {
-
+    CategoryStore.addChangeHandler(this._onChange);
+    ApiUtil.getCategories();
   },
   componentDidMount: function() {
 
@@ -16,20 +22,8 @@ var TransactionForm = React.createClass({
     this.handleSubmit();
   },
 
-  formatDate: function (date) {
-    var d = new Date(date),
-        month = '' + (d.getUTCMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-    return [year, month, day].join('-');
-  },
-
   render: function() {
-    createdDate = this.formatDate(this.state.date);
-    nowDate = this.formatDate();
+    createdDate = (new Date(this.state.date)).toString('MMM d');
     return (
       <div>
         <form className="transaction-inputs group">
@@ -38,21 +32,24 @@ var TransactionForm = React.createClass({
             type="text"
             onChange={ this.handleInput }
             name="date"
-            value={ this.props.newT ? nowDate : createdDate }/>
+            value={ createdDate }/>
           <input
             className="transaction-item description"
             type="text"
-            valueLink={ this.linkState('description') }/>
+            onChange={ this.handleInput }
+            value={ this.state.description }/>
           <input
             className="transaction-item category"
             type="text"
             name="category"
-            valueLink={ this.linkState('category') }/>
+            onChange={ this.handleInput }
+            value={ this.state.category }/>
           <input
             className="transaction-item amount"
             type="text"
             name="amount"
-            valueLink={ this.linkState('amount') }/>
+            onChange={ this.handleInput }
+            value={ this.state.amount }/>
         </form>
         <span onClick={this.showDetailForm}>EDIT DETAILS</span>
       </div>
@@ -64,7 +61,6 @@ var TransactionForm = React.createClass({
       console.log("new item, not made yet!");
     }else{
       var newProps = $.extend({}, this.state);
-      debugger
       newProps.date = new Date(newProps.date);
       ApiUtil.editTransaction(newProps);
     }
@@ -76,5 +72,10 @@ var TransactionForm = React.createClass({
       newProps[e.currentTarget.name] = e.currentTarget.value;
       this.setState(newProps);
     }
+  },
+
+  _onChange: function () {
+    var category = CategoryStore.single(accountProps.category_id) || {name: "uncategorized"};
+    this.setState({ category: category.name });
   }
 });

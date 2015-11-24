@@ -75,7 +75,7 @@ Account.create(
 
 Account.create(
   name: "Pirate Best Savings",
-  user_id: 2,
+  user_id: 3,
   institution_id: 1,
   username: "solar",
   user_password: "solarsolar",
@@ -85,7 +85,7 @@ Account.create(
 
 Account.create(
   name: "Swashy Savings",
-  user_id: 2,
+  user_id: 3,
   institution_id: 2,
   username: "solar",
   user_password: "solarsolar",
@@ -95,7 +95,7 @@ Account.create(
 
 Account.create(
   name: "Yeomans Boat Loan",
-  user_id: 2,
+  user_id: 3,
   institution_id: 3,
   username: "solar",
   user_password: "solarsolar",

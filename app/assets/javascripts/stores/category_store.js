@@ -12,6 +12,7 @@
     _categories.push(newCategory);
     CategoryStore.changed();
   };
+
   var CHANGE_EVENT = "change_event";
 
   CategoryStore = root.CategoryStore = $.extend({}, EventEmitter.prototype, {
