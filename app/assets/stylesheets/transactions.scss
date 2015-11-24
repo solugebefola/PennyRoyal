@@ -7,6 +7,9 @@
   text-align: center;
 }
 
+.transaction-sections {
+  margin-top: 20px;
+}
 .transaction-sections > li {
   display: block;
   float: left;
@@ -14,7 +17,7 @@
 }
 
 .transaction-main {
-  box-shadow: -10px 0px 10px #eee;
+  box-shadow: -3px 0px 10px #eee;
 }
 
 .transaction-main section {
@@ -35,7 +38,7 @@
   display: block;
   font-size: 14px;
   border-bottom: 1px solid #000;
-  width: 800px;
+  // width: 800px;
 }
 
 .transaction-item-attributes > li {
@@ -46,7 +49,6 @@
 }
 
 .transaction-item {
-  // padding: 2px 0;
 }
 
 .transaction-item-attributes > li:first-child {
@@ -62,11 +64,11 @@
 }
 
 .transaction-item.category {
-  width: 100px;
+  width: 150px;
 }
 
 .transaction-item.amount {
-  width: 50px;
+  width: 100px;
 }
 
 
@@ -74,7 +76,7 @@
   position: relative;
   background: #224;
   font-size: 16px;
-  padding: 2px 0;
+  padding: 2px 0 3px;
 }
 
 .transaction-form form {
@@ -82,8 +84,13 @@
 }
 
 .transaction-form input {
+  display: block;
+  float: left;
   font-size: 14px;
-  padding: 5px;
+  background: #feeaa7;
+  padding: 5px 5px 5px 5px;
+  border-right: 1px solid #000;
+  box-shadow: inset 1px 1px 1px #caa640;
 }
 
 .transaction-form span {
@@ -92,11 +99,12 @@
   z-index: 10;
   font-size: 10px;
   height: 15px;
-  border: 1px solid #999;
+  border: 1px solid #333;
   border-bottom-left-radius: 5px 5px;
   border-bottom-right-radius: 5px 5px;
   padding: 0 10px 0 10px;
-  background: #999;
+  background: #333;
   color: #eee;
   cursor: pointer;
+  box-shadow: 1px 0 2px #caa640;
 }
