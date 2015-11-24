@@ -19,12 +19,12 @@ var App = React.createClass({
     return(
       <div>
         <header className="app-header">
-          <Link to="/" className="logo"><h1>👑PennyRoyal</h1></Link>
+          <Link to="account" className="logo"><h1>👑PennyRoyal</h1></Link>
           <ul className="app-header list">
             <li>
               <Link
                 className={ "app-header-link " + overviewCurrent }
-                to="/">OVERVIEW
+                to="account">OVERVIEW
               </Link>
             </li>
             <li>
@@ -51,11 +51,11 @@ var App = React.createClass({
       ReactDOM.render((
         <Router history={createBrowserHistory}>
           <Route path="/" component={App}>
-            <IndexRoute component={OverviewIndex}>
-              <Route path="accountpre" component={AccountPreForm} />
-              <Route path="accountedit" component={AccountEditForm} />
-              <Route path="accountnew/:inst_id" component={AccountNewForm} />
-            </IndexRoute>
+            <Route path="account" component={OverviewIndex}>
+              <Route path="pre" component={AccountPreForm} />
+              <Route path="edit" component={AccountEditForm} />
+              <Route path="new/:inst_id" component={AccountNewForm} />
+            </Route>
             <Route path="transactions" component={TransactionsPage} />
           </Route>
         </Router>
