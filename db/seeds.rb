@@ -37,7 +37,11 @@ User.create(
   session_token: "OMSczi-YPj0ACv4WViztAw"
 )
 
-
+User.create(
+  email: "guest@ourfineestablishment.com",
+  password_digest: "$2a$10$/VOOu0w8/pT.iGcAIQmRSujuqHgQ1WZhUdHxtsovZLNMy9QkYKaTK",
+  session_token: "bkqNvxRJkegATHb26ANeVw",
+)
 
 Account.create(
   name: "Pirate Best Savings",
@@ -69,8 +73,54 @@ Account.create(
   account_type: "loan",
 )
 
+Account.create(
+  name: "Pirate Best Savings",
+  user_id: 2,
+  institution_id: 1,
+  username: "solar",
+  user_password: "solarsolar",
+  balance: 22.00,
+  account_type: "savings",
+)
+
+Account.create(
+  name: "Swashy Savings",
+  user_id: 2,
+  institution_id: 2,
+  username: "solar",
+  user_password: "solarsolar",
+  balance: 514.00,
+  account_type: "savings",
+)
+
+Account.create(
+  name: "Yeomans Boat Loan",
+  user_id: 2,
+  institution_id: 3,
+  username: "solar",
+  user_password: "solarsolar",
+  balance: -1000.00,
+  account_type: "loan",
+)
+
 Category.create!(
   name: "UNCATEGORIZED"
+)
+
+Category.create!(
+  name: "Boat supplies"
+)
+
+Category.create!(
+  name: "Wine and Rum"
+)
+
+Category.create!(
+  name: "Accoutrements"
+)
+
+Category.create!(
+  name: "Raids"
 )
 
 Transaction.create!(
@@ -90,9 +140,33 @@ Transaction.create!(
 )
 
 Transaction.create!(
-  category_id: 1,
-  account_id: 1,
+  category_id: 3,
+  account_id: 4,
   date: Date.new,
   amount: -100.32,
   description: "Pirate Hat from Skullo"
+)
+
+Transaction.create!(
+  category_id: 1,
+  account_id: 5,
+  date: Date.new,
+  amount: -123.32,
+  description: "Sails from Sails r us"
+)
+
+Transaction.create!(
+  category_id: 6,
+  account_id: 4,
+  date: Date.new,
+  amount: 4000.18,
+  description: "Bounty from the sea"
+)
+
+Transaction.create!(
+  category_id: 6,
+  account_id: 6,
+  date: Date.new,
+  amount: -100.12,
+  description: "loan payment"
 )
