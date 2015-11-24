@@ -2,7 +2,7 @@
 ### Monday
 #### Morning
 #### React Components
-- [ ] Fix date display for TransactionForm
+- [x] Fix date display for TransactionForm
 #### React Components
 #### CSS
 #### Afternoon

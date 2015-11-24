@@ -79,12 +79,11 @@ var TransactionForm = React.createClass({
   },
 
   handleSubmit: function () {
-    debugger
     if (this.props.newT){
       console.log("new item, not made yet!");
     }else{
       var newProps = $.extend({}, this.state);
-      newProps.category_id = this.props.transaction.category_id;
+      newProps.category_id = CategoryStore.single(this.state.category) || 1;
       ApiUtil.editTransaction(newProps);
     }
   },

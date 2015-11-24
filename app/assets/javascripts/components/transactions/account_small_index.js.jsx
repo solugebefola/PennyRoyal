@@ -88,5 +88,7 @@ var AccountSmallIndex = React.createClass({
 
   _emptyActiveAccounts: function () {
     ActiveAccountsActions.emptyActiveAccounts();
-  }
+  },
+
+
 });

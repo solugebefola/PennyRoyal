@@ -1,4 +1,5 @@
 var AccountIndex = React.createClass({
+  mixins: [ReactRouter.History],
 
   getInitialState: function () {
     return { accounts: AccountStore.all() };
@@ -48,11 +49,16 @@ var AccountIndex = React.createClass({
 
     return (
       <div className="account-index-list">
-        <h1>Accounts</h1>
+        <h1>Accounts <strong onClick={ this.activateAccountForm }> + ADD ACCOUNT</strong></h1>
         <ul>
           { indexes }
         </ul>
       </div>
     );
+  },
+
+  activateAccountForm: function () {
+    $(".modal").addClass("is-active");
+    this.history.pushState(null, "account/pre");
   }
 });

@@ -5,6 +5,16 @@ section.overview {
   min-height: 700px;
 }
 
+.account-index-list strong {
+  display: block;
+  float: right;
+  font-size: 10px;
+  padding: 7px;
+  margin-right: 5px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+
 section.overview-main {
   background-image: url(http://previews.123rf.com/images/snusmumr/snusmumr1307/snusmumr130700017/20708584-Pirates-elements-seamless-pattern-Stock-Vector.jpg);
   width: 600px;
@@ -16,16 +26,6 @@ section.overview-main {
   border-radius: 5px;
   padding:20px;
   box-shadow: 0 5px 10px #aaa;
-}
-
-.modal.screen {
-  width: 100%;
-  height: 100%;
-
-}
-
-.modal.is-active {
-  display: block;
   width: 500px;
   height: 500px;
   position: absolute;
@@ -33,4 +33,16 @@ section.overview-main {
   top: 100px;
   left: 500px;
   z-index: 50;
+}
+
+.modal.screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 49;
+  background: #000;
+}
+
+.modal.is-active {
+  display: block;
 }

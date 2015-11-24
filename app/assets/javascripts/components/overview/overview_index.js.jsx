@@ -8,10 +8,9 @@ var OverviewIndex = React.createClass({
         <section className="overview-main overview">
           <OverviewMain />
         </section>
-        <section id="edit-modal" className="modal is-active">
+        <section id="edit-modal" className="modal">
           { this.props.children }
         </section>
-        <span id="modal-screen" className="modal screen"></span>
       </div>
     );
   },
