@@ -33,6 +33,12 @@
       }
     },
 
+    findIDByName: function (name) {
+      return _categories.find(function (cat) {
+        return (cat.id == id);
+      });
+    },
+
     addChangeHandler: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },

@@ -1,14 +1,17 @@
 var TransactionIndexItem = React.createClass({
   getInitialState: function() {
     accountProps = $.extend({}, this.props.transaction);
-    accountProps.category = CategoryStore
-      .single(accountProps.category_id) || "uncategorized";
+    accountProps.categories = CategoryStore.all();
     return accountProps;
   },
 
-  componentWillMount: function() {
+  componentDidMount: function() {
     CategoryStore.addChangeHandler(this._onChange);
     ApiUtil.getCategories();
+  },
+
+  componentWillUnmount: function() {
+    CategoryStore.removeChangeHandler(this._onChange);
   },
 
   render: function() {
@@ -24,7 +27,7 @@ var TransactionIndexItem = React.createClass({
             { this.state.description }
           </li>
           <li className="transaction-item category">
-            { this.state.category }
+            { this.state.category || "UNCATEGORIZED" }
           </li>
           <li className="transaction-item amount">
             { this.state.amount }
@@ -34,8 +37,6 @@ var TransactionIndexItem = React.createClass({
     );
   },
   _onChange: function () {
-    accountProps = $.extend({}, this.state);
-    accountProps.category = CategoryStore.single(accountProps.category_id) || "uncategorized";
-    this.setState(accountProps);
+    this.setState({ categories: CategoryStore.all() });
   },
 });
