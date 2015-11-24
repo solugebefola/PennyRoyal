@@ -7,6 +7,7 @@ var TransactionForm = React.createClass({
     return {
       id: transaction.id,
       category: category.name,
+      category_id: transaction.category_id,
       date: transaction.date,
       description: transaction.description,
       amount: transaction.amount
@@ -30,14 +31,13 @@ var TransactionForm = React.createClass({
     var dateBefore;
     var dateAfter;
     for (var i = 1; i < 5; i++){
-      dateBefore = currentDate.add(-i).days();
+      dateBefore = new Date(this.state.date).add(-i).days();
       dates.unshift(dateBefore);
-      dateAfter = currentDate.add(i).days();
+      dateAfter = new Date(this.state.date).add(i).days();
       dates.push(dateAfter);
     }
-    debugger
     return dates.map(function (date) {
-      return <li key={ date } id={ date }>{ date.toString('MMM d') }</li>;
+      return <li key={ date } id={ date.toString() }>{ date.toString('MMM d') }</li>;
     });
   },
 
@@ -46,8 +46,12 @@ var TransactionForm = React.createClass({
     return (
       <div>
         <form className="transaction-inputs group">
-          <div className="transaction-item date">
-            <ul className="transaction-item dates" onClick={ this.handleDate }>
+          <div className="transaction-item date group">
+            <input
+              className="transaction-item date"
+              type="text"
+              value={ new Date(this.state.date ).toString('MMM d') }/>
+            <ul className="transaction-item dates" id="dates" onClick={ this.handleDate }>
               { this.makeDateDropdown() }
             </ul>
           </div>
@@ -75,12 +79,12 @@ var TransactionForm = React.createClass({
   },
 
   handleSubmit: function () {
+    debugger
     if (this.props.newT){
       console.log("new item, not made yet!");
     }else{
       var newProps = $.extend({}, this.state);
       newProps.category_id = this.props.transaction.category_id;
-      newProps.date = new Date(newProps.date);
       ApiUtil.editTransaction(newProps);
     }
   },
@@ -94,11 +98,16 @@ var TransactionForm = React.createClass({
   },
 
   handleDate: function (e) {
-
+    this.setState({ date: new Date(e.target.id) });
+    $("#dates").css("display", "none");
   },
 
   _onChange: function () {
     var category = CategoryStore.single(accountProps.category_id) || {name: "uncategorized"};
     this.setState({ category: category.name });
+  },
+
+  showDetailForm: function () {
+
   }
 });
