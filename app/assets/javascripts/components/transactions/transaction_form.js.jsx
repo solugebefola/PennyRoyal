@@ -50,7 +50,7 @@ var TransactionForm = React.createClass({
             <input
               className="transaction-item date"
               type="text"
-              value={ new Date(this.state.date ).toString('MMM d') }/>
+              value={ new Date(this.state.date ).toString('MMM d') } disabled/>
             <ul className="transaction-item dates" id="dates" onClick={ this.handleDate }>
               { this.makeDateDropdown() }
             </ul>
@@ -83,7 +83,7 @@ var TransactionForm = React.createClass({
       console.log("new item, not made yet!");
     }else{
       var newProps = $.extend({}, this.state);
-      newProps.category_id = CategoryStore.single(this.state.category) || 1;
+      newProps.category_id = CategoryStore.single(this.state.category).id || 1;
       ApiUtil.editTransaction(newProps);
     }
   },
@@ -98,7 +98,6 @@ var TransactionForm = React.createClass({
 
   handleDate: function (e) {
     this.setState({ date: new Date(e.target.id) });
-    $("#dates").css("display", "none");
   },
 
   _onChange: function () {
