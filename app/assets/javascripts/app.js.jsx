@@ -11,15 +11,15 @@ var App = React.createClass({
   render: function () {
     var overviewCurrent = "";
     var transactionCurrent = "";
-    if (this.props.location.pathname === "/"){
+    if (this.props.location.pathname.match("account")){
       overviewCurrent = "current";
-    }else{
+    }else if(this.props.location.pathname.match("transactions")){
       transactionCurrent = "current";
     }
     return(
       <div>
         <header className="app-header">
-          <Link to="account" className="logo"><h1>👑PennyRoyal</h1></Link>
+          <Link to="/" className="logo"><h1>👑PennyRoyal</h1></Link>
           <ul className="app-header list">
             <li>
               <Link
@@ -51,6 +51,7 @@ var App = React.createClass({
       ReactDOM.render((
         <Router history={createBrowserHistory}>
           <Route path="/" component={App}>
+            <IndexRoute component={AppMain} />
             <Route path="account" component={OverviewIndex}>
               <Route path="pre" component={AccountPreForm} />
               <Route path="edit" component={AccountEditForm} />

@@ -2,20 +2,18 @@
 ### Monday
 #### Morning
 #### React Components
-- [x] Add category column for TransactionForm/TransactionIndexItem
+- [ ] Fix date display for TransactionForm
+#### React Components
 #### CSS
 #### Afternoon
 #### Back end resources
-- [x] AccountBase resources
 - [ ] New Account form
 - [ ] User Profile
   - [ ] Paperclip incorporation
     -[ ] Modify user model to incorporate photo, fname, lname, age, gender
-#### React Components
-- [ ] Fix date display for TransactionForm
 #### Evening
 - [ ] Make site look more professional
-- [x] Sign in as guest user button
+- [ ] Sign in as guest user button
 #### Flux/React controls
 #### Misc
 - [ ] Alerts - Table Only For Now (Maybe no back end?)
