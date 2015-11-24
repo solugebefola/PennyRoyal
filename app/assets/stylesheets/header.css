@@ -38,7 +38,8 @@
 }
 
 .app-header-link:hover {
-  border-bottom: 3px solid #aaa;
+  border-bottom: 3px solid #ccc;
+  color: #999;
 }
 
 .app-header-link {
@@ -49,6 +50,10 @@
 
 .app-header-link.current {
   border-bottom: 3px solid #fdda85;
+}
+
+.app-header-link.current:hover {
+  color: #000;
 }
 
 .logo {

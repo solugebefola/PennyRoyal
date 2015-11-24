@@ -4,10 +4,14 @@
   cursor: pointer;
 }
 
+.account-small-index {
+  width: 220px;
+
+}
+
 .account-small-index li {
-  padding: 10px 0;
+  padding: 10px 0 10px 10px;
   font-size: 14px;
-  width: 200px;
 }
 
 .account-small-index > li:nth-child(2n+1) {
@@ -26,7 +30,7 @@
 }
 
 .account-small-index > li{
-  padding: 10px;
+  padding: 10px 0px;
 }
 
 .account-small-item:hover {
@@ -39,6 +43,6 @@
   color: #fff;
 }
 
-.account-small-item.active:hover {
+.account-small-item.active:hover * {
   color: #fff
 }

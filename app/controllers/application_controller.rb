@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :require_logged_in, except: [:new, :create]
+  before_action :default_headers
   helper_method :log_in, :logged_in?, :current_user
 
 
@@ -29,5 +30,9 @@ class ApplicationController < ActionController::Base
     def require_logged_in
       puts "logged in? #{logged_in?}"
       redirect_to "/session/new" unless logged_in?
+    end
+
+    def default_headers
+      headers['X-Frame-Options'] = 'Allow-from http://www.hover.com'
     end
 end

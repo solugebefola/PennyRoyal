@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.transaction-title {
+  font-size: 18px;
+  text-align: center;
+}
 
 .transaction-sections > li {
   display: block;
@@ -20,7 +24,7 @@
 .transaction {
   display: block;
   background: #fdda85;
-  padding: 1px;
+  cursor: pointer;
 }
 
 .transaction:nth-child(2n+1) {
@@ -39,6 +43,10 @@
   float: left;
   padding: 5px;
   border-right: 1px solid #000;
+}
+
+.transaction-item {
+  // padding: 2px 0;
 }
 
 .transaction-item-attributes > li:first-child {
