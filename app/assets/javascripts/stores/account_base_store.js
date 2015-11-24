@@ -2,6 +2,7 @@
   var _accountBases = [];
   var _resetAccountBases = function (newAccountBases) {
     _accountBases = newAccountBases;
+    AccountBaseStore.changed();
   };
   var CHANGE_EVENT = "change_event";
 
@@ -9,6 +10,18 @@
 
     all: function () {
       return _accountBases.slice(0);
+    },
+
+    filterByInstitutionID: function (id) {
+      return _accountBases.filter(function (base) {
+        return base.institution_id == id;
+      });
+    },
+
+    filterByAccountType: function (type) {
+      return _accountBases.filter(function (base) {
+        return base.account_type === type;
+      });
     },
 
     addChangeHandler: function (callback) {

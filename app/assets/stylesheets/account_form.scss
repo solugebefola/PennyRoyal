@@ -1,5 +1,11 @@
+.account-form.institution {
+  font-size: 30px;
+  font-weight: 500;
+}
+
 .account-form.input-label {
   display: block;
+  margin: 0 10px;
 }
 
 .account-form-button {
@@ -12,4 +18,11 @@
 
 .account-pre-form {
   display: block;
+}
+
+.account-form.input {
+  display: block;
+  border: 1px solid #000;
+  padding: 2px;
+  margin: 10px 0px;
 }

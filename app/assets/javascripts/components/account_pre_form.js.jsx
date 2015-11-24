@@ -1,26 +1,28 @@
 var AccountPreForm = React.createClass({
   getInitialState: function() {
     return {
-      institutions: InstitutionStore.all(),
-      accountBases: AccountBaseStore.all()
+      institutions: InstitutionStore.all()
     };
   },
+
   componentWillMount: function() {
 
   },
+
   componentDidMount: function() {
     InstitutionStore.addChangeHandler(this._onChange);
-    AccountBaseStore.addChangeHandler(this._onChange);
     ApiUtil.getInstitutions();
   },
-  componentWillUnmount: function() {
 
+  componentWillUnmount: function() {
+    InstitutionStore.removeChangeHandler(this._onChange);
   },
+  
   render: function() {
     var insts = this.state.institutions.map(function (inst) {
       return (
         <Link
-          to={ "account/new/" + inst.id }
+          to={ "account/new/" + inst.id + "?institution=" + inst.name }
           className="account-pre-form institution"
           key={ inst.id }>{ inst.name }</Link>
       );
@@ -34,12 +36,8 @@ var AccountPreForm = React.createClass({
 
   _onChange: function () {
     this.setState({
-      institutions: InstitutionStore.all(),
-      accountBases: AccountBaseStore.all()
+      institutions: InstitutionStore.all()
     });
   },
 
-  chooseInstitution: function(id) {
-
-  }
 });

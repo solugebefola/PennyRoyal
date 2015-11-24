@@ -6,8 +6,9 @@
 #### React Components
 #### CSS
 #### Afternoon
-#### Back end resources
-- [ ] New Account form
+- [ ] AccountPreForm
+- [ ] AccountNewForm
+- [ ] AccountEditForm
 - [ ] User Profile
   - [ ] Paperclip incorporation
     -[ ] Modify user model to incorporate photo, fname, lname, age, gender
@@ -16,6 +17,7 @@
 - [ ] Sign in as guest user button
 #### Flux/React controls
 #### Misc
-- [ ] Alerts - Table Only For Now (Maybe no back end?)
 - [ ] AccountNewForm
 - [ ] AccountEditForm
+#### Back end resources
+- [ ] Alerts - Table Only For Now (Maybe no back end?)

@@ -13,6 +13,7 @@ section.overview {
   margin-right: 5px;
   border: 1px solid #aaa;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 section.overview-main {
