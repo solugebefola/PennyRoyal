@@ -103,6 +103,7 @@
         }
       });
     },
+    
     getCategory: function (id) {
       $.ajax({
         url: "/api/category/" + id,

@@ -3,11 +3,18 @@
 #### Morning
 - [x] Fix date in TransactionForm
 - [x] Fix Category in TransactionForm
-- [ ] TransactionForm edit detail form
 #### React Components
 #### React Components
 #### CSS
 #### Afternoon
+- [ ] TransactionForm edit detail form
+  - [ ] Tags ecosystem
+    - [x] TagStore, TagApiActions, ApiUtil for tags
+    - [ ] model, controller, jbuilder views
+  - [ ] Taglinks
+    - [ ] model, controller, jbuilder views
+  - [ ] TransactionDetailForm component
+
 - [ ] Add User profile form to ReactRouter
   - [ ] Add to modal form
   - [ ] Add fname, lname, age, gender columns to table

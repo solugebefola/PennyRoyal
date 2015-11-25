@@ -1,12 +1,14 @@
 class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, presence: true, uniqueness: true
-  validates :password, length: {minimum: 8, allow_nil: true}
+  validates :password, length: { minimum: 8, allow_nil: true }
   validates :email, format: { with: /\A([^@\s]+)@(([-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   #Addnote: password regexp validation
 
-  has_many :accounts
+  has_many :accounts, inverse_of: :user
   has_many :institutions, through: :accounts
   has_many :transactions, through: :accounts
+  has_many :taglinks, inverse_of: :user
+  has_many :tags, through: :tags
 
 attr_reader :password
 
