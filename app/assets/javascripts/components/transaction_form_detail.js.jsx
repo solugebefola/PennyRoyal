@@ -1,9 +1,11 @@
 var TransactionFormDetail = React.createClass({
   getInitialState: function() {
-    var tagNames = TagStore.all().map(function(tag){ return tag.name; });
+    var tagCheckList = {};
+    TagStore.all().forEach(function (tag) {
+      tagCheckList[tag.name] = false;
+    });
     return {
-      off: tagNames,
-      on: [],
+      tagCheckList: tagCheckList,
       tags: TagStore.all(),
       notes: this.props.transaction.notes
     };
@@ -22,20 +24,8 @@ var TransactionFormDetail = React.createClass({
     TagStore.removeChangeHandler(this._onChange);
   },
 
-  isTransactionTagged: function (tagName) {
-    if (this.state.on.find(
-      function(tag){
-        return tagName === tag.name;
-      }
-    )){
-      return "on";
-    }else{
-      return "off";
-    }
-  },
-
   makeTagList: function () {
-    return this.tags.map(function (tag) {
+    return TagStore.all().map(function (tag) {
       return(
         <label key={ tag.id }>{ tag.name }
           <input
@@ -43,7 +33,7 @@ var TransactionFormDetail = React.createClass({
             type="checkbox"
             onChange={ this.handleTagCheck }
             name={ tag.name }
-            value={ this.isTransactionTagged(tag) }/>
+            checked={ this.state.tagCheckList[tag.name] }/>
         </label>
       );
     }.bind(this));
@@ -64,7 +54,7 @@ var TransactionFormDetail = React.createClass({
           </label>
           <textarea name="notes" value="" />
           <button name="cancel" onClick={ this.handleDetail }>Cancel</button>
-          <button type="submit" onClick={ this.handleSubmit }>Save Changes</button>
+          <button type="submit" onClick={ this.handleDetail }>Save Changes</button>
         </form>
       </div>
     );
@@ -81,13 +71,13 @@ var TransactionFormDetail = React.createClass({
   },
 
   handleTagCheck: function (e) {
-    if (isTransactionTagged(e.target.name) === "on"){
-      this.setState({
-        off: this.state.off.push(e.target.name),
-        on: this.state.on.splice()
-      });
+    var newState = $.extend({}, this.state.tagCheckList);
+    if (this.state.tagCheckList[e.target.name]){
+      newState[e.target.name] = false;
+    }else{
+      newState[e.target.name] = true;
     }
-    this.setState({  });
+    this.setState({ tagCheckList: newState });
   },
 
   handleDetail: function (e) {
