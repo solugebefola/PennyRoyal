@@ -4,6 +4,9 @@ var TransactionFormDetail = React.createClass({
     TagStore.all().forEach(function (tag) {
       tagCheckList[tag.name] = false;
     });
+    this.props.transaction.tags.forEach(function(tag){
+      tagCheckList[tag.name] = true;
+    });
     return {
       tagCheckList: tagCheckList,
       tags: TagStore.all(),
@@ -85,6 +88,7 @@ var TransactionFormDetail = React.createClass({
     if (e.target.name == "cancel") {
 
     }else{
+
       this.props.getDetailProps(this.state);
     }
   }
