@@ -4,8 +4,9 @@ class Api::TagsController < ApplicationController
     @tag = Tag.new(tag_params)
     @tag.user_id = current_user.id
     @tag.save
-    fail
-    @tag.taglinks.create!(transaction_id: params[:transaction_id])
+    @taglink = @tag.taglinks.new()
+    @taglink.transaction_id = params[:tag][:transaction_id]
+    @taglink.save
     render :show
   end
 

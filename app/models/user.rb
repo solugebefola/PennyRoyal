@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   has_many :institutions, through: :accounts
   has_many :transactions, through: :accounts
   has_many :taglinks, inverse_of: :user
-  has_many :tags, through: :tags
-
+  has_many :tags
+  
 attr_reader :password
 
 after_initialize :ensure_session_token

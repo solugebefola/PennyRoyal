@@ -12,6 +12,7 @@ var TransactionFormDetail = React.createClass({
 
   componentDidMount: function() {
     TagStore.addChangeHandler(this._onChange);
+    ApiUtil.getTags();
   },
 
   componentWillUnmount: function() {
@@ -21,10 +22,12 @@ var TransactionFormDetail = React.createClass({
   makeTagList: function () {
     return this.state.tags.map(function (tag) {
       return(
-        <input
-          className="transaction-item tags"
-          type="checkbox"
-          name={ tag.name }/>
+        <label>{ tag.name }
+          <input
+            className="transaction-item tags"
+            type="checkbox"
+            name={ tag.name }/>
+        </label>
       );
     });
   },
@@ -56,7 +59,6 @@ var TransactionFormDetail = React.createClass({
   addTag: function (e) {
     e.preventDefault();
     var tagName = $("#newtag").val();
-    debugger
     ApiUtil.newTag({ name: tagName, transaction_id: this.props.transaction.id });
   },
 

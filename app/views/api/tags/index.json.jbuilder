@@ -1,4 +1,1 @@
-json.array! @tags do |tag|
-  json.name tag.name
-  json.array! tag.taglinks
-end
+json.array! @tags, :transactions, :name, :id 
