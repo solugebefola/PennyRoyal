@@ -1,9 +1,8 @@
 class Api::TagsController < ApplicationController
 
   def create
-    @tag = Tag.new(tag_params)
+    @tag = current_user.tags(newtag_params)
     @tag.taglinks.create!(params[:transaction_id])
-    @tag.user_id = current_user.id
     if @tag.save
       render :show
     else
@@ -11,13 +10,15 @@ class Api::TagsController < ApplicationController
     end
   end
 
-  def index
-    @tags = current_user.tags
+  def destroy
+    @tag = Tag.find(params[:id])
+    @tag.destroy
     render :index
   end
 
-  def edit
-    
+  def index
+    @tags = current_user.tags.includes(:taglinks)
+    render :index
   end
 
   private

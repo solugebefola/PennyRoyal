@@ -103,7 +103,7 @@
         }
       });
     },
-    
+
     getCategory: function (id) {
       $.ajax({
         url: "/api/category/" + id,
@@ -124,15 +124,28 @@
       });
     },
 
-    newTag: function (tagName) {
+    newTag: function (tag) {
       $.ajax({
-        url: "/api/transactions/",
+        url: "/api/tags/",
         method: "POST",
+        data: { tag: tag },
+        dataType: "json",
         success: function (tag) {
           TagApiActions.tagReceived(tag);
         }
       });
-    }
+    },
 
+    newTaglink: function (taglink) {
+      $.ajax({
+        url: "api/taglinks",
+        method: "POST",
+        data: { taglink: taglink },
+        dataType: "json",
+        success: function (taglink) {
+          
+        }
+      });
+    }
   };
 })(this);

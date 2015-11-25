@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :transactions, only: [:create, :index, :show, :update, :destroy]
     resources :categories
     resources :account_bases, only: [:index]
+    resources :tags, only: [:create, :index, :destroy]
+    resources :taglinks, only: [:create, :destroy]
   end
 
   resource :session, only: [:new, :create, :destroy]
