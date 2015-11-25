@@ -2,7 +2,7 @@ var CategoryDropdown = React.createClass({
   getInitialState: function() {
     return {
       categories: CategoryStore.all(),
-      categoryID: this.props.currentCategoryID
+      category_id: this.props.currentCategoryID
     };
   },
 
@@ -44,10 +44,9 @@ var CategoryDropdown = React.createClass({
   },
 
   handleClick: function (e) {
-    debugger
     e.preventDefault();
-    this.setState({ categoryID: e.target.id });
-    this.props.setCategory(this.state.categoryID);
+    this.setState({ category_id: e.target.id });
+    this.props.setCategory(e.target.id);
   },
 
   _onChange: function () {

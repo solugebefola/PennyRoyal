@@ -9,14 +9,13 @@ var TransactionForm = React.createClass({
   },
 
   componentWillMount: function() {
+  },
+
+  componentDidMount: function() {
     CategoryStore.addChangeHandler(this._onChange);
     ApiUtil.getCategories();
   },
 
-  componentDidMount: function() {
-
-  },
-  
   componentWillUnmount: function() {
     this.handleSubmit();
     CategoryStore.removeChangeHandler(this._onChange);
@@ -40,7 +39,6 @@ var TransactionForm = React.createClass({
   },
 
   render: function() {
-
     return (
       <div>
         <form className="transaction-inputs group">
@@ -64,7 +62,7 @@ var TransactionForm = React.createClass({
               type="text"
               name="category"
               value={ this.state.categoryName } disabled/>
-            <CategoryDropdown setCategory={ this.setCategory } currentCategoryID={ this.state.categoryID }/>
+            <CategoryDropdown setCategory={ this.setCategory } currentCategoryID={ this.state.category_id }/>
           </div>
           <input
             className="transaction-item amount"
@@ -109,7 +107,7 @@ var TransactionForm = React.createClass({
 
   setCategory: function (id) {
     var category = CategoryStore.single(id) || {name: "uncategorized"};
-    this.setState({ categoryID: id, categoryName: category.name });
+    this.setState({ category_id: id, categoryName: category.name });
   },
 
   showDetailForm: function () {

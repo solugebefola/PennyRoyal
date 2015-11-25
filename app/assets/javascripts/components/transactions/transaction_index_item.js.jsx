@@ -28,7 +28,7 @@ var TransactionIndexItem = React.createClass({
             { this.state.description }
           </li>
           <li className="transaction-item category">
-            { this.state.category || "UNCATEGORIZED" }
+            { this.state.categoryName || "UNCATEGORIZED" }
           </li>
           <li className="transaction-item amount">
             { this.state.amount }
