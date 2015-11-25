@@ -65,9 +65,12 @@
   border-left: 1px solid #eee;
 }
 
+div.transaction-item.category {
+  position: relative;
+}
+
 .transaction-item.dropdown {
   display: none;
-  width: 100px;
   padding: 5px;
   height: auto;
   background: #fff;
@@ -88,7 +91,8 @@
 
 .transaction-item.dropdown.dates {
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  width: 100px;
 }
 
 
@@ -98,14 +102,13 @@
   display: block;
 }
 
-.hidden {
-  display:none;
-}
-
-.dates li:hover {
+.dates li:hover, .categories li:hover {
   background: #224;
   color: #fff;
 }
+
+
+
 
 .transaction-item.date {
   position: relative;
@@ -155,9 +158,10 @@
 
 
 
-.transaction-form span {
+.detail-tab {
   position: absolute;
   left: 50%;
+  transform: translateX(-50%);
   z-index: 10;
   font-size: 10px;
   height: 15px;

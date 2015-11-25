@@ -6,8 +6,8 @@ var TransactionForm = React.createClass({
     var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
     return {
       id: transaction.id,
-      category: category.name,
-      category_id: transaction.category_id,
+      categoryName: category.name,
+      categoryID: transaction.category_id,
       date: transaction.date,
       description: transaction.description,
       amount: transaction.amount
@@ -65,17 +65,18 @@ var TransactionForm = React.createClass({
               className="transaction-item category"
               type="text"
               name="category"
-              value={ this.state.category } disabled/>
+              value={ this.state.categoryName } disabled/>
+            <CategoryDropdown setCategory={ this.setCategory } currentCategoryID={ this.state.categoryID }/>
           </div>
           <input
             className="transaction-item amount"
             type="text"
             name="amount"
             onChange={ this.handleInput }
+            decimal="2"
             value={ this.state.amount }/>
         </form>
-            <CategoryDropdown setCategory={ this.setCategory } currentCategoryID={ this.state.category_id }/>
-        <span onClick={ this.showDetailForm }>EDIT DETAILS</span>
+        <span className="detail-tab" onClick={ this.showDetailForm }>EDIT DETAILS</span>
       </div>
     );
   },
@@ -85,7 +86,6 @@ var TransactionForm = React.createClass({
       console.log("new item, not made yet!");
     }else{
       var newProps = $.extend({}, this.state);
-      newProps.category_id = CategoryStore.single(this.state.category).id || 1;
       ApiUtil.editTransaction(newProps);
     }
   },
@@ -99,16 +99,18 @@ var TransactionForm = React.createClass({
   },
 
   handleDate: function (e) {
+    console.log(this.state + "before");
     this.setState({ date: new Date(e.target.id) });
+    console.log(this.state + "after");
   },
 
   _onChange: function () {
-    var category = CategoryStore.single(accountProps.category_id) || {name: "uncategorized"};
-    this.setState({ category: category.name });
+    var category = CategoryStore.single(this.state.categoryID) || {name: "uncategorized"};
+    this.setState({ categoryName: category.name });
   },
 
   setCategory: function (id) {
-    this.setState({ category_id: id }).bind(this);
+    this.setState({ categoryID: id });
   },
   showDetailForm: function () {
 

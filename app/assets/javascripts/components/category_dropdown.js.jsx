@@ -1,9 +1,8 @@
 var CategoryDropdown = React.createClass({
   getInitialState: function() {
-    debugger
     return {
       categories: CategoryStore.all(),
-      category_id: this.props.currentCategoryID
+      categoryID: this.props.currentCategoryID
     };
   },
 
@@ -17,13 +16,12 @@ var CategoryDropdown = React.createClass({
 
   componentWillUnmount: function() {
     CategoryStore.removeChangeHandler(this._onChange);
-    this.props.setCategory();
   },
 
   buildDropdown: function () {
     var currentCategory;
     return this.state.categories.map(function (cat) {
-      if( cat.id == this.state.category_id ) { currentCategory = "chosen"; }
+      if( cat.id == this.state.categoryID ) { currentCategory = "chosen"; }
       return (
         <li className={ currentCategory } key= { cat.id } id={ cat.id }>
           { cat.name }
@@ -47,7 +45,10 @@ var CategoryDropdown = React.createClass({
 
   handleClick: function (e) {
     e.preventDefault();
-    this.setState({ category_id: e.target.id });
+    this.setState({ categoryID: e.target.id });
+    // console.log(this.state.categoryID);
+    this.props.setCategory(this.state.categoryID);
+
   },
 
   _onChange: function () {
