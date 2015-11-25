@@ -1,0 +1,2 @@
+class TaglinksController < ApplicationController
+end

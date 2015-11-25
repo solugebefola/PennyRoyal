@@ -73,6 +73,9 @@ var TransactionForm = React.createClass({
             value={ this.state.amount }/>
         </form>
         <span className="detail-tab" onClick={ this.showDetailForm }>EDIT DETAILS</span>
+        <div className="detail-form">
+          <TransactionFormDetail transaction={ this.props.transaction }/>
+        </div>
       </div>
     );
   },

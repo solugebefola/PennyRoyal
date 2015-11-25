@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :taglinks
+  resources :tags
   resources :account_bases
   resources :budgets
   resources :categories

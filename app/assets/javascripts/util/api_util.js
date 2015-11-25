@@ -111,6 +111,26 @@
           CategoryApiActions.categoryReceived(category);
         }
       });
+    },
+
+    getTags: function () {
+      $.ajax({
+        url: "/api/tags",
+        methog: "GET",
+        success: function (tags) {
+          TagApiActions.tagsReceived(tags);
+        }
+      });
+    },
+
+    newTag: function (tagName) {
+      $.ajax({
+        url: "/api/transactions/",
+        method: "POST",
+        success: function (tag) {
+          TagApiActions.tagReceived(tag);
+        }
+      });
     }
 
   };

@@ -1,8 +1,8 @@
 ## Todo
 ### Monday
 #### Morning
-- [ ] Fix date in TransactionForm
-- [ ] Fix Category in TransactionForm
+- [x] Fix date in TransactionForm
+- [x] Fix Category in TransactionForm
 - [ ] TransactionForm edit detail form
 #### React Components
 #### React Components

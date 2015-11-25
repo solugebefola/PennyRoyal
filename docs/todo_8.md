@@ -16,8 +16,8 @@
   - [ ] Paperclip incorporation
     -[ ] Modify user model to incorporate photo, fname, lname, age, gender
 #### Evening
-- [ ] Make site look more professional
-- [ ] Sign in as guest user button
+- [x] Make site look more professional
+- [x] Sign in as guest user button
 #### Flux/React controls
 #### Misc
 - [ ] AccountNewForm
