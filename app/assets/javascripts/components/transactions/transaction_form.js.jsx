@@ -2,22 +2,25 @@ var TransactionForm = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
 
   getInitialState: function() {
-    var accountProps = $.extend({}, this.props.transaction);
-    accountProps.categories = CategoryStore.all();
-    var category = CategoryStore.single(accountProps.category_id) || {name: "uncategorized"};
-    accountProps.categoryName = category.name;
-    return accountProps;
+    var transaction = TransactionStore.singleByID(this.props.transaction.id);
+    var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
+    transaction.categoryName = category.name;
+    return transaction;
   },
+
   componentWillMount: function() {
     CategoryStore.addChangeHandler(this._onChange);
     ApiUtil.getCategories();
   },
+
   componentDidMount: function() {
 
   },
+  
   componentWillUnmount: function() {
     this.handleSubmit();
     CategoryStore.removeChangeHandler(this._onChange);
+    TransactionStore.removeChangeHandler(this._onChange);
   },
 
   makeDateDropdown: function() {
@@ -81,7 +84,6 @@ var TransactionForm = React.createClass({
       console.log("new item, not made yet!");
     }else{
       var newProps = $.extend({}, this.state);
-      console.log("submit "+ newProps.date);
       ApiUtil.editTransaction(newProps);
     }
   },
@@ -95,19 +97,21 @@ var TransactionForm = React.createClass({
   },
 
   handleDate: function (e) {
-    console.log(this.state.date + "before");
     this.setState({ date: new Date(e.target.id) });
-    console.log(this.state.date + "after");
   },
 
   _onChange: function () {
-    var category = CategoryStore.single(this.state.categoryID) || {name: "uncategorized"};
-    this.setState({ categoryName: category.name });
+    var transaction = TransactionStore.singleByID(this.props.transaction.id);
+    var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
+    transaction.categoryName = category.name;
+    this.setState(transaction);
   },
 
   setCategory: function (id) {
-    this.setState({ categoryID: id });
+    var category = CategoryStore.single(id) || {name: "uncategorized"};
+    this.setState({ categoryID: id, categoryName: category.name });
   },
+
   showDetailForm: function () {
 
   }

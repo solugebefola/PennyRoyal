@@ -126,7 +126,7 @@ Category.create!(
 Transaction.create!(
   category_id: 1,
   account_id: 2,
-  date: Date.new,
+  date: DateTime.now,
   amount: -223.23,
   description: "Cannonballs from Cannonball Alley"
 )
@@ -134,7 +134,7 @@ Transaction.create!(
 Transaction.create!(
   category_id: 1,
   account_id: 1,
-  date: Date.new,
+  date: DateTime.now,
   amount: -100.32,
   description: "Sails from Sails r us"
 )
@@ -142,7 +142,7 @@ Transaction.create!(
 Transaction.create!(
   category_id: 3,
   account_id: 4,
-  date: Date.new,
+  date: DateTime.now,
   amount: -100.32,
   description: "Pirate Hat from Skullo"
 )
@@ -150,7 +150,7 @@ Transaction.create!(
 Transaction.create!(
   category_id: 1,
   account_id: 5,
-  date: Date.new,
+  date: DateTime.now,
   amount: -123.32,
   description: "Sails from Sails r us"
 )
@@ -158,7 +158,7 @@ Transaction.create!(
 Transaction.create!(
   category_id: 6,
   account_id: 4,
-  date: Date.new,
+  date: DateTime.now,
   amount: 4000.18,
   description: "Bounty from the sea"
 )
@@ -166,7 +166,7 @@ Transaction.create!(
 Transaction.create!(
   category_id: 6,
   account_id: 6,
-  date: Date.new,
+  date: DateTime.now,
   amount: -100.12,
   description: "loan payment"
 )

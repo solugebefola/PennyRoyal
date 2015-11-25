@@ -44,6 +44,7 @@ var CategoryDropdown = React.createClass({
   },
 
   handleClick: function (e) {
+    debugger
     e.preventDefault();
     this.setState({ categoryID: e.target.id });
     this.props.setCategory(this.state.categoryID);

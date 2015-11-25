@@ -30,7 +30,7 @@ var TransactionIndex = React.createClass({
         );
       }else{
         return (
-          <li key={ transaction.id } className="transaction group" onClick={this._setActive} id={ transaction.id }>
+          <li key={ transaction.id } className="transaction group" onClick={ this._setActive } id={ transaction.id }>
             <TransactionIndexItem transaction={ transaction } newT="false"/>
           </li>
         );
@@ -68,7 +68,9 @@ var TransactionIndex = React.createClass({
   },
 
   _onChange: function () {
-    this.setState({transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all())});
+    this.setState({
+      transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all())
+    });
   },
 
   _onActiveChange: function () {
