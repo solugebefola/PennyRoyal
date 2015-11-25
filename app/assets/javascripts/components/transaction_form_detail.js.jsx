@@ -1,6 +1,9 @@
 var TransactionFormDetail = React.createClass({
   getInitialState: function() {
+    var tagNames = TagStore.all().map(function(tag){ return tag.name; });
     return {
+      off: tagNames,
+      on: [],
       tags: TagStore.all(),
       notes: this.props.transaction.notes
     };
@@ -19,17 +22,31 @@ var TransactionFormDetail = React.createClass({
     TagStore.removeChangeHandler(this._onChange);
   },
 
+  isTransactionTagged: function (tagName) {
+    if (this.state.on.find(
+      function(tag){
+        return tagName === tag.name;
+      }
+    )){
+      return "on";
+    }else{
+      return "off";
+    }
+  },
+
   makeTagList: function () {
-    return this.state.tags.map(function (tag) {
+    return this.tags.map(function (tag) {
       return(
-        <label>{ tag.name }
+        <label key={ tag.id }>{ tag.name }
           <input
             className="transaction-item tags"
             type="checkbox"
-            name={ tag.name }/>
+            onChange={ this.handleTagCheck }
+            name={ tag.name }
+            value={ this.isTransactionTagged(tag) }/>
         </label>
       );
-    });
+    }.bind(this));
   },
 
   render: function() {
@@ -45,6 +62,7 @@ var TransactionFormDetail = React.createClass({
               id="newtag" />
             <button className="tag-button" onClick={ this.addTag }>Add New Tag</button>
           </label>
+          <textarea name="notes" value="" />
           <button name="cancel" onClick={ this.handleDetail }>Cancel</button>
           <button type="submit" onClick={ this.handleSubmit }>Save Changes</button>
         </form>
@@ -60,6 +78,16 @@ var TransactionFormDetail = React.createClass({
     e.preventDefault();
     var tagName = $("#newtag").val();
     ApiUtil.newTag({ name: tagName, transaction_id: this.props.transaction.id });
+  },
+
+  handleTagCheck: function (e) {
+    if (isTransactionTagged(e.target.name) === "on"){
+      this.setState({
+        off: this.state.off.push(e.target.name),
+        on: this.state.on.splice()
+      });
+    }
+    this.setState({  });
   },
 
   handleDetail: function (e) {
