@@ -36,7 +36,7 @@
       $.ajax({
         url: "/api/accounts",
         method: "POST",
-        data: {account: params},
+        data: { account: params },
         success: function (account) {
           AccountApiActions.singleAccountReceived(account);
         }
@@ -78,7 +78,7 @@
       $.ajax({
         url: "/api/transactions/" + transaction.id,
         method: "PATCH",
-        data: {transaction: transaction},
+        data: { transaction: transaction },
         success: function (transaction) {
           TransactionApiActions.singleTransactionReceived(transaction);
         }

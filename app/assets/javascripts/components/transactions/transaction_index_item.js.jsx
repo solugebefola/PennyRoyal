@@ -1,7 +1,10 @@
 var TransactionIndexItem = React.createClass({
   getInitialState: function() {
-    accountProps = $.extend({}, this.props.transaction);
+    var accountProps = $.extend({}, this.props.transaction);
     accountProps.categories = CategoryStore.all();
+    var category = CategoryStore.single(accountProps.category_id) || {name: "uncategorized"};
+    debugger
+    accountProps.categoryName = category.name;
     return accountProps;
   },
 

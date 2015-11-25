@@ -25,7 +25,7 @@ var TransactionIndex = React.createClass({
       if (transaction.id == this.state.activeTransaction.id) {
         return (
           <li key={ transaction.id } className="transaction-form group">
-            <TransactionForm transaction_id={ transaction.id }/>
+            <TransactionForm transaction={ transaction }/>
           </li>
         );
       }else{

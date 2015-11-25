@@ -2,16 +2,11 @@ var TransactionForm = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
 
   getInitialState: function() {
-    var transaction = TransactionStore.singleByID(this.props.transaction_id);
-    var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
-    return {
-      id: transaction.id,
-      categoryName: category.name,
-      categoryID: transaction.category_id,
-      date: transaction.date,
-      description: transaction.description,
-      amount: transaction.amount
-    };
+    var accountProps = $.extend({}, this.props.transaction);
+    accountProps.categories = CategoryStore.all();
+    var category = CategoryStore.single(accountProps.category_id) || {name: "uncategorized"};
+    accountProps.categoryName = category.name;
+    return accountProps;
   },
   componentWillMount: function() {
     CategoryStore.addChangeHandler(this._onChange);
@@ -50,7 +45,7 @@ var TransactionForm = React.createClass({
             <input
               className="transaction-item date"
               type="text"
-              value={ new Date(this.state.date ).toString('MMM d') } disabled/>
+              value={ new Date(this.state.date).toString('MMM d') } disabled/>
             <ul className="transaction-item dropdown dates" id="dates" onClick={ this.handleDate }>
               { this.makeDateDropdown() }
             </ul>
@@ -86,6 +81,7 @@ var TransactionForm = React.createClass({
       console.log("new item, not made yet!");
     }else{
       var newProps = $.extend({}, this.state);
+      console.log("submit "+ newProps.date);
       ApiUtil.editTransaction(newProps);
     }
   },
@@ -99,9 +95,9 @@ var TransactionForm = React.createClass({
   },
 
   handleDate: function (e) {
-    console.log(this.state + "before");
+    console.log(this.state.date + "before");
     this.setState({ date: new Date(e.target.id) });
-    console.log(this.state + "after");
+    console.log(this.state.date + "after");
   },
 
   _onChange: function () {
