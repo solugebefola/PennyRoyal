@@ -95,8 +95,6 @@ div.transaction-item.category {
   width: 100px;
 }
 
-
-
 .transaction-item.date:hover .dropdown,
 .transaction-item.category:hover .dropdown{
   display: block;
@@ -108,14 +106,12 @@ div.transaction-item.category {
   color: #fff;
 }
 
-
-
-
 .transaction-item.date {
   position: relative;
   width: 100px;
   height: 19px;
 }
+
 
 
 
@@ -157,8 +153,6 @@ div.transaction-item.category {
   box-shadow: inset 1px 1px 1px #caa640;
 }
 
-
-
 .detail-tab {
   position: absolute;
   left: 50%;
@@ -174,4 +168,39 @@ div.transaction-item.category {
   color: #eee;
   cursor: pointer;
   box-shadow: 1px 0 2px #caa640;
+}
+
+.detail-form {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+  font-size: 12px;
+  border: 1px solid #333;
+  border-bottom-left-radius: 5px 5px;
+  border-bottom-right-radius: 5px 5px;
+  padding: 10px;
+  background: #aaa;
+  color: #eee;
+  box-shadow: 1px 0 2px #caa640;
+}
+
+.transaction-item.detail {
+  padding: 10px;
+
+}
+
+.tag-button {
+  display: block;
+  font-size: 10px;
+  padding: 5px;
+  width: auto;
+  height: auto;
+}
+
+.transaction-item.tag-name {
+  display: block;
+  background: #fff;
+  color: #000;
 }

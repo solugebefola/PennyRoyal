@@ -1,4 +1,4 @@
-class TaglinksController < ApplicationController
+class Api::TaglinksController < ApplicationController
   def create
     @taglink = Taglink.create!(taglink_params)
     render :show

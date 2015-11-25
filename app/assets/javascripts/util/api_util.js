@@ -129,7 +129,6 @@
         url: "/api/tags/",
         method: "POST",
         data: { tag: tag },
-        dataType: "json",
         success: function (tag) {
           TagApiActions.tagReceived(tag);
         }
@@ -141,9 +140,8 @@
         url: "api/taglinks",
         method: "POST",
         data: { taglink: taglink },
-        dataType: "json",
         success: function (taglink) {
-          
+          TagApiActions.tagReceived();
         }
       });
     }

@@ -1,11 +1,11 @@
 class Api::TransactionsController < ApplicationController
 
   def index
-    @transactions = current_user.transactions.order(created_at: :desc).limit(500)
+    @transactions = current_user.transactions.includes(:tags).order(created_at: :desc).limit(500)
   end
 
   def show
-    @transaction = Transaction.find(params[:id])
+    @transaction = Transaction.includes(:tags).find(params[:id])
   end
 
   def create

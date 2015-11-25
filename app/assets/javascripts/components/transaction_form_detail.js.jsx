@@ -19,7 +19,7 @@ var TransactionFormDetail = React.createClass({
   },
 
   makeTagList: function () {
-    return tags.map(function (tag) {
+    return this.state.tags.map(function (tag) {
       return(
         <input
           className="transaction-item tags"
@@ -34,11 +34,14 @@ var TransactionFormDetail = React.createClass({
       <div>
         <form className="transaction-item detail">
           { this.makeTagList() }
-          <input
-            type="text"
-            name="newtag"
-            id="newtag" />
-          <button onClick={ this.addTag }>Add New Tag</button>
+          <label>Tag Name
+            <input
+              className="transaction-item tag-name"
+              type="text"
+              name="newtag"
+              id="newtag" />
+            <button className="tag-button" onClick={ this.addTag }>Add New Tag</button>
+          </label>
           <button name="cancel" onClick={ this.handleDetail }>Cancel</button>
           <button type="submit" onClick={ this.handleSubmit }>Save Changes</button>
         </form>
@@ -46,9 +49,23 @@ var TransactionFormDetail = React.createClass({
     );
   },
 
+  _onChange: function () {
+    this.setState({ tags: TagStore.all() });
+  },
+
   addTag: function (e) {
     e.preventDefault();
     var tagName = $("#newtag").val();
-    ApiUtil.newTag(tagName);
+    debugger
+    ApiUtil.newTag({ name: tagName, transaction_id: this.props.transaction.id });
+  },
+
+  handleDetail: function (e) {
+    e.preventDefault();
+    if (e.target.name == "cancel") {
+
+    }else{
+      this.props.getDetailProps(this.state);
+    }
   }
 });

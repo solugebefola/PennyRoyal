@@ -72,9 +72,13 @@ var TransactionForm = React.createClass({
             decimal="2"
             value={ this.state.amount }/>
         </form>
-        <span className="detail-tab" onClick={ this.showDetailForm }>EDIT DETAILS</span>
-        <div className="detail-form">
-          <TransactionFormDetail transaction={ this.props.transaction }/>
+        <div>
+          <span className="detail-tab" onClick={ this.showDetailForm }>EDIT DETAILS</span>
+          <div className="detail-form">
+            <TransactionFormDetail
+              transaction={ this.props.transaction }
+              getDetailProps={ this.getDetailProps } />
+          </div>
         </div>
       </div>
     );
@@ -115,5 +119,9 @@ var TransactionForm = React.createClass({
 
   showDetailForm: function () {
 
+  },
+
+  getDetailProps: function (newProps) {
+    this.setState(newProps);
   }
 });
