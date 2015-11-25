@@ -22,23 +22,24 @@ var CategoryDropdown = React.createClass({
 
   buildDropdown: function () {
     var currentCategory;
-    var categories = this.categories.map(function (cat) {
-      if( cat.id == category_id ) { currentCategory = "chosen"; }
+    return this.state.categories.map(function (cat) {
+      if( cat.id == this.state.category_id ) { currentCategory = "chosen"; }
       return (
         <li className={ currentCategory } key= { cat.id } id={ cat.id }>
           { cat.name }
         </li>
       );
-    });
+    }.bind(this));
   },
 
   render: function() {
+    var drop = this.buildDropdown();
     return (
       <div>
         <ul
           className="transaction-item dropdown categories"
           onClick={ this.handleClick }>
-          { this.buildDropdown() }
+          { drop }
         </ul>
       </div>
     );
@@ -46,7 +47,6 @@ var CategoryDropdown = React.createClass({
 
   handleClick: function (e) {
     e.preventDefault();
-    debugger
     this.setState({ category_id: e.target.id });
   },
 
