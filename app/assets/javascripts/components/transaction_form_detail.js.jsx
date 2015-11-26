@@ -63,6 +63,7 @@ var TransactionFormDetail = React.createClass({
           <button name="cancel" onClick={ this.handleDetail }>Cancel</button>
           <button type="submit" onClick={ this.handleDetail }>Save Changes</button>
         </form>
+        <span className="detail-tab hide" onClick={ this.handleDetail }>HIDE DETAILS</span>
       </div>
     );
   },

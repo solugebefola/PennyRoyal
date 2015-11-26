@@ -155,9 +155,8 @@ div.transaction-item.category {
 
 .detail-tab {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 10;
+  left: 300px;
   font-size: 10px;
   height: 15px;
   border: 1px solid #333;
@@ -168,6 +167,13 @@ div.transaction-item.category {
   color: #eee;
   cursor: pointer;
   box-shadow: 1px 0 2px #caa640;
+}
+
+.detail-tab.hide{
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+  z-index: 60;
 }
 
 .detail-form {
