@@ -16,6 +16,11 @@ attr_reader :password
 
 after_initialize :ensure_session_token
 
+
+def profile
+  
+end
+
 def self.generate_token
   SecureRandom::urlsafe_base64(16)
 end
