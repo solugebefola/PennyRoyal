@@ -80,20 +80,18 @@ var AccountNewForm = React.createClass({
 
   inputChangeHandler: function (e) {
     e.preventDefault();
-    newState = {};
-    propKey = e.target.name;
-    newState[propKey] = e.target.value;
-    debugger
-    this.setState(newState);
+    var newState = {};
     if (e.target.name === "account_type"){
       this.setState(
         {accountName: AccountBaseStore.filterByAccountType(e.target.name)}
       );
     }
+    propKey = e.target.name;
+    newState[propKey] = e.target.value;
+    this.setState(newState);
   },
 
   submitChangeHandler: function (e) {
-    debugger
     e.preventDefault();
     var accountProps = {};
     var inst = this.state.institutions.find(function(institution) {
@@ -104,7 +102,7 @@ var AccountNewForm = React.createClass({
     accountProps.username = this.state.username.value;
     accountProps.user_password = this.state.user_password.value;
     accountProps.account_type = this.state.account_type.value;
-    accountProps.balance = 1.00; //Addnote: change this to random value?
+    accountProps.balance = Math.floor(Math.round()*4000000)/100;//Addnote: change this to random value?
     ApiUtil.createAccount(accountProps);
   },
 });

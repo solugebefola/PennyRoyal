@@ -145,7 +145,6 @@ AccountBase.create!(
   account_type: "loan",
 )
 
-
 Category.create!(
   name: "UNCATEGORIZED"
 )
