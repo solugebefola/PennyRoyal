@@ -20,6 +20,8 @@ gem 'kaminari'
 
 gem 'font-awesome-sass', '~> 4.4.0'
 
+gem 'accountingjs-rails'
+
 gem 'pg_search'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

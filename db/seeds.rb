@@ -56,7 +56,7 @@ Account.create(
 Account.create(
   name: "Swashy Savings",
   user_id: 1,
-  institution_id: 2,
+  institution_id: 3,
   username: "solar",
   user_password: "solarsolar",
   balance: 500.00,
@@ -66,7 +66,7 @@ Account.create(
 Account.create(
   name: "Yeoman's Boat Loan",
   user_id: 1,
-  institution_id: 3,
+  institution_id: 4,
   username: "solar",
   user_password: "solarsolar",
   balance: -500.00,
@@ -86,7 +86,7 @@ Account.create(
 Account.create(
   name: "Swashy Savings",
   user_id: 3,
-  institution_id: 2,
+  institution_id: 3,
   username: "solar",
   user_password: "solarsolar",
   balance: 514.00,
@@ -96,7 +96,7 @@ Account.create(
 Account.create(
   name: "Yeoman's Boat Loan",
   user_id: 3,
-  institution_id: 3,
+  institution_id: 4,
   username: "solar",
   user_password: "solarsolar",
   balance: -1000.00,
@@ -123,25 +123,25 @@ AccountBase.create!(
 
 AccountBase.create!(
   name: "Swashy Savings",
-  institution_id: 2,
+  institution_id: 3,
   account_type: "savings",
 )
 
 AccountBase.create!(
   name: "Swashy Swab Checking",
-  institution_id: 2,
+  institution_id: 3,
   account_type: "checking",
 )
 
 AccountBase.create!(
   name: "Yeoman Best Savings",
-  institution_id: 3,
+  institution_id: 4,
   account_type: "savings",
 )
 
 AccountBase.create!(
   name: "Yeoman's Boat Loan",
-  institution_id: 3,
+  institution_id: 4,
   account_type: "loan",
 )
 

@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require accountingjs
 //= require react
 //= require react_ujs
 //= require react-router

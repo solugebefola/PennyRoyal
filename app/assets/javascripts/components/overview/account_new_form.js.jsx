@@ -3,9 +3,9 @@ var AccountNewForm = React.createClass({
     return {
       username: "",
       user_password: "",
-      accountType: "",
+      account_type: "",
       accountBases: AccountBaseStore.filterByInstitutionID(this.props.params.inst_id),
-      accountName: ""
+      account_name: ""
     };
   },
 
@@ -22,13 +22,16 @@ var AccountNewForm = React.createClass({
   },
 
   render: function() {
+    var accountOptions = this.state.accountBases.map(function (base) {
+      return <option key={ base.id } value={ base.account_type }>{ base.name }</option>;
+    });
     return (
       <div>
         <h1 className="account-form institution">
           { this.props.location.query.institution }
         </h1>
         <h2>
-          { this.state.accountName }
+          { this.state.account_name }
         </h2>
         <form onSubmit={this.submitChangeHandler} action="">
           <label className="account-form input-label">Username
@@ -54,12 +57,7 @@ var AccountNewForm = React.createClass({
               name="account_type">
 
               <option value="">Select a type</option>
-              <option value="savings">Savings</option>
-              <option value="checking">Checking</option>
-              <option value="credit_card">Credit Card</option>
-              <option value="loan">Loan</option>
-              <option value="investment">Investment</option>
-              <option value="cash">Cash</option>
+              { accountOptions }
             </select>
           </label>
           <button
@@ -82,9 +80,8 @@ var AccountNewForm = React.createClass({
     e.preventDefault();
     var newState = {};
     if (e.target.name === "account_type"){
-      this.setState(
-        {accountName: AccountBaseStore.filterByAccountType(e.target.name)}
-      );
+      var name = e.target.selectedOptions[0].text;
+      newState.account_name = name;
     }
     propKey = e.target.name;
     newState[propKey] = e.target.value;
@@ -94,15 +91,13 @@ var AccountNewForm = React.createClass({
   submitChangeHandler: function (e) {
     e.preventDefault();
     var accountProps = {};
-    var inst = this.state.institutions.find(function(institution) {
-      return (institution.id === this.state.institution_id);
-    });
-    accountProps.name = this.state.accountName;
+    accountProps.name = this.state.account_name;
     accountProps.institution_id = this.props.params.inst_id;
-    accountProps.username = this.state.username.value;
-    accountProps.user_password = this.state.user_password.value;
-    accountProps.account_type = this.state.account_type.value;
-    accountProps.balance = Math.floor(Math.round()*4000000)/100;//Addnote: change this to random value?
+    accountProps.username = this.state.username;
+    accountProps.user_password = this.state.user_password;
+    accountProps.account_type = this.state.account_type;
+    accountProps.balance = Math.floor(Math.random()*4000000)/100;
+    if (accountProps.account_type === "loan"){ accountProps.balance *= -1; }
     ApiUtil.createAccount(accountProps);
   },
 });

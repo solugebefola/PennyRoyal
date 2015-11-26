@@ -13,6 +13,12 @@
     });
     AccountStore.changed();
   };
+
+  var _addAccount = function (newAccount) {
+    _accounts[newAccount.account_type].push(newAccount);
+    AccountStore.changed();
+  };
+  
   var CHANGE_EVENT = "change_event";
 
   AccountStore = root.AccountStore = $.extend({}, EventEmitter.prototype, {
@@ -65,6 +71,9 @@
       switch (payload.actionType){
         case fluxConstants.ACCOUNTS_RECEIVED:
         _resetAccounts(payload.newAccounts);
+        break;
+        case fluxConstants.ACCOUNT_RECEIVED:
+        _addAccount(payload.newAccount);
         break;
       }
     })
