@@ -53,6 +53,7 @@ var App = React.createClass({
           <Route path="/" component={App}>
             <IndexRoute component={AppMain} />
             <Route path="account" component={OverviewIndex}>
+              <IndexRoute component={HiddenForm} />
               <Route path="pre" component={AccountPreForm} />
               <Route path="edit" component={AccountEditForm} />
               <Route path="new/:inst_id" component={AccountNewForm} />

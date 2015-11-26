@@ -27,47 +27,49 @@ var AccountNewForm = React.createClass({
     });
     return (
       <div>
-        <header className="account-form">
-          <h1 className="institution">
-            { this.props.location.query.institution }
-          </h1>
-          <h2 className="account-base">
-            { this.state.account_name }
-          </h2>
-        </header>
-        <form onSubmit={this.submitChangeHandler} action="">
-          <label className="account-form input-label">Username
-          <input
-            className="account-form edit input"
-            type="text"
-            name="username"
-            onChange={ this.inputChangeHandler }
-            value={ this.state.username } />
-          </label>
-          <label className="account-form input-label">Password
-          <input
-            className="account-form edit input"
-            type="password"
-            name="user_password"
-            onChange={ this.inputChangeHandler }
-            value={ this.state.password }/>
-          </label>
-          <label className="account-form input-label">Account type
-            <select
-              className="account-form input"
+        <section className="modal">
+          <header className="account-form">
+            <h1 className="institution">
+              { this.props.location.query.institution }
+            </h1>
+            <h2 className="account-base">
+              { this.state.account_name }
+            </h2>
+          </header>
+          <form onSubmit={this.submitChangeHandler} action="">
+            <label className="account-form input-label">Username
+            <input
+              className="account-form edit input"
+              type="text"
+              name="username"
               onChange={ this.inputChangeHandler }
-              name="account_type">
+              value={ this.state.username } />
+            </label>
+            <label className="account-form input-label">Password
+            <input
+              className="account-form edit input"
+              type="password"
+              name="user_password"
+              onChange={ this.inputChangeHandler }
+              value={ this.state.password }/>
+            </label>
+            <label className="account-form input-label">Account type
+              <select
+                className="account-form input"
+                onChange={ this.inputChangeHandler }
+                name="account_type">
 
-              <option value="">Select a type</option>
-              { accountOptions }
-            </select>
-          </label>
-          <button
-            className="account-form-button submit"
-            type="submit">Add Account
-          </button>
-        </form>
-        <Link to="/account/pre" className="back backcarrot">Go Back</Link>
+                <option value="">Select a type</option>
+                { accountOptions }
+              </select>
+            </label>
+            <button
+              className="account-form-button submit"
+              type="submit">Add Account
+            </button>
+          </form>
+          <Link to="/account/pre" className="back backcarrot">Go Back</Link>
+        </section>
       </div>
     );
   },

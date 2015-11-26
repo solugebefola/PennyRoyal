@@ -39,17 +39,24 @@ var AccountIndex = React.createClass({
     var accountGroups = this.makeAccountGroups();
     for (var accountGroupKey in accountGroups) {
       indexes.push(
-        <li key={accountGroupKey}>
+        <li key={ accountGroupKey }>
           <AccountTypeIndex
-          accountGroupType={accountGroupKey}
-          accounts={accountGroups[accountGroupKey]} />
+          accountGroupType={ accountGroupKey }
+          accounts={ accountGroups[accountGroupKey] } />
         </li>
       );
     }
 
     return (
       <div className="account-index-list">
-        <h1>Accounts <strong onClick={ this.activateAccountForm }> + ADD ACCOUNT</strong></h1>
+        <h1>
+          Accounts
+          <Link
+            className="add-account"
+            to="account/pre">
+             + ADD ACCOUNT
+          </Link>
+        </h1>
         <ul>
           { indexes }
         </ul>

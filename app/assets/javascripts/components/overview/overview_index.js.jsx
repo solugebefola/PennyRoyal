@@ -1,5 +1,6 @@
 var OverviewIndex = React.createClass({
   render: function() {
+
     return (
       <div>
         <section className="account-index overview">
@@ -8,9 +9,7 @@ var OverviewIndex = React.createClass({
         <section className="overview-main overview">
           <OverviewMain />
         </section>
-        <section id="edit-modal" className="modal">
-          { this.props.children }
-        </section>
+        { this.props.children }
       </div>
     );
   },
