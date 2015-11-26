@@ -31,13 +31,13 @@ Institution.create(
   logo_url: "#",
 )
 
-User.create(
+a = User.create(
   email:"solar@solar.com",
   password_digest: "$2a$10$tB8EJ485joiZtAAmgDA.3.ZaaJY6PEtR8Krb5DS0OqlxSvM9q5JH6",
   session_token: "OMSczi-YPj0ACv4WViztAw"
 )
 
-User.create(
+b = User.create(
   email: "guest@ourfineestablishment.com",
   password_digest: "$2a$10$/VOOu0w8/pT.iGcAIQmRSujuqHgQ1WZhUdHxtsovZLNMy9QkYKaTK",
   session_token: "bkqNvxRJkegATHb26ANeVw",

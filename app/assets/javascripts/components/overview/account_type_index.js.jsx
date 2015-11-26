@@ -26,17 +26,17 @@ var AccountTypeIndex = React.createClass({
     var accounts = this.props.accounts.map(function(account){
       return (
         <li className="account-type-index-items" key={account.id}>
-          <AccountIndexItem accountItem={account} />
+          <AccountIndexItem accountItem={ account } />
         </li>
       );
     });
 
     return (
       <div>
-        <ul className={"account-type-index " + this.props.accountType}>
+        <ul className={ "account-type-index " + this.props.accountType }>
           <li className="summary group">
-            <p className="summary-type">{this.props.accountGroupType}</p>
-            <p className="summary-sum">${this.state.accountsSum}</p>
+            <p className="summary-type">{ this.props.accountGroupType }</p>
+            <p className="summary-sum">${ this.state.accountsSum }</p>
           </li>
           {accounts}
         </ul>
