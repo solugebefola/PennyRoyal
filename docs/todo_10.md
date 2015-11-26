@@ -17,7 +17,7 @@
   - [x] Add to modal form
 - [ ] User Profile
   - [ ] Paperclip incorporation
-    - [ ] Modify user model to incorporate photo, fname, lname, age, gender
+    - [x] Modify user model to incorporate photo, fname, lname, age, gender
 - [ ] Start work on Search
 #### Evening
 #### Back end resources
