@@ -2,14 +2,15 @@ var TransactionFormDetail = React.createClass({
   getInitialState: function() {
     var tagCheckList = {};
     TagStore.all().forEach(function (tag) {
-      tagCheckList[tag.name] = false;
+      tagCheckList[tag.id] = false;
     });
     this.props.transaction.tags.forEach(function(tag){
-      tagCheckList[tag.name] = true;
+      tagCheckList[tag.id] = true;
     });
     return {
       tagCheckList: tagCheckList,
       tags: TagStore.all(),
+      tag_ids: [],
       notes: this.props.transaction.notes
     };
   },
@@ -32,12 +33,14 @@ var TransactionFormDetail = React.createClass({
       return(
         <label key={ tag.id }>{ tag.name }
           <input
-            key={ tag.id }
+            key={ tag.id + " input" }
             className="transaction-item tags"
             type="checkbox"
             onChange={ this.handleTagCheck }
-            name={ tag.name }
-            checked={ this.state.tagCheckList[tag.name] }/>
+            name="tag_ids[]"
+            id={ tag.id }
+            value={ tag.id }
+            checked={ this.state.tagCheckList[tag.id] }/>
         </label>
       );
     }.bind(this));
@@ -47,7 +50,7 @@ var TransactionFormDetail = React.createClass({
     return (
       <div>
         <form className="transaction-item detail">
-          <section>
+          <section><h3>Tags</h3>
             { this.makeTagList() }
           </section>
           <section>
@@ -59,9 +62,13 @@ var TransactionFormDetail = React.createClass({
               placeholder="Add a new tag..." />
             <button className="tag-button" onClick={ this.addTag }>Add New Tag</button>
           </section>
-          <input name="notes" onChange={ this.handleNotes } value={ this.state.notes } />
-          <button name="cancel" onClick={ this.handleDetail }>Cancel</button>
-          <button type="submit" onClick={ this.handleDetail }>Save Changes</button>
+          <section>
+            <label>Notes:
+              <input className="notes" name="notes" onChange={ this.handleNotes } value={ this.state.notes } />
+            </label>
+            <button name="cancel" onClick={ this.handleDetail }>Cancel</button>
+            <button type="submit" onClick={ this.handleDetail }>Save</button>
+          </section>
         </form>
         <span className="detail-tab hide" onClick={ this.handleDetail }>HIDE DETAILS</span>
       </div>
@@ -80,10 +87,11 @@ var TransactionFormDetail = React.createClass({
 
   handleTagCheck: function (e) {
     var newState = $.extend({}, this.state.tagCheckList);
-    if (this.state.tagCheckList[e.target.name]){
-      newState[e.target.name] = false;
+    var tagIDs = [];
+    if (this.state.tagCheckList[e.target.id]){
+      newState[e.target.id] = false;
     }else{
-      newState[e.target.name] = true;
+      newState[e.target.id] = true;
     }
     this.setState({ tagCheckList: newState });
   },
@@ -94,10 +102,18 @@ var TransactionFormDetail = React.createClass({
 
   handleDetail: function (e) {
     e.preventDefault();
+    var tagIDs = [];
+    var newState = {};
+    newState.notes = this.state.notes;
     var exitDetail = { detail: false };
     if (e.target.name !== "cancel") {
-      this.setState({ detail: false });
-      this.props.getDetailProps(this.state);
+      for (var id in this.state.tagCheckList){
+        if (this.state.tagCheckList[id]){
+          tagIDs.push(id);
+        }
+      }
+      newState.tag_ids = tagIDs;
+      this.props.getDetailProps(newState);
     }else{
       this.props.getDetailProps(exitDetail);
     }

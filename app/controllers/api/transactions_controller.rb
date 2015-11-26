@@ -38,7 +38,8 @@ class Api::TransactionsController < ApplicationController
         :date,
         :amount,
         :description,
-        :notes
+        :notes,
+        tag_ids: []
       )
     end
 

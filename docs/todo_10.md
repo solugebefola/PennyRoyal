@@ -7,8 +7,8 @@
 - [x] AccountEditForm functionality (not appearance)
   - [x] close...
 #### CSS
-- [ ] TransactionForm edit detail form
-  - [ ] Must close when unmounted - set detail to false, put an x in corner too?
+- [x] TransactionForm edit detail form
+  - [x] Must close when unmounted - set detail to false, put an x in corner too?
 #### Back end resources
   - [ ] Add fname, lname, age, gender columns to user table
 #### Afternoon
