@@ -17,7 +17,7 @@ var AccountPreForm = React.createClass({
   componentWillUnmount: function() {
     InstitutionStore.removeChangeHandler(this._onChange);
   },
-  
+
   render: function() {
     var insts = this.state.institutions.map(function (inst) {
       return (
@@ -29,7 +29,9 @@ var AccountPreForm = React.createClass({
     });
     return (
       <div>
-        { insts }
+        <section className="modal">
+          { insts }
+        </section>
       </div>
     );
   },

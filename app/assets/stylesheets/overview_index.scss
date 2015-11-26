@@ -5,15 +5,8 @@ section.overview {
   min-height: 700px;
 }
 
-.account-index-list a {
-  display: block;
-  float: right;
-  font-size: 10px;
-  padding: 7px;
-  margin: 0 5px 5px;
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  cursor: pointer;
+.wrapper {
+  position: relative;
 }
 
 section.overview-main {
