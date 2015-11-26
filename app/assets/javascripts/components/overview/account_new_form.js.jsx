@@ -99,11 +99,9 @@ var AccountNewForm = React.createClass({
   submitChangeHandler: function (e) {
     e.preventDefault();
     var accountProps = {};
+    accountProps = $.extend({}, this.state);
     accountProps.name = this.state.account_name;
     accountProps.institution_id = this.props.params.inst_id;
-    accountProps.username = this.state.username;
-    accountProps.user_password = this.state.user_password;
-    accountProps.account_type = this.state.account_type;
     accountProps.balance = Math.floor(Math.random()*4000000)/100;
     if (accountProps.account_type === "loan"){ accountProps.balance *= -1; }
     ApiUtil.createAccount(accountProps);

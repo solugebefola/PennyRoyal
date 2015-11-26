@@ -10,11 +10,11 @@
 - [x] TransactionForm edit detail form
   - [x] Must close when unmounted - set detail to false, put an x in corner too?
 #### Back end resources
-  - [ ] Add fname, lname, age, gender columns to user table
+  - [x] Add fname, lname, age, gender columns to user table
 #### Afternoon
 #### React Components
-- [ ] Add User profile form to ReactRouter
-  - [ ] Add to modal form
+- [x] Add User profile form to ReactRouter
+  - [x] Add to modal form
 - [ ] User Profile
   - [ ] Paperclip incorporation
     - [ ] Modify user model to incorporate photo, fname, lname, age, gender
