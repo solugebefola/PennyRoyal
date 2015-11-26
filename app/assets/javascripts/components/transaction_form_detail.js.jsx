@@ -57,7 +57,7 @@ var TransactionFormDetail = React.createClass({
               placeholder="Add a new tag..." />
             <button className="tag-button" onClick={ this.addTag }>Add New Tag</button>
           </label>
-          <textarea name="notes" value="" />
+          <input name="notes" onChange={ this.handleNotes } value={ this.state.notes } />
           <button name="cancel" onClick={ this.handleDetail }>Cancel</button>
           <button type="submit" onClick={ this.handleDetail }>Save Changes</button>
         </form>
@@ -83,6 +83,10 @@ var TransactionFormDetail = React.createClass({
       newState[e.target.name] = true;
     }
     this.setState({ tagCheckList: newState });
+  },
+
+  handleNotes: function (e) {
+    this.setState({ notes: e.target.value });
   },
 
   handleDetail: function (e) {

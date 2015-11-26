@@ -5,7 +5,7 @@ var TransactionForm = React.createClass({
     var transaction = TransactionStore.singleByID(this.props.transaction.id);
     var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
     transaction.categoryName = category.name;
-    transaction.detail = false;
+    transaction.detail = true;
     return transaction;
   },
 

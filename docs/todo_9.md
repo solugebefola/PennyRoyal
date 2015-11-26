@@ -8,11 +8,11 @@
 #### CSS
 #### Afternoon
 - [ ] TransactionForm edit detail form
-  - [ ] Tags ecosystem
+  - [x] Tags ecosystem
     - [x] TagStore, TagApiActions, ApiUtil for tags
-    - [ ] model, controller, jbuilder views
-  - [ ] Taglinks
-    - [ ] model, controller, jbuilder views
+    - [x] model, controller, jbuilder views
+  - [x] Taglinks
+    - [x] model, controller, jbuilder views
   - [ ] TransactionDetailForm component
 
 - [ ] Add User profile form to ReactRouter

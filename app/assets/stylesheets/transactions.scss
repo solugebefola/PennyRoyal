@@ -173,22 +173,39 @@ div.transaction-item.category {
 .detail-form {
   display: block;
   position: absolute;
-  left: 50%;
+  left: 342px;
+  width: 300px;
+  height: 200px;
   transform: translateX(-50%);
   z-index: 11;
+  bottom: -222px;
   font-size: 12px;
-  border: 1px solid #333;
+  border-left: 2px solid #555;
+  border-right: 2px solid #555;
+  border-bottom: 2px solid #555;
   border-bottom-left-radius: 5px 5px;
   border-bottom-right-radius: 5px 5px;
   padding: 10px;
-  background: #aaa;
+  background: #eee;
   color: #eee;
-  box-shadow: 1px 0 2px #caa640;
+  box-shadow: inset 0 2px 2px #777;
 }
 
 .transaction-item.detail {
   padding: 10px;
+  height: 160px;
+}
 
+.transaction-item button {
+  display: block;
+  background: #db8d58;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.detail notes {
+  width: 250px;
+  padding: 10px;
 }
 
 .tag-button {
