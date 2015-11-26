@@ -6,6 +6,7 @@
 - [ ] AccountEditForm
 #### CSS
 - [ ] TransactionForm edit detail form
+  - [ ] Must close when unmounted - set detail to false, put an x in corner too?
 #### Back end resources
   - [ ] Add fname, lname, age, gender columns to user table
 #### Afternoon
@@ -23,5 +24,6 @@
 #### Misc
 - [ ] Alerts - Check monthly sums in categories.  Front end only
 - [ ] Update README and docs
+- [ ] Make a logo
 #### CSS
 - [ ] Everything

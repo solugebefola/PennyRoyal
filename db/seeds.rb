@@ -64,7 +64,7 @@ Account.create(
 )
 
 Account.create(
-  name: "Yeomans Boat Loan",
+  name: "Yeoman's Boat Loan",
   user_id: 1,
   institution_id: 3,
   username: "solar",
@@ -94,7 +94,7 @@ Account.create(
 )
 
 Account.create(
-  name: "Yeomans Boat Loan",
+  name: "Yeoman's Boat Loan",
   user_id: 3,
   institution_id: 3,
   username: "solar",
@@ -102,6 +102,49 @@ Account.create(
   balance: -1000.00,
   account_type: "loan",
 )
+
+AccountBase.create!(
+  name: "Pirate Best Savings",
+  institution_id: 1,
+  account_type: "savings",
+)
+
+AccountBase.create!(
+  name: "Pirate Best Checking",
+  institution_id: 1,
+  account_type: "checking",
+)
+
+AccountBase.create!(
+  name: "Pirate Serious Loan",
+  institution_id: 1,
+  account_type: "loan",
+)
+
+AccountBase.create!(
+  name: "Swashy Savings",
+  institution_id: 2,
+  account_type: "savings",
+)
+
+AccountBase.create!(
+  name: "Swashy Swab Checking",
+  institution_id: 2,
+  account_type: "checking",
+)
+
+AccountBase.create!(
+  name: "Yeoman Best Savings",
+  institution_id: 3,
+  account_type: "savings",
+)
+
+AccountBase.create!(
+  name: "Yeoman's Boat Loan",
+  institution_id: 3,
+  account_type: "loan",
+)
+
 
 Category.create!(
   name: "UNCATEGORIZED"
