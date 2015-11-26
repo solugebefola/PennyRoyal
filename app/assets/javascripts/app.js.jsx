@@ -1,5 +1,6 @@
 (function (root) {
   Link = ReactRouter.Link;
+  IndexLink = ReactRouter.IndexLink;
   Route = ReactRouter.Route;
   IndexRoute = ReactRouter.IndexRoute;
   Router = ReactRouter.Router;
@@ -49,17 +50,17 @@ var App = React.createClass({
   $(document).on('ready', function (){
     if(document.getElementById('content')){
       ReactDOM.render((
-        <Router history={createBrowserHistory}>
-          <Route path="/" component={App}>
-            <IndexRoute component={AppMain} />
-            <Route path="account" component={OverviewIndex}>
-              <IndexRoute component={HiddenForm} />
-              <Route path="pre" component={AccountPreForm} />
-              <Route path="edit" component={AccountEditForm} />
-              <Route path="new/:inst_id" component={AccountNewForm} />
-              <Route path="user_profile" component={UserEditForm} />
+        <Router history={ createBrowserHistory }>
+          <Route path="/" component={ App }>
+            <IndexRoute component={ AppMain } />
+            <Route path="account" component={ OverviewIndex }>
+              <IndexRoute component={ HiddenForm } />
+              <Route path="pre" component={ AccountPreForm } />
+              <Route path="edit" component={ AccountEditForm } />
+              <Route path="new/:inst_id" component={ AccountNewForm } />
+              <Route path="user_profile" component={ UserEditForm } />
             </Route>
-            <Route path="transactions" component={TransactionsPage} />
+            <Route path="transactions" component={ TransactionsPage } />
           </Route>
         </Router>
       ),document.getElementById('content'));

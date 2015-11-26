@@ -29,3 +29,4 @@
 - [ ] Make a logo
 #### CSS
 - [ ] Everything
+- [ ] React animations?

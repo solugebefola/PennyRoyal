@@ -47,8 +47,10 @@ var TransactionFormDetail = React.createClass({
     return (
       <div>
         <form className="transaction-item detail">
-          { this.makeTagList() }
-          <label>Tag Name
+          <section>
+            { this.makeTagList() }
+          </section>
+          <section>
             <input
               className="transaction-item tag-name"
               type="text"
@@ -56,7 +58,7 @@ var TransactionFormDetail = React.createClass({
               id="newtag"
               placeholder="Add a new tag..." />
             <button className="tag-button" onClick={ this.addTag }>Add New Tag</button>
-          </label>
+          </section>
           <input name="notes" onChange={ this.handleNotes } value={ this.state.notes } />
           <button name="cancel" onClick={ this.handleDetail }>Cancel</button>
           <button type="submit" onClick={ this.handleDetail }>Save Changes</button>

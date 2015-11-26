@@ -68,7 +68,10 @@ var AccountNewForm = React.createClass({
               type="submit">Add Account
             </button>
           </form>
-          <Link to="/account/pre" className="back backcarrot">Go Back</Link>
+          <div className="back">
+            <Link to="/account/pre" className="backcarrot">Go Back</Link>
+            <Link to="/accounts">✖︎ Cancel</Link>
+          </div>
         </section>
       </div>
     );
