@@ -2,8 +2,10 @@
 ### Monday
 #### Morning
 #### React Components
-- [ ] AccountNewForm
-- [ ] AccountEditForm
+- [ ] AccountNewForm functionality (not appearance)
+  - [ ] close window on blur or with button
+- [ ] AccountEditForm functionality (not appearance)
+  - [ ] close...
 #### CSS
 - [ ] TransactionForm edit detail form
   - [ ] Must close when unmounted - set detail to false, put an x in corner too?

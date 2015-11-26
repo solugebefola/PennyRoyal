@@ -27,12 +27,14 @@ var AccountNewForm = React.createClass({
     });
     return (
       <div>
-        <h1 className="account-form institution">
-          { this.props.location.query.institution }
-        </h1>
-        <h2>
-          { this.state.account_name }
-        </h2>
+        <header className="account-form">
+          <h1 className="institution">
+            { this.props.location.query.institution }
+          </h1>
+          <h2 className="account-base">
+            { this.state.account_name }
+          </h2>
+        </header>
         <form onSubmit={this.submitChangeHandler} action="">
           <label className="account-form input-label">Username
           <input
@@ -50,7 +52,7 @@ var AccountNewForm = React.createClass({
             onChange={ this.inputChangeHandler }
             value={ this.state.password }/>
           </label>
-          <label>Account type
+          <label className="account-form input-label">Account type
             <select
               className="account-form input"
               onChange={ this.inputChangeHandler }
@@ -65,6 +67,7 @@ var AccountNewForm = React.createClass({
             type="submit">Add Account
           </button>
         </form>
+        <Link to="/account/pre" className="back backcarrot">Go Back</Link>
       </div>
     );
   },
