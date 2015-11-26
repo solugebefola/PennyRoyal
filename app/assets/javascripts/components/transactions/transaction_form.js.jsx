@@ -5,6 +5,7 @@ var TransactionForm = React.createClass({
     var transaction = TransactionStore.singleByID(this.props.transaction.id);
     var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
     transaction.categoryName = category.name;
+    transaction.detail = false;
     return transaction;
   },
 
@@ -36,6 +37,20 @@ var TransactionForm = React.createClass({
     return dates.map(function (date) {
       return <li key={ date } id={ date.toString() }>{ date.toString('MMM d') }</li>;
     });
+  },
+
+  detailForm: function () {
+    if (this.state.detail){
+      return(
+        <div className="detail-form">
+          <TransactionFormDetail
+            transaction={ this.props.transaction }
+            getDetailProps={ this.getDetailProps } />
+        </div>
+      );
+    }else{
+      return "";
+    }
   },
 
   render: function() {
@@ -74,11 +89,7 @@ var TransactionForm = React.createClass({
         </form>
         <div>
           <span className="detail-tab" onClick={ this.showDetailForm }>EDIT DETAILS</span>
-          <div className="detail-form">
-            <TransactionFormDetail
-              transaction={ this.props.transaction }
-              getDetailProps={ this.getDetailProps } />
-          </div>
+          { this.detailForm() }
         </div>
       </div>
     );
@@ -118,10 +129,11 @@ var TransactionForm = React.createClass({
   },
 
   showDetailForm: function () {
-
+    this.setState({ detail: true });
   },
 
   getDetailProps: function (newProps) {
+    newProps.detail = false;
     this.setState(newProps);
   }
 });

@@ -32,6 +32,7 @@ var TransactionFormDetail = React.createClass({
       return(
         <label key={ tag.id }>{ tag.name }
           <input
+            key={ tag.id }
             className="transaction-item tags"
             type="checkbox"
             onChange={ this.handleTagCheck }
@@ -52,7 +53,8 @@ var TransactionFormDetail = React.createClass({
               className="transaction-item tag-name"
               type="text"
               name="newtag"
-              id="newtag" />
+              id="newtag"
+              placeholder="Add a new tag..." />
             <button className="tag-button" onClick={ this.addTag }>Add New Tag</button>
           </label>
           <textarea name="notes" value="" />
@@ -85,11 +87,12 @@ var TransactionFormDetail = React.createClass({
 
   handleDetail: function (e) {
     e.preventDefault();
-    if (e.target.name == "cancel") {
-
-    }else{
-
+    var exitDetail = { detail: false };
+    if (e.target.name !== "cancel") {
+      this.setState({ detail: false });
       this.props.getDetailProps(this.state);
+    }else{
+      this.props.getDetailProps(exitDetail);
     }
   }
 });

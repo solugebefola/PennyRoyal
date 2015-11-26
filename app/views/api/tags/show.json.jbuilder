@@ -1,4 +1,4 @@
-json @tag,
+json.(@tag,
 :transactions,
 :name,
-:user_id
+:user_id)
