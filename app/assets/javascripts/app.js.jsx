@@ -21,7 +21,7 @@ var App = React.createClass({
       <div>
         <header className="app-header">
           <Link to="/" className="logo">
-          <img className="logo-image" src="pennyroyal_logo.png" />
+          <span className="logo-image"></span>
           <h1>👑PennyRoyal</h1></Link>
           <ul className="app-header list">
             <li>

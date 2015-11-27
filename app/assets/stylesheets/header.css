@@ -14,6 +14,12 @@
   padding: 5px 0px 0px 20px;
 }
 
+.logo-image {
+  min-width: 50px;
+  min-height: 50px;
+  background-image: url("pennyroyal_logo.png");
+}
+
 .app-header-link {
   font-weight: 600;
 }
