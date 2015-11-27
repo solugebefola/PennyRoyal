@@ -1,6 +1,10 @@
 class Api::UsersController < ApplicationController
   def show
-    current_user
+    @user = current_user
+  end
+
+  def index
+    @user = current_user
   end
 
   def update

@@ -23,7 +23,7 @@ var AccountPreForm = React.createClass({
       return (
         <Link
           to={ "account/new/" + inst.id + "?institution=" + inst.name }
-          className="account-pre-form institution"
+          className="pre-form institution"
           key={ inst.id }>{ inst.name }</Link>
       );
     });

@@ -7,6 +7,7 @@ var UserEditForm = React.createClass({
 
   componentDidMount: function() {
     UserStore.addChangeHandler(this._onChange);
+    ApiUtil.getUser();
   },
 
   componentWillUnmount: function() {
@@ -18,13 +19,19 @@ var UserEditForm = React.createClass({
       <div>
         <section className="user modal">
           <h1>Set up your User Profile</h1>
-          <form onSubmit={this.submitChangeHandler} action="">
+          <form
+            onSubmit={this.submitChangeHandler}
+            action=""
+            className="user">
             <label>Add a picture
-              <input type="file"/>
+              <input
+                type="file"
+                onChange={ this.fileChangeHandler }/>
             </label>
+            <img className="preview-image" src={ this.state.imageUrl } />
             <label className="input-label">First Name
             <input
-              className="account-form edit input"
+              className="form edit input"
               type="text"
               name="fname"
               onChange={ this.inputChangeHandler }
@@ -32,7 +39,7 @@ var UserEditForm = React.createClass({
             </label>
             <label className="input-label">Last Name
             <input
-              className="account-form edit input"
+              className="form edit input"
               type="text"
               name="lname"
               onChange={ this.inputChangeHandler }
@@ -40,15 +47,15 @@ var UserEditForm = React.createClass({
             </label>
             <label className="input-label">Gender
             <input
-              className="account-form edit input"
+              className="form edit input"
               type="text"
               name="gender"
               onChange={ this.inputChangeHandler }
               value={ this.state.gender } />
             </label>
-            <label className="input-label">First Name
+            <label className="input-label">Age
             <input
-              className="account-form edit input"
+              className="form edit input"
               type="number"
               name="age"
               onChange={ this.inputChangeHandler }
@@ -66,6 +73,21 @@ var UserEditForm = React.createClass({
     this.setState(UserStore.one());
   },
 
+  fileChangeHandler: function (e) {
+    var reader = new FileReader();
+    var file = e.currentTarget.files[0];
+    var that = this;
+    reader.onloadend = function () {
+      that.setState({ imageUrl: reader.result, imageFile: file });
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageURL: "", imageFile: null });
+    }
+  },
+
   inputChangeHandler: function (e) {
     e.preventDefault();
     var newState = {};
@@ -76,7 +98,11 @@ var UserEditForm = React.createClass({
 
   submitChangeHandler: function (e) {
     e.preventDefault();
-    ApiUtil.editUser(this.state);
+    var file = this.state.imageFile;
+    var user = this.state;
+    user.profile = file;
+    debugger
+    ApiUtil.editUser(user);
   }
 
 });

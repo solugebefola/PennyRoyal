@@ -1,4 +1,4 @@
-header.account-form {
+header.form {
   font-weight: 500;
   margin-bottom: 20px;
   h1 {
@@ -9,13 +9,19 @@ header.account-form {
   }
 }
 
-.account-form.input-label {
+.preview-image {
+  width: 200px;
+  height: auto;
   display: block;
-  margin: 20px 10px;
-
+  float: right;
 }
 
-.account-form-button {
+.form.input-label {
+  display: block;
+  margin: 20px 10px;
+}
+
+.form-button {
   display: block;
   width: 100px;
   height: auto;
@@ -23,11 +29,11 @@ header.account-form {
   padding: 5px;
 }
 
-.account-pre-form {
+.pre-form {
   display: block;
 }
 
-.account-form.input {
+.form.input {
   font-size: 14px;
   display: block;
   border-radius: 5px;
@@ -45,4 +51,9 @@ header.account-form {
   position: absolute;
   right: 20px;
   top: 20px;
+}
+
+.user .input-label {
+  display: block;
+  padding: 10px 0px
 }

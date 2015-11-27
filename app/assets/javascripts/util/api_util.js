@@ -161,12 +161,12 @@
 
     editUser: function (user) {
       $.ajax({
-        url: "api/users",
+        url: "api/users/" + user.id,
         method: "PATCH",
         processData: false,
         contentType: false,
-        dataType: json,
-        data: formData,
+        dataType: "json",
+        data: { user: user },
         success: function (user) {
           AppDispatcher.dispatch({
             actionType: fluxConstants.USER_RECEIVED,

@@ -31,7 +31,7 @@ var TransactionIndexItem = React.createClass({
             { this.state.categoryName || "UNCATEGORIZED" }
           </li>
           <li className="transaction-item amount">
-            { this.state.amount }
+            { accounting.formatMoney(this.state.amount, "$",2,",",".") }
           </li>
         </ul>
       </div>

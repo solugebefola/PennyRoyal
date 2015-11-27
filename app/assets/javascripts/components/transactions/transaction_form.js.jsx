@@ -5,7 +5,7 @@ var TransactionForm = React.createClass({
     var transaction = TransactionStore.singleByID(this.props.transaction.id);
     var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
     transaction.categoryName = category.name;
-    transaction.detail = true;
+    transaction.detail = false;
     transaction.tag_ids = [];
     return transaction;
   },
@@ -86,7 +86,7 @@ var TransactionForm = React.createClass({
             name="amount"
             onChange={ this.handleInput }
             decimal="2"
-            value={ this.state.amount }/>
+            value={ accounting.formatMoney(this.state.amount, "$",2,",",".") }/>
         </form>
         <div>
           <span className="detail-tab" onClick={ this.showDetailForm }>EDIT DETAILS</span>
@@ -119,13 +119,13 @@ var TransactionForm = React.createClass({
 
   _onChange: function () {
     var transaction = TransactionStore.singleByID(this.props.transaction.id);
-    var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
+    var category = CategoryStore.single(transaction.category_id) || { name: "uncategorized" };
     transaction.categoryName = category.name;
     this.setState(transaction);
   },
 
   setCategory: function (id) {
-    var category = CategoryStore.single(id) || {name: "uncategorized"};
+    var category = CategoryStore.single(id) || { name: "uncategorized" };
     this.setState({ category_id: id, categoryName: category.name });
   },
 

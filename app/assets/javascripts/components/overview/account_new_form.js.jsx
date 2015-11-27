@@ -28,7 +28,7 @@ var AccountNewForm = React.createClass({
     return (
       <div>
         <section className="modal">
-          <header className="account-form">
+          <header className="form">
             <h1 className="institution">
               { this.props.location.query.institution }
             </h1>
@@ -37,25 +37,25 @@ var AccountNewForm = React.createClass({
             </h2>
           </header>
           <form onSubmit={this.submitChangeHandler} action="">
-            <label className="account-form input-label">Username
+            <label className="form input-label">Username
             <input
-              className="account-form edit input"
+              className="form edit input"
               type="text"
               name="username"
               onChange={ this.inputChangeHandler }
               value={ this.state.username } />
             </label>
-            <label className="account-form input-label">Password
+            <label className="form input-label">Password
             <input
-              className="account-form edit input"
+              className="form edit input"
               type="password"
               name="user_password"
               onChange={ this.inputChangeHandler }
               value={ this.state.password }/>
             </label>
-            <label className="account-form input-label">Account type
+            <label className="form input-label">Account type
               <select
-                className="account-form input"
+                className="form input"
                 onChange={ this.inputChangeHandler }
                 name="account_type">
 
