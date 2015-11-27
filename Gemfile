@@ -18,6 +18,8 @@ gem 'datejs-rails'
 
 gem 'kaminari'
 
+gem 'faker'
+
 gem 'font-awesome-sass', '~> 4.4.0'
 
 gem 'accountingjs-rails'

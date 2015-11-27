@@ -10,37 +10,37 @@
 Institution.create(
   name: "First Pirate Bank",
   url: "#",
-  logo_url: "#",
+  logo_url: "#"
 )
 
 Institution.create(
   name: "Last Pirate Bank",
   url: "#",
-  logo_url: "#",
+  logo_url: "#"
 )
 
 Institution.create(
   name: "Swashbuckler Bank",
   url: "#",
-  logo_url: "#",
+  logo_url: "#"
 )
 
 Institution.create(
   name: "Ye Old Bank",
   url: "#",
-  logo_url: "#",
+  logo_url: "#"
 )
 
-a = User.create(
+User.create!(
   email:"solar@solar.com",
   password_digest: "$2a$10$tB8EJ485joiZtAAmgDA.3.ZaaJY6PEtR8Krb5DS0OqlxSvM9q5JH6",
   session_token: "OMSczi-YPj0ACv4WViztAw"
 )
 
-b = User.create(
+User.create!(
   email: "guest@ourfineestablishment.com",
   password_digest: "$2a$10$/VOOu0w8/pT.iGcAIQmRSujuqHgQ1WZhUdHxtsovZLNMy9QkYKaTK",
-  session_token: "bkqNvxRJkegATHb26ANeVw",
+  session_token: "bkqNvxRJkegATHb26ANeVw"
 )
 
 Account.create(
@@ -50,7 +50,7 @@ Account.create(
   username: "solar",
   user_password: "solarsolar",
   balance: 20.00,
-  account_type: "savings",
+  account_type: "savings"
 )
 
 Account.create(
@@ -60,7 +60,7 @@ Account.create(
   username: "solar",
   user_password: "solarsolar",
   balance: 500.00,
-  account_type: "savings",
+  account_type: "savings"
 )
 
 Account.create(
@@ -70,7 +70,7 @@ Account.create(
   username: "solar",
   user_password: "solarsolar",
   balance: -500.00,
-  account_type: "loan",
+  account_type: "loan"
 )
 
 Account.create(
@@ -80,7 +80,7 @@ Account.create(
   username: "solar",
   user_password: "solarsolar",
   balance: 22.00,
-  account_type: "savings",
+  account_type: "savings"
 )
 
 Account.create(
@@ -90,7 +90,7 @@ Account.create(
   username: "solar",
   user_password: "solarsolar",
   balance: 514.00,
-  account_type: "savings",
+  account_type: "savings"
 )
 
 Account.create(
@@ -100,49 +100,49 @@ Account.create(
   username: "solar",
   user_password: "solarsolar",
   balance: -1000.00,
-  account_type: "loan",
+  account_type: "loan"
 )
 
 AccountBase.create!(
   name: "Pirate Best Savings",
   institution_id: 1,
-  account_type: "savings",
+  account_type: "savings"
 )
 
 AccountBase.create!(
   name: "Pirate Best Checking",
   institution_id: 1,
-  account_type: "checking",
+  account_type: "checking"
 )
 
 AccountBase.create!(
   name: "Pirate Serious Loan",
   institution_id: 1,
-  account_type: "loan",
+  account_type: "loan"
 )
 
 AccountBase.create!(
   name: "Swashy Savings",
   institution_id: 3,
-  account_type: "savings",
+  account_type: "savings"
 )
 
 AccountBase.create!(
   name: "Swashy Swab Checking",
   institution_id: 3,
-  account_type: "checking",
+  account_type: "checking"
 )
 
 AccountBase.create!(
   name: "Yeoman Best Savings",
   institution_id: 4,
-  account_type: "savings",
+  account_type: "savings"
 )
 
 AccountBase.create!(
   name: "Yeoman's Boat Loan",
   institution_id: 4,
-  account_type: "loan",
+  account_type: "loan"
 )
 
 Category.create!(

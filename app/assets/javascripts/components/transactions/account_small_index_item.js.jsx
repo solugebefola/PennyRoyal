@@ -14,8 +14,8 @@ var AccountSmallIndexItem = React.createClass({
   render: function() {
     return (
       <div>
-        <p className="account-small-greater">{this.props.account.institution.name}</p>
-        <p className="account-small-lesser">{this.props.account.name}</p>
+        <p className="account-small-greater">{ this.props.account.institution.name }</p>
+        <p className="account-small-lesser">{ this.props.account.name }</p>
       </div>
     );
   }

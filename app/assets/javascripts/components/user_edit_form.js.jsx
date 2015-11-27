@@ -98,10 +98,13 @@ var UserEditForm = React.createClass({
 
   submitChangeHandler: function (e) {
     e.preventDefault();
-    var file = this.state.imageFile;
-    var user = this.state;
-    user.profile = file;
-    debugger
+    var user = new FormData();
+    user.append("user[email]", this.state.email);
+    user.append("user[fname]", this.state.fname);
+    user.append("user[lname]", this.state.lname);
+    user.append("user[age]", this.state.age);
+    user.append("user[gender]", this.state.gender);
+    user.append("user[profile]", this.state.imageFile);
     ApiUtil.editUser(user);
   }
 

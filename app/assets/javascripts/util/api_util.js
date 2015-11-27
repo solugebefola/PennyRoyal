@@ -166,7 +166,7 @@
         processData: false,
         contentType: false,
         dataType: "json",
-        data: { user: user },
+        data: user,
         success: function (user) {
           AppDispatcher.dispatch({
             actionType: fluxConstants.USER_RECEIVED,
