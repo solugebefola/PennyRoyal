@@ -17,30 +17,6 @@ var AccountEditForm = React.createClass({
 
   },
 
-  inputChangeHandler: function (e) {
-    e.preventDefault();
-    newState = {};
-    propKey = e.target.name;
-    newState[propKey] = e.target.value;
-    this.setState(newState);
-  },
-
-  submitChangeHandler: function (e) {
-    e.preventDefault();
-    ApiUtil.editAccount(this.state);
-  },
-
-  selectChangeHandler: function (e) {
-    this.setState({ accountType: e.target.value });
-  },
-
-  deleteButtonChangeHandler: function (e) {
-    e.preventDefault();
-    if(this.props.account.id){
-      AccountApiActions.deleteAccount({ id: this.props.account.id });
-    }
-  },
-
   render: function() {
     var accountTypes = accountConstants.accountType.map(function (type) {
       return <option key={ type } value={ type }>{ type }</option>;
@@ -92,5 +68,29 @@ var AccountEditForm = React.createClass({
         </form>
       </div>
     );
+  },
+
+  inputChangeHandler: function (e) {
+    e.preventDefault();
+    newState = {};
+    propKey = e.target.name;
+    newState[propKey] = e.target.value;
+    this.setState(newState);
+  },
+
+  submitChangeHandler: function (e) {
+    e.preventDefault();
+    ApiUtil.editAccount(this.state);
+  },
+
+  selectChangeHandler: function (e) {
+    this.setState({ accountType: e.target.value });
+  },
+
+  deleteButtonChangeHandler: function (e) {
+    e.preventDefault();
+    if(this.props.account.id){
+      AccountApiActions.deleteAccount({ id: this.props.account.id });
+    }
   }
 });

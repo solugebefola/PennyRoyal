@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :tags, only: [:create, :index, :destroy, :show]
     resources :taglinks, only: [:create, :destroy, :show]
     resources :users, only: [:show, :update, :index]
+    resources :transaction_updates, only: [:index]
   end
 
   resource :session, only: [:new, :create, :destroy]

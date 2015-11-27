@@ -16,7 +16,8 @@ class Api::CategoriesController < ApplicationController
 
   def create
     @category = Category.create!(category_params)
-    render :show
+    @categories = Category.all
+    render :index
   end
 
   def destroy

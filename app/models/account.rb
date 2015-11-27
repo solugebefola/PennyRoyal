@@ -9,6 +9,20 @@ class Account < ActiveRecord::Base
   belongs_to :user
   has_many :transactions
 
+  def create_transactions(number)
+    number.times do |time|
+      cat_id = Category.all.sample.id
+      description = Faker::Commerce.product_name
+      date = Faker::Date.backward(rand(100))
+      amount = (rand(10000)/100) - 50
 
+      self.transactions.create(
+        category_id: cat_id,
+        description: description,
+        date: date,
+        amount: amount
+      )
+    end
+  end
 
 end

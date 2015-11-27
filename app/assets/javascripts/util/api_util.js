@@ -2,6 +2,7 @@
 
   var ApiUtil = root.ApiUtil = {
     getAccounts: function () {
+    console.log("account index search!");
       $.ajax({
         url: "/api/accounts",
         method: "GET",
@@ -15,9 +16,9 @@
       $.ajax({
         url: "/api/account/" + params[id],
         method: "PATCH",
+        data: { account: params },
         success: function (account) {
           AccountApiActions.singleAccountReceived(account);
-
         }
       });
     },
@@ -39,6 +40,16 @@
         data: { account: params },
         success: function (account) {
           AccountApiActions.singleAccountReceived(account);
+        }
+      });
+    },
+
+    generateTransactions: function () {
+      $.ajax({
+        url: "/api/transaction_updates",
+        method: "GET",
+        success: function (transactions) {
+          TransactionApiActions.transactionsReceived(transactions);
         }
       });
     },
@@ -110,6 +121,17 @@
         method: "GET",
         success: function (category) {
           CategoryApiActions.categoryReceived(category);
+        }
+      });
+    },
+
+    createCategory: function (params) {
+      $.ajax({
+        url: "/api/categories",
+        method: "POST",
+        data: { category: params },
+        success: function (categories) {
+          CategoryApiActions.categoriesReceived(categories);
         }
       });
     },

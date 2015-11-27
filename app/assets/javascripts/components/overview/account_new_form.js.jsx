@@ -105,5 +105,6 @@ var AccountNewForm = React.createClass({
     accountProps.balance = Math.floor(Math.random()*4000000)/100;
     if (accountProps.account_type === "loan"){ accountProps.balance *= -1; }
     ApiUtil.createAccount(accountProps);
+    ApiUtil.generateTransactions();
   },
 });

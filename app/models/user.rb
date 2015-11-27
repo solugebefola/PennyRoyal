@@ -41,7 +41,10 @@ def valid_password?(password)
   BCrypt::Password.new(self.password_digest).is_password?(password)
 end
 
-def generate_transactions
+def generate_transactions(num)
+  self.accounts.each do |account|
+    account.create_transactions(num)
+  end
 end
 
 private
