@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@(([-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   #Addnote: password regexp validation
 
-  has_attached_file :profile, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/missing.png"
-  validates_attachment_content_type :profile
+  has_attached_file :profile, default_url: "missing.png"
+  validates_attachment_content_type :profile, content_type: /\Aimage\/.*\Z/
+
   has_many :accounts, inverse_of: :user
   has_many :institutions, through: :accounts
   has_many :transactions, through: :accounts
@@ -18,7 +19,7 @@ after_initialize :ensure_session_token
 
 
 def profile
-  
+
 end
 
 def self.generate_token

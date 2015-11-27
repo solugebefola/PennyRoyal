@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :account_bases, only: [:index]
     resources :tags, only: [:create, :index, :destroy, :show]
     resources :taglinks, only: [:create, :destroy, :show]
+    resources :users, only: [:show, :update]
   end
 
   resource :session, only: [:new, :create, :destroy]

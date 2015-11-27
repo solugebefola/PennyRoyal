@@ -144,6 +144,36 @@
           TagApiActions.tagReceived();
         }
       });
+    },
+
+    getUser: function () {
+      $.ajax({
+        url: "api/users",
+        method: "GET",
+        success: function (user) {
+          AppDispatcher.dispatch({
+            actionType: fluxConstants.USER_RECEIVED,
+            user: user
+          });
+        }
+      });
+    },
+
+    editUser: function (user) {
+      $.ajax({
+        url: "api/users",
+        method: "PATCH",
+        processData: false,
+        contentType: false,
+        dataType: json,
+        data: formData,
+        success: function (user) {
+          AppDispatcher.dispatch({
+            actionType: fluxConstants.USER_RECEIVED,
+            user: user
+          });
+        }
+      });
     }
   };
 })(this);

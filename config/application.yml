@@ -1,0 +1,8 @@
+development:
+  s3_bucket: "pennyroyal-dev"
+
+production:
+  s3_bucket: "pennyroyal-pro"
+
+s3_access_key_id: "AKIAJG4RCVFUX2L7JAPA"
+s3_secret_access_key: "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"
