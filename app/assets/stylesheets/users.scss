@@ -51,6 +51,7 @@ div.login-errors {
   margin: auto;
   padding: 43px 50px 50px 50px;
   box-shadow: 0px 3px 10px #ccc;
+  border-radius: 10px 10px;
 }
 
 .login-text {
@@ -74,6 +75,7 @@ div.login-errors {
   width: 250px;
   height: 25px;
   margin: 5px 0px;
+  padding: 3px;
   box-shadow: inset 0px 2px 2px #eee;
 }
 
@@ -103,12 +105,12 @@ div.login-errors {
 .signup-login-list {
   list-style: none;
   display: block;
-  float: right;
   position: absolute;
   bottom: 0px;
   right: 0px;
   vertical-align: baseline;
 }
+
 
 .signup-login-list > li {
   padding: 0px 10px;

@@ -26,14 +26,17 @@
   min-height: 700px;
 }
 
+.positive, .negative {
+  font-weight: 600;
+  margin: 10px;
+  font-size: 20px;
+}
 .positive {
   color: #fdda30;
-  margin: 10px;
 }
 
 .negative {
   color: #aaa;
-  margin: 10px;
 }
 
 .transaction {

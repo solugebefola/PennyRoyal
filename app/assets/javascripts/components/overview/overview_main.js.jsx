@@ -1,7 +1,7 @@
 var OverviewMain = React.createClass({
 
   getInitialState: function () {
-    return { catInput: "", categories: CategoryStore.all() };
+    return { name: "", categories: CategoryStore.all() };
   },
 
   componentDidMount: function () {
@@ -19,24 +19,23 @@ var OverviewMain = React.createClass({
       });
     return (
       <div>
-        <ul>
+        <ul className="cat list group">
           { categories }
-          <li>Add a Category</li>
-          <li>
-            <input
-              className="cat input"
-              type="text"
-              onChange={ this.handleChange } />
-          </li>
         </ul>
-        <button onClick={ this.handleSubmit }>Add Category</button>
+        <label className="cat label"> Add a Category
+          <input
+            className="cat input"
+            type="text"
+            onChange={ this.handleChange } />
+        </label>
+        <button className="cat" onClick={ this.handleSubmit }>Add Category</button>
       </div>
     );
   },
 
   handleChange: function (e) {
     e.preventDefault();
-    this.setState({ catInput: e.target.value });
+    this.setState({ name: e.target.value });
   },
 
   handleSubmit: function (e) {

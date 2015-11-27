@@ -40,6 +40,9 @@ var TransactionMain = React.createClass({
   },
 
   _onActiveChange: function () {
-    this.setState({ activeAccounts: ActiveAccountStore.all() });
+    this.setState({
+      transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all()),
+      activeAccounts: ActiveAccountStore.all()
+    });
   },
 });

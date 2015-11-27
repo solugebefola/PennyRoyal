@@ -11,6 +11,43 @@ section.overview {
 
 section.overview-main {
   width: 600px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.cat.span {
+  background: #fdda85;
+  margin: 15px;
+  font-size: 15px;
+  padding: 5px 20px;
+  border-radius: 20px 20px;
+}
+
+.cat.input {
+  border: 1px solid #000;
+  display: block;
+  border-radius: 3px 3px;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.cat.list {
+  display: block;
+  float: left;
+  margin-right: 20px;
+  width: 300px;
+}
+
+.cat.label {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+button.cat {
+  font-size: 14px;
+  padding: 5px;
+  width: 110px;
 }
 
 .modal {

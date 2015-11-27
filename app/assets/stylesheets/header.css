@@ -7,6 +7,8 @@
 
 .logo {
   font-size: 16px;
+  display: block;
+  float: left;
   color: #aa7700;
   vertical-align: baseline;
   padding: 5px 0px 0px 20px;
