@@ -1,27 +1,20 @@
 var TransactionIndex = React.createClass({
   getInitialState: function() {
     return {
-      transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all()),
       activeTransaction: ActiveTransactionStore.one()
     };
   },
-  componentWillMount: function() {
 
-  },
   componentDidMount: function() {
     ActiveTransactionStore.addChangeHandler(this._onActiveChange);
-    TransactionStore.addChangeHandler(this._onChange);
-    ActiveAccountStore.addChangeHandler(this._onActiveChange);
-    ApiUtil.getTransactions();
   },
+
   componentWillUnmount: function() {
     ActiveTransactionStore.removeChangeHandler(this._onActiveChange);
-    TransactionStore.removeChangeHandler(this._onChange);
-    ActiveAccountStore.removeChangeHandler(this._onActiveChange);
   },
 
   _makeComponents: function () {
-    var transactionsList = this.state.transactions.map(function (transaction) {
+    var transactionsList = this.props.transactions.map(function (transaction) {
       if (transaction.id == this.state.activeTransaction.id) {
         return (
           <li key={ transaction.id } className="transaction-form group">
@@ -67,22 +60,17 @@ var TransactionIndex = React.createClass({
     );
   },
 
-  _onChange: function () {
-    this.setState({
-      transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all())
-    });
-  },
+
 
   _onActiveChange: function () {
     this.setState({
-      transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all()),
       activeTransaction: ActiveTransactionStore.one()
     });
   },
 
   _setActive: function (e) {
     e.preventDefault();
-    var newActive = this.state.transactions.find(function(transaction) {
+    var newActive = this.props.transactions.find(function(transaction) {
       return (transaction.id == e.currentTarget.id);
     });
     ActiveTransactionActions.getActiveTransaction(newActive);

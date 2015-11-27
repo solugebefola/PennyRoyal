@@ -7,6 +7,16 @@
   text-align: center;
 }
 
+
+.transaction-main {
+  box-shadow: -3px 0px 10px #eee;
+}
+
+.transaction-main section {
+  display: block;
+  padding-left: 10px;
+}
+
 .transaction-sections {
   margin-top: 20px;
 }
@@ -16,13 +26,14 @@
   min-height: 700px;
 }
 
-.transaction-main {
-  box-shadow: -3px 0px 10px #eee;
+.positive {
+  color: #fdda30;
+  margin: 10px;
 }
 
-.transaction-main section {
-  display: block;
-  padding-left: 10px;
+.negative {
+  color: #aaa;
+  margin: 10px;
 }
 
 .transaction {
