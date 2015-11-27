@@ -47,7 +47,7 @@ var AccountSmallIndex = React.createClass({
             <AccountTypeNavbar />
           </li>
           <li>
-            <p>Accounts</p>
+            <p>Accounts <em onClick={ this.updateTransactions }>Update Accounts</em></p>
           </li>
           <li>
             <ul>
@@ -89,6 +89,10 @@ var AccountSmallIndex = React.createClass({
   _emptyActiveAccounts: function () {
     ActiveAccountsActions.emptyActiveAccounts();
   },
+
+  updateTransactions: function () {
+    ApiUtil.generateTransactions();
+  }
 
 
 });

@@ -33,6 +33,22 @@ header.form {
   display: block;
 }
 
+.pre-form.institution {
+  background: #22c531;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px 5px;
+}
+
+.pre-form.institution:hover {
+  background: #fdda30;
+  border: 1px solid #22c531;
+}
+
+.pre-form.institution:first-child {
+  margin-top: 30px;
+}
+
 .form.input {
   font-size: 14px;
   display: block;

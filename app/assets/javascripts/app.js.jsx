@@ -52,7 +52,7 @@ var App = React.createClass({
       ReactDOM.render((
         <Router history={ createBrowserHistory }>
           <Route path="/" component={ App }>
-            <IndexRoute component={ AppMain } />
+          <IndexRoute component={ AppMain } />
             <Route path="account" component={ OverviewIndex }>
               <IndexRoute component={ HiddenForm } />
               <Route path="pre" component={ AccountPreForm } />
