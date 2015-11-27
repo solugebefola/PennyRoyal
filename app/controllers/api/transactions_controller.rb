@@ -1,6 +1,7 @@
 class Api::TransactionsController < ApplicationController
 
   def index
+    current_user.generate_transactions
     @transactions = current_user.transactions.includes(:tags).order(created_at: :desc).limit(500)
   end
 

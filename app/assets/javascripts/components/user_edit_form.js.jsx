@@ -28,7 +28,7 @@ var UserEditForm = React.createClass({
                 type="file"
                 onChange={ this.fileChangeHandler }/>
             </label>
-            <img className="preview-image" src={ this.state.imageUrl } />
+            <img className="preview-image" src={ this.state.image_url } />
             <label className="input-label">First Name
             <input
               className="form edit input"
@@ -78,13 +78,13 @@ var UserEditForm = React.createClass({
     var file = e.currentTarget.files[0];
     var that = this;
     reader.onloadend = function () {
-      that.setState({ imageUrl: reader.result, imageFile: file });
+      that.setState({ image_url: reader.result, imageFile: file });
     };
 
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this.setState({ imageURL: "", imageFile: null });
+      this.setState({ image_url: "", imageFile: null });
     }
   },
 

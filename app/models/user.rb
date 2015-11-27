@@ -41,6 +41,9 @@ def valid_password?(password)
   BCrypt::Password.new(self.password_digest).is_password?(password)
 end
 
+def generate_transactions
+end
+
 private
   def ensure_session_token
     self.session_token ||= self.reset_token!

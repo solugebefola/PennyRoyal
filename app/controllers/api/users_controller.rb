@@ -9,6 +9,7 @@ class Api::UsersController < ApplicationController
 
   def update
     current_user.update!(user_params)
+    render :show
   end
 
   private
