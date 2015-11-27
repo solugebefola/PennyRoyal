@@ -1,94 +1,95 @@
-
-<header class="login-header">
-  <ul class="signup-login-list group">
-    <li>
-      <%= link_to "Log in", new_session_url, class: "login link" %>
-    </li>
-    <li>
-      <%= link_to "Sign up", new_user_url, class: "signup link" %>
-    </li>
-  </ul>
-</header>
-<% flash[:errors].try(:each) do |error| %>
-  <div class="login-errors"><%= error  %></div>
-<% end %>
-<main class="signup-main">
-<h1 class="login-text">See all your finances in one place &amp; create a budget</h1>
-<form class="login-form" action="/users" method="POST">
-  <%= auth_token %>
-  <ul class="login-form-list">
-    <li>
-      <label class="login-input-label">Your Email
-      <input
-        class="login-input"
-        type="text"
-        name="user[email]"
-        value="<%= flash[:errors] ? params[:user][:email] : ""  %>">
-      </label>
-    </li>
-    <li>
-      <label class="login-input-label">Confirm Email
-      <input
-        class="login-input"
-        type="text"
-        name="email_confirm"
-        value="">
-      </label>
-    </li>
-    <li>
-      <label class="login-input-label">Country
-      <select class="login-input" name="user[country]">
-        <option value="United States">United States</option>
-        <option value="Canada">Canada</option>
-      </select>
-      </label>
-    </li>
-    <li>
-      <label class="login-input-label">Zip Code
-      <input
-        class="login-input zip"
-        type="text"
-        name="user[zip_code]"
-        value="<%= flash[:errors] ? params[:user][:zip_code] : ""  %>">
-      </label>
-    </li>
-    <li>
-      <label class="login-input-label">Password
-      <input
-        class="login-input"
-        type="password"
-        name="user[password]]"
-        value="<%= flash[:errors] ? params[:user][:password] : ""  %>">
-      </label>
-    </li>
-    <li>
-      <label class="login-input-label">Confirm Password
-      <input
-        class="login-input"
-        type="password"
-        name="password_confirm"
-        value="">
-      </label>
-    </li>
-    <li>
-      <label class="login-terms">
+<!-- <img class="gold-coins" src="/images/1-ancientgolde"/> -->
+<%= image_tag("1-ancientgolde", class: "gold-coins") %>
+  <header class="login-header">
+    <ul class="signup-login-list group">
+      <li>
+        <%= link_to "Log in", new_session_url, class: "login link" %>
+      </li>
+      <li>
+        <%= link_to "Sign up", new_user_url, class: "signup link" %>
+      </li>
+    </ul>
+  </header>
+  <% flash[:errors].try(:each) do |error| %>
+    <div class="login-errors"><%= error  %></div>
+  <% end %>
+  <main class="signup-main">
+  <h1 class="login-text">See all your finances in one place &amp; create a budget</h1>
+  <form class="login-form" action="/users" method="POST">
+    <%= auth_token %>
+    <ul class="login-form-list">
+      <li>
+        <label class="login-input-label">Your Email
         <input
-          class="login-checkbox"
-          type="checkbox"
-          name="user[confirm_terms]"/>
-          Yes, I agree to the PennyRoyal <a href="#">Terms of Use</a>.</label>
-    </li>
-  <button class="log-in-button" type="submit">SIGN UP</button>
-</form>
-<form action"/session" method="POST">
-  <%= auth_token %>
-  <input
-    type="hidden"
+          class="login-input"
+          type="text"
+          name="user[email]"
+          value="<%= flash[:errors] ? params[:user][:email] : ""  %>">
+        </label>
+      </li>
+      <li>
+        <label class="login-input-label">Confirm Email
+        <input
+          class="login-input"
+          type="text"
+          name="email_confirm"
+          value="">
+        </label>
+      </li>
+      <li>
+        <label class="login-input-label">Country
+        <select class="login-input" name="user[country]">
+          <option value="United States">United States</option>
+          <option value="Canada">Canada</option>
+        </select>
+        </label>
+      </li>
+      <li>
+        <label class="login-input-label">Zip Code
+        <input
+          class="login-input zip"
+          type="text"
+          name="user[zip_code]"
+          value="<%= flash[:errors] ? params[:user][:zip_code] : ""  %>">
+        </label>
+      </li>
+      <li>
+        <label class="login-input-label">Password
+        <input
+          class="login-input"
+          type="password"
+          name="user[password]]"
+          value="<%= flash[:errors] ? params[:user][:password] : ""  %>">
+        </label>
+      </li>
+      <li>
+        <label class="login-input-label">Confirm Password
+        <input
+          class="login-input"
+          type="password"
+          name="password_confirm"
+          value="">
+        </label>
+      </li>
+      <li>
+        <label class="login-terms">
+          <input
+            class="login-checkbox"
+            type="checkbox"
+            name="user[confirm_terms]"/>
+            Yes, I agree to the PennyRoyal <a href="#">Terms of Use</a>.</label>
+      </li>
+    <button class="log-in-button" type="submit">SIGN UP</button>
+  </form>
+  <form action"/session" method="POST">
+    <%= auth_token %>
+    <input
+      type="hidden"
+      name="user[email]"
+      value="guest@ourfineestablishment.com">
+    <input type="hidden"
     name="user[email]"
-    value="guest@ourfineestablishment.com">
-  <input type="hidden"
-  name="user[email]"
-  value="guestpassword">
-  <button class="guest-button" type="submit">SIGN IN AS GUEST</button>
-</form>
-</main>
+    value="guestpassword">
+    <button class="guest-button" type="submit">SIGN IN AS GUEST</button>
+  </form>
+  </main>

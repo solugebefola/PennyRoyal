@@ -11,15 +11,15 @@
  * file per style scope.
 
  *= require reset
+ *= require sessions
+ *= require users
  *= require defaults
  *= require font-awesome
  *= require institutions
- *= require sessions
  *= require overview_index
  *= require categories
  *= require accounts
  *= require account_form
- *= require users
  *= require transactions
  *= require account_small_index
  *= require_tree .

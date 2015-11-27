@@ -8,3 +8,18 @@ body {
 a {
   text-decoration: none;
 }
+
+.sit-up {
+  background: #fff;
+}
+
+.gold-coins {
+  position: absolute;
+  width: 300%;
+  top: -50%;
+  left: -50%;
+  vertical-align: center;
+  height: auto;
+  z-index: -5;
+  opacity: 0.7;
+}

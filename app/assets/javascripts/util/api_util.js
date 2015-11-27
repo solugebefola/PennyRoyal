@@ -2,7 +2,6 @@
 
   var ApiUtil = root.ApiUtil = {
     getAccounts: function () {
-    console.log("account index search!");
       $.ajax({
         url: "/api/accounts",
         method: "GET",
