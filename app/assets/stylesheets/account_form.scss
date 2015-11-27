@@ -29,6 +29,10 @@ header.form {
   padding: 5px;
 }
 
+.form-button.submit {
+  margin: 0 10px;
+}
+
 .pre-form {
   display: block;
 }
@@ -36,6 +40,7 @@ header.form {
 .pre-form.institution {
   background: #22c531;
   padding: 10px;
+  width: 300px;
   margin: 5px;
   border-radius: 5px 5px;
 }
@@ -67,6 +72,10 @@ header.form {
   position: absolute;
   right: 20px;
   top: 20px;
+  text-align: right;
+  a {
+    display: block;
+  }
 }
 
 .user .input-label {

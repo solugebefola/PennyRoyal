@@ -58,19 +58,18 @@ var AccountNewForm = React.createClass({
                 className="form input"
                 onChange={ this.inputChangeHandler }
                 name="account_type">
-
                 <option value="">Select a type</option>
                 { accountOptions }
               </select>
             </label>
             <button
-              className="account-form-button submit"
+              className="account form-button submit"
               type="submit">Add Account
             </button>
           </form>
           <div className="back">
-            <Link to="/account/pre" className="backcarrot">Go Back</Link>
             <Link to="/accounts">✖︎ Cancel</Link>
+            <Link to="/account/pre" className="backcarrot">Go Back</Link>
           </div>
         </section>
       </div>
