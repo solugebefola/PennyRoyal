@@ -1,6 +1,7 @@
 class Institution < ActiveRecord::Base
+  include PgSearch
+  multisearchable :against => :name
   validates :name, :url, presence: true
-
   has_many :accounts
   has_many(
     :account_bases,

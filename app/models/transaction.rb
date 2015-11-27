@@ -1,4 +1,6 @@
 class Transaction < ActiveRecord::Base
+  include PgSearch
+  multisearchable :against => :description
   validates :account_id, :category_id, :amount, :description, presence: true
   validates :amount, :account_id, :category_id, numericality: true
   after_initialize :ensure_date_filled
