@@ -69,6 +69,7 @@ var TransactionForm = React.createClass({
           <input
             className="transaction-item description"
             type="text"
+            name="description"
             onChange={ this.handleInput }
             value={ this.state.description }/>
           <div className="transaction-item category">
