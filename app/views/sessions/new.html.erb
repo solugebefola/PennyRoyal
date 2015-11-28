@@ -14,36 +14,38 @@
   <div class="login-errors"><%= error  %></div>
 <% end %>
 <main class="login-main">
+    <div class="login-sidebar">
+      <img className="logo-image" src="/assets/pennyroyal_logo.png" />
+    </div>
+  <h1 class="login-text">Log in to PennyRoyal</h1>
 
-<h1 class="login-text">Log in to PennyRoyal</h1>
-
-<form class="login-form" action="/session" method="POST">
-  <%= auth_token %>
-  <label class="login-input-label">Your Email
-  <input
-    class="login-input"
-    type="text"
-    name="user[email]"
-    value="<%= flash[:errors] ? params[:user][:email] : "" %>">
-  </label>
-  <label class="login-input-label">Password
-  <input
-    class="login-input"
-    type="password"
-    name="user[password]"
-    value="<%= flash[:errors] ? params[:user][:password] : "" %>">
-  </label>
-  <button class="log-in-button" type="submit">LOG IN</button>
-  </form>
-  <form action="/session" method="POST">
+  <form class="login-form" action="/session" method="POST">
     <%= auth_token %>
+    <label class="login-input-label">Your Email
     <input
-      type="hidden"
+      class="login-input"
+      type="text"
       name="user[email]"
-      value="guest@ourfineestablishment.com">
-    <input type="hidden"
-    name="user[password]"
-    value="guestpassword">
-    <button class="guest-button" type="submit">SIGN IN AS GUEST</button>
-  </form>
+      value="<%= flash[:errors] ? params[:user][:email] : "" %>">
+    </label>
+    <label class="login-input-label">Password
+    <input
+      class="login-input"
+      type="password"
+      name="user[password]"
+      value="<%= flash[:errors] ? params[:user][:password] : "" %>">
+    </label>
+    <button class="log-in-button" type="submit">LOG IN</button>
+    </form>
+    <form action="/session" method="POST">
+      <%= auth_token %>
+      <input
+        type="hidden"
+        name="user[email]"
+        value="guest@ourfineestablishment.com">
+      <input type="hidden"
+      name="user[password]"
+      value="guestpassword">
+      <button class="guest-button" type="submit">SIGN IN AS GUEST</button>
+    </form>
 </main>

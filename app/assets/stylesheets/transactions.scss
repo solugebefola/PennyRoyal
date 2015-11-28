@@ -122,13 +122,8 @@ div.transaction-item.category {
 
 .transaction-item.date {
   position: relative;
-  width: 100px;
-  height: 19px;
+  width: 98px;
 }
-
-
-
-
 
 .transaction-item.description {
   width: 450px;
@@ -139,7 +134,7 @@ div.transaction-item.category {
 }
 
 .transaction-item.amount {
-  width: 100px;
+  width: 98px;
 }
 
 
@@ -147,14 +142,7 @@ div.transaction-item.category {
   position: relative;
   background: #224;
   font-size: 16px;
-  padding: 2px 0 3px;
-}
-
-.transaction-form form {
-  width: 610;
-}
-
-.transaction-inputs {
+  padding: 2px 0 3px 1px;
 }
 
 .transaction-inputs > * {

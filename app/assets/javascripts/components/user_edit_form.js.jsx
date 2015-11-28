@@ -20,7 +20,7 @@ var UserEditForm = React.createClass({
         <section className="user modal">
           <h1>Set up your User Profile</h1>
           <form
-            onSubmit={this.submitChangeHandler}
+            onSubmit={ this.submitChangeHandler }
             action=""
             className="user">
             <label>Add a picture
