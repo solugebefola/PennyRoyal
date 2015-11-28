@@ -10,8 +10,14 @@
   display: block;
   float: left;
   color: #aa7700;
-  vertical-align: baseline;
-  padding: 5px 0px 0px 20px;
+  width: 300px;
+  padding: 5px 0px 0 20px;
+  img{
+    max-width: 15%;
+    max-height: auto;
+    display: block;
+    float: left;
+  }
 }
 
 .login-sidebar {
