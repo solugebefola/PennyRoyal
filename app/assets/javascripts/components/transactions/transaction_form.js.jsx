@@ -1,5 +1,4 @@
 var TransactionForm = React.createClass({
-  mixins: [React.addons.LinkedStateMixin],
 
   getInitialState: function() {
     var transaction = TransactionStore.singleByID(this.props.transaction.id);
