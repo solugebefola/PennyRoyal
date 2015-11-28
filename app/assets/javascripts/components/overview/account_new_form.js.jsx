@@ -68,7 +68,7 @@ var AccountNewForm = React.createClass({
             </button>
           </form>
           <div className="back">
-            <Link to="/accounts">✖︎ Cancel</Link>
+            <Link to="/account">✖︎ Cancel</Link>
             <Link to="/account/pre" className="backcarrot">Go Back</Link>
           </div>
         </section>
