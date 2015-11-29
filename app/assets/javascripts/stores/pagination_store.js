@@ -18,7 +18,7 @@
   PaginationStore = root.PaginationStore = $.extend({}, EventEmitter.prototype, {
 
     all: function () {
-      return $.extend({},_pagination);
+      return $.extend({}, _pagination);
     },
 
     addChangeHandler: function (callback) {

@@ -30,17 +30,16 @@ var TransactionSearch = React.createClass({
 
   render: function() {
     var openingStatement;
+    debugger
     if (this.props.activeAccounts.length === 1){
-      openingStatement = <h2>{ this.props.activeAccounts[0].name }</h2>;
-    }else if(this.props.activeAccounts.length > 1){
+      openingStatement = <h2>{ this.props.activeAccounts[0].name || "All Accounts" }</h2>;
+    }else{
       openingStatement = <h2>Selected Accounts</h2>;
-    }else {
-      openingStatement = <h2>All Accounts</h2>;
     }
     balances = this.balances();
     return (
       <div>
-        <h1>This months transactions</h1>
+        <h1>This Month's Transactions</h1>
         { openingStatement }
         <p>
           <em className="positive">{ accounting.formatMoney(balances[0], "$",2,",",".") }</em>
