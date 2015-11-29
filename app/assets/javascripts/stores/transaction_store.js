@@ -2,7 +2,7 @@
   var _transactions = [];
   var CHANGE_EVENT = "change_event";
   var _resetTransactions = function (newTransactions) {
-    _transactions = newTransactions;
+    _transactions = newTransactions.transactions;
     TransactionStore.changed();
   };
 
@@ -24,7 +24,7 @@
     all: function () {
       return _transactions.slice(0);
     },
-    
+
     singleByID: function (id) {
       return _transactions.find(function (transaction) {
         return transaction.id == id;

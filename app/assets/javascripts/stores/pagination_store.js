@@ -5,11 +5,11 @@
     total_count: 0
   };
 
-  var _resetPagination = function (transactions) {
+  var _resetPagination = function (newTransactions) {
     _pagination = {
-      per_number: transactions.per,
-      page: transactions.page,
-      total_count: transactions.total_count
+      per_number: newTransactions.per,
+      page: newTransactions.page,
+      total_count: newTransactions.total_count
     };
     PaginationStore.changed();
   };
@@ -18,7 +18,7 @@
   PaginationStore = root.PaginationStore = $.extend({}, EventEmitter.prototype, {
 
     all: function () {
-      return _pagination.slice(0);
+      return $.extend({},_pagination);
     },
 
     addChangeHandler: function (callback) {
@@ -36,11 +36,11 @@
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
         case fluxConstants.TRANSACTIONS_RECEIVED:
-          _resetPagination(payload.transactions);
+          _resetPagination(payload.newTransactions);
           break;
       }
     })
 
-  })
+  });
 
 })(this);
