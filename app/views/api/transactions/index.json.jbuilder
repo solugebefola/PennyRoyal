@@ -1,6 +1,6 @@
 json.total_count @total_count
-json.per_number @per_number
-json.page_number @page_number
+json.per_number @per
+json.page_number @page
 json.transactions do
   json.array! @transactions,
   :tags,

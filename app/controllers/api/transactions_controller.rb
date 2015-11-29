@@ -1,18 +1,17 @@
 class Api::TransactionsController < ApplicationController
 
   def index
-    @page_number = params[:page] || 1
-    @per_number = params[:per] || 25
+    @page = params[:page] || 1
+    @per = params[:per] || 25
     @transactions = current_user
       .transactions
       .includes(:tags)
       .order(date: :desc)
-      .page(@page_number)
+      .page(@page)
     @total_count = current_user
       .transactions
-      .order(date: :desc)
-      .page(@page_number)
-      .per(@per_number)
+      .page(@page)
+      .per(@per)
       .total_count
   end
 
