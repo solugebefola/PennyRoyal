@@ -4,19 +4,21 @@ var TransactionMain = React.createClass({
     return {
       transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all()),
       activeAccounts: ActiveAccountStore.all(),
-      pagination: PaginationStore.all()
+      paginatedTransactions: PaginatedTransactionStore.all()
     };
   },
 
   componentDidMount: function () {
     TransactionStore.addChangeHandler(this._onChange);
     ActiveAccountStore.addChangeHandler(this._onActiveChange);
+    PaginatedTransactionStore.addChangeHandler(this._onPaginatedChange);
     ApiUtil.getTransactions();
   },
 
   componentWillUnmount: function () {
     TransactionStore.removeChangeHandler(this._onChange);
     ActiveAccountStore.removeChangeHandler(this._onActiveChange);
+    PaginatedTransactionStore.removeChangeHandler(this._onPaginatedChange);
   },
 
   render: function() {
@@ -48,4 +50,10 @@ var TransactionMain = React.createClass({
       activeAccounts: ActiveAccountStore.all()
     });
   },
+
+  _onPaginatedChange: function () {
+    this.setState({
+      paginatedTransactions: PaginatedTransactionStore.all()
+    });
+  }
 });

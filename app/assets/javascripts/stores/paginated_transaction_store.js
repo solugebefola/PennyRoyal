@@ -7,14 +7,10 @@
   };
 
   var _resetPaginatedTransactions = function (newPaginatedTransactions) {
-    _pagination = {
-      per_number: newPaginatedTransactions.per,
-      page: newPaginatedTransactions.page,
-      total_count: newPaginatedTransactions.total_count,
-      transactions: newPaginatedTransactions.transactions
-    };
+    _pagination = $.extend({}, newPaginatedTransactions);
     PaginatedTransactionStore.changed();
   };
+  
   var CHANGE_EVENT = "change_event";
 
   PaginatedTransactionStore = root.PaginatedTransactionStore = $.extend({}, EventEmitter.prototype, {
