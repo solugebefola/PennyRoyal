@@ -1,7 +1,19 @@
 class Api::TransactionsController < ApplicationController
 
   def index
-    @transactions = current_user.transactions.includes(:tags).order(date: :desc).limit(500)
+    @page_number = params[:page] || 1
+    @per_number = params[:per] || 25
+    @transactions = current_user
+      .transactions
+      .includes(:tags)
+      .order(date: :desc)
+      .page(@page_number)
+    @total_count = current_user
+      .transactions
+      .order(date: :desc)
+      .page(@page_number)
+      .per(@per_number)
+      .total_count
   end
 
   def show
