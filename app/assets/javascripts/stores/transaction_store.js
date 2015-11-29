@@ -45,6 +45,16 @@
       }
     },
 
+    page: function (accounts, page, per) {
+      var pagee = page || 1;
+      var perr = per || 25;
+      return filterTransactionsOnAccounts(accounts)
+        .transactions.slice(perr * (page - 1), perr);
+    },
+
+    total_count: function (accounts) {
+      return filterTransactionsOnAccounts(account).length;
+    },
 
     addChangeHandler: function (callback) {
       this.on(CHANGE_EVENT, callback);

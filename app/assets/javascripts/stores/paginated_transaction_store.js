@@ -2,21 +2,28 @@
   var _paginatedTransactions = {
     per: 25,
     page: 1,
-    total_count: 0,
-    transactions: []
+    transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all())
   };
 
   var _resetPaginatedTransactions = function (newPaginatedTransactions) {
-    _pagination = $.extend({}, newPaginatedTransactions);
+    _paginatedTransactions.transactions = TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all());
     PaginatedTransactionStore.changed();
   };
-  
+
+  var _resetPageOrPer = function (newPaginationParameters) {
+    $.extend(_paginatedTransactions, newPaginationParameters);
+    PaginatedTransactionStore.changed();
+  };
+
   var CHANGE_EVENT = "change_event";
 
   PaginatedTransactionStore = root.PaginatedTransactionStore = $.extend({}, EventEmitter.prototype, {
 
-    all: function () {
-      return $.extend({}, _pagination);
+    page: function () {
+      var per = _paginatedTransactions.per;
+      var page = _paginatedTransactions.page;
+      return _paginatedTransactions
+        .transactions.slice(per * (page - 1), per);
     },
 
     addChangeHandler: function (callback) {
@@ -33,8 +40,16 @@
 
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
-        case fluxConstants.PAGINATED_TRANSACTIONS_RECEIVED:
-          _resetPaginatedTransactions(payload.newPaginatedTransactions);
+        case fluxConstants.TRANSACTIONS_RECEIVED:
+          wait_for(TransactionStore.dispatcherID);
+          _resetPaginatedTransactions();
+          break;
+        case fluxConstants.ACTIVE_ACCOUNTS_RECEIVED:
+          wait_for(ActiveAccountStore.dispatcherID);
+          _resetPaginatedTransactions();
+          break;
+        case fluxConstants.PAGINATION_PARAMETERS_RECEIVED:
+          _resetPageOrPer(payload.newPaginationParameters);
           break;
       }
     })

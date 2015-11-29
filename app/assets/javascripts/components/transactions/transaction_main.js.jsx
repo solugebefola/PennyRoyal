@@ -31,8 +31,7 @@ var TransactionMain = React.createClass({
         </section>
         <section>
           <TransactionIndex
-            transactions={ this.state.transactions }
-            pagination={ this.state.pagination }/>
+            paginatedTransactions={ this.state.transactions }/>
         </section>
       </div>
     );

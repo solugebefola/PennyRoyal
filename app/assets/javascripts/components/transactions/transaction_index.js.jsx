@@ -14,7 +14,7 @@ var TransactionIndex = React.createClass({
   },
 
   _makeComponents: function () {
-    var transactionsList = this.props.transactions.map(function (transaction) {
+    var transactionsList = this.props.paginatedTransactions.map(function (transaction) {
       if (transaction.id == this.state.activeTransaction.id) {
         return (
           <li key={ transaction.id } className="transaction-form group">
