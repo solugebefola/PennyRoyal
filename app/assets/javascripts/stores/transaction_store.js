@@ -2,7 +2,7 @@
   var _transactions = [];
   var CHANGE_EVENT = "change_event";
   var _resetTransactions = function (newTransactions) {
-    _transactions = newTransactions.transactions;
+    _transactions = newTransactions;
     TransactionStore.changed();
   };
 

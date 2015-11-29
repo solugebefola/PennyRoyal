@@ -30,7 +30,6 @@ var TransactionSearch = React.createClass({
 
   render: function() {
     var openingStatement;
-    debugger
     if (this.props.activeAccounts.length === 1){
       openingStatement = <h2>{ this.props.activeAccounts[0].name || "All Accounts" }</h2>;
     }else{
