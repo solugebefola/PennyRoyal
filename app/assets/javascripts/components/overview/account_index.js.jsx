@@ -53,7 +53,7 @@ var AccountIndex = React.createClass({
           Accounts
           <Link
             className="add-account"
-            to="account/pre">
+            to="accounts/modal/pre">
              + ADD ACCOUNT
           </Link>
         </h1>
@@ -62,10 +62,5 @@ var AccountIndex = React.createClass({
         </ul>
       </div>
     );
-  },
-
-  activateAccountForm: function () {
-    $(".modal").addClass("is-active");
-    this.history.pushState(null, "account/pre");
   }
 });

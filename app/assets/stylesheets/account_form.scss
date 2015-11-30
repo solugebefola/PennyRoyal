@@ -9,6 +9,33 @@ header.form {
   }
 }
 
+.menu {
+  width: 100%;
+  height: 62px;
+  background: linear-gradient(to top, #ccc, #eee);
+  margin-bottom: 20px;
+}
+
+nav.form-options span {
+  display: inline-block;
+  float: left;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.form-options a {
+  display: block;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 20px;
+  height: 62px;
+  width: auto;
+}
+
+.form.main {
+  padding: 0 20px 20px 20px;
+}
+
 .preview-image {
   width: 200px;
   height: auto;

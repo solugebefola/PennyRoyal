@@ -29,11 +29,11 @@ var AccountPreForm = React.createClass({
     });
     return (
       <div>
-        <section className="modal">
-        Choose your financial institution
-          { insts }
-        <Link className="back" to="/accounts">✖︎ Cancel</Link>
-        </section>
+        <header className="form">
+          <h1>Choose your financial institution</h1>
+            { insts }
+          <Link className="back" to="/accounts">✖︎ Cancel</Link>
+        </header>
       </div>
     );
   },
