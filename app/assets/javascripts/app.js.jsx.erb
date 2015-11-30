@@ -27,7 +27,7 @@ var App = React.createClass({
             <li>
               <Link
                 className={ "app-header-link " + overviewCurrent }
-                to="account">OVERVIEW
+                to="/accounts">OVERVIEW
               </Link>
             </li>
             <li>
@@ -44,18 +44,46 @@ var App = React.createClass({
           </li>
         </ul>
         <footer className="footer group">
-          <ul className="footer list">
+          <ul className="footer-list group">
             <li>
               <Link
-                className={ "app-footer link " + overviewCurrent }
+                className={ "app-footer-link " + overviewCurrent }
                 to="/accounts">OVERVIEW
               </Link>
             </li>
-            <Link
-              className={ "app-footer link " + transactionCurrent }
-              to="/transactions">TRANSACTIONS
-            </Link>
-
+            <li>
+              <Link
+                className={ "app-footer-link " + transactionCurrent }
+                to="/transactions">TRANSACTIONS
+              </Link>
+            </li>
+          </ul>
+          <ul className="footer-list small group">
+            <li>
+              <Link to="http://appacademy.io" className="app-footer-link small">
+                Support Community
+              </Link>
+            </li>
+            <li>
+              <Link to="http://appacademy.io" className="app-footer-link small">
+                Terms of Use
+              </Link>
+            </li>
+            <li>
+              <Link to="http://appacademy.io" className="app-footer-link small">
+                Privacy
+              </Link>
+            </li>
+            <li>
+              <Link to="http://appacademy.io" className="app-footer-link small">
+                Legal and Trademark Notices
+              </Link>
+            </li>
+            <li>
+              <Link to="http://appacademy.io" className="app-footer-link small">
+                About PennyRoyal
+              </Link>
+            </li>
           </ul>
 
         </footer>

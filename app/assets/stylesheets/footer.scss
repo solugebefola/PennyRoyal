@@ -4,3 +4,34 @@
   height: 100%;
   display: block;
 }
+
+.footer-list {
+  width: 640px;
+  display: block;
+  margin: 0 auto;
+  font-size: 12px;
+  padding: 10px 0 30px 0;
+}
+
+.footer-list > li {
+  display: block;
+  float: right;
+}
+
+.app-footer-link {
+  color: #444;
+  padding: 10px 5px 5px 5px;
+  margin: 0px 10px;
+}
+
+.app-footer-link:hover {
+  border-bottom: 1px solid #aaa;
+}
+
+.footer-list.small > li {
+  border-left: 1px solid #aaa;
+}
+
+.footer-list.small > li:last-child {
+  border-left: none;
+}
