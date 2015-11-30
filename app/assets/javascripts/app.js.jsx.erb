@@ -38,11 +38,14 @@ var App = React.createClass({
             </li>
           </ul>
         </header>
-        <ul>
-          <li className="main-content">
+        <ul className="main-content group">
+          <li>
             { this.props.children }
           </li>
         </ul>
+        <footer className="footer group">
+          Content.
+        </footer>
       </div>
     );
   }
@@ -54,7 +57,7 @@ var App = React.createClass({
       ReactDOM.render((
         <Router history={ createBrowserHistory }>
           <Route path="/" component={ App }>
-          <IndexRoute component={ AppMain } />
+          <IndexRoute component={ OverviewIndex } />
             <Route path="account" component={ OverviewIndex }>
               <IndexRoute component={ HiddenForm } />
               <Route path="pre" component={ AccountPreForm } />
