@@ -1,1 +1,1 @@
-json.array! current_user.transactions
+json.array! current_user.transactions.order(date: :desc)
