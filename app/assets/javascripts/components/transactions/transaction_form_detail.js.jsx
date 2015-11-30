@@ -1,16 +1,14 @@
 var TransactionFormDetail = React.createClass({
   getInitialState: function() {
-    var tagCheckList = {};
-    TagStore.all().forEach(function (tag) {
-      tagCheckList[tag.id] = false;
-    });
-    this.props.transaction.tags.forEach(function(tag){
-      tagCheckList[tag.id] = true;
-    });
+    var checkedTags = this.props.transaction.tags
+      .map(function(tag) {
+        return tag.id;
+      }
+    );
+
     return {
-      tagCheckList: tagCheckList,
       tags: TagStore.all(),
-      tag_ids: [],
+      tag_ids: checkedTags,
       notes: this.props.transaction.notes
     };
   },
@@ -28,20 +26,26 @@ var TransactionFormDetail = React.createClass({
     TagStore.removeChangeHandler(this._onChange);
   },
 
+  checkIDinTagIDs: function(id) {
+    if (this.state.tag_ids.find(function(tagid){
+      return id == tagid;
+    })){
+      console.log(id + "true");
+      return true;
+    }else{
+      console.log(id + "false");
+      return false;
+    }
+  },
+
   makeTagList: function () {
     return TagStore.all().map(function (tag) {
+      var tagged = this.checkIDinTagIDs(tag.id);
       return(
-        <label key={ tag.id }>{ tag.name }
-          <input
-            key={ tag.id + " input" }
-            className="transaction-item tags"
-            type="checkbox"
-            onChange={ this.handleTagCheck }
-            name="tag_ids[]"
-            id={ tag.id }
-            value={ tag.id }
-            checked={ this.state.tagCheckList[tag.id] }/>
-        </label>
+        <span className={ "transaction-item tags " + tagged }
+            onClick={ this.handleTag }
+            key={ tag.id }
+            id={ tag.id }>{ tag.name }</span>
       );
     }.bind(this));
   },
@@ -82,38 +86,33 @@ var TransactionFormDetail = React.createClass({
   addTag: function (e) {
     e.preventDefault();
     var tagName = $("#newtag").val();
-    ApiUtil.newTag({ name: tagName, transaction_id: this.props.transaction.id });
+    if (tagName !== ""){
+      ApiUtil.newTag({ name: tagName, transaction_id: this.props.transaction.id });
+    }
   },
 
-  handleTagCheck: function (e) {
-    var newState = $.extend({}, this.state.tagCheckList);
-    var tagIDs = [];
-    if (this.state.tagCheckList[e.target.id]){
-      newState[e.target.id] = false;
+  handleTag: function (e) {
+    e.preventDefault();
+    tagIDs = this.state.tag_ids.slice();
+    if (this.checkIDinTagIDs(e.target.id)) {
+      tagIDs = tagIDs.filter(function (id) {
+        return id != e.target.id;
+      });
     }else{
-      newState[e.target.id] = true;
+      tagIDs.push(parseInt(e.target.id));
     }
-    this.setState({ tagCheckList: newState });
+    this.setState({ tag_ids: tagIDs });
   },
 
   handleNotes: function (e) {
-    this.setState({ notes: e.target.value });
+    this.setState({ notes: e.target.id });
   },
 
   handleDetail: function (e) {
     e.preventDefault();
-    var tagIDs = [];
-    var newState = {};
-    newState.notes = this.state.notes;
     var exitDetail = { detail: false };
     if (e.target.name !== "cancel") {
-      for (var id in this.state.tagCheckList){
-        if (this.state.tagCheckList[id]){
-          tagIDs.push(id);
-        }
-      }
-      newState.tag_ids = tagIDs;
-      this.props.getDetailProps(newState);
+      this.props.getDetailProps(this.state);
     }else{
       this.props.getDetailProps(exitDetail);
     }

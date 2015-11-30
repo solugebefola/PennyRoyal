@@ -14,6 +14,7 @@ header.form {
   height: 62px;
   background: linear-gradient(to top, #ccc, #eee);
   margin-bottom: 20px;
+  padding-top: 10px;
 }
 
 nav.form-options span {
@@ -30,6 +31,15 @@ nav.form-options span {
   padding: 20px;
   height: 62px;
   width: auto;
+}
+
+.form-options a:hover {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 30%,
+    #aaa
+  );
 }
 
 .form.main {

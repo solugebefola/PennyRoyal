@@ -228,6 +228,20 @@ div.transaction-item.category {
   font-size: 12px;
 }
 
+span.tags {
+  padding: 5px;
+  margin: 2px;
+  background: #aaa;
+  color: #fff;
+  cursor: pointer;
+}
+
+span.tags.true {
+  padding: 5px;
+  background: #b0f;
+  color: #fff;
+}
+
 .detail label .notes{
   width: 250px;
   padding: 5px;
