@@ -4,7 +4,7 @@ var TransactionMain = React.createClass({
     return {
       transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all()),
       activeAccounts: ActiveAccountStore.all(),
-      paginatedTransactions: PaginatedTransactionStore.all()
+      paginatedTransactions: PaginatedTransactionStore.transactions()
     };
   },
 
@@ -31,7 +31,7 @@ var TransactionMain = React.createClass({
         </section>
         <section>
           <TransactionIndex
-            paginatedTransactions={ this.state.transactions }/>
+            paginatedTransactions={ this.state.paginatedTransactions }/>
         </section>
       </div>
     );
@@ -52,7 +52,7 @@ var TransactionMain = React.createClass({
 
   _onPaginatedChange: function () {
     this.setState({
-      paginatedTransactions: PaginatedTransactionStore.all()
+      paginatedTransactions: PaginatedTransactionStore.transactions()
     });
-  }
+  },
 });

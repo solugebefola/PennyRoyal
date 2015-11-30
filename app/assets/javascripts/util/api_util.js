@@ -95,16 +95,6 @@
       });
     },
 
-    getPaginatedTransactions: function () {
-      $.ajax({
-        url: "/api/paginated_transactions/",
-        method: "GET",
-        success: function (newPaginatedTransactions) {
-          PaginatedTransactionApiActions.paginatedTransactionsReceived(newPaginatedTransactions);
-        }
-      });
-    },
-
     getAccountBases: function () {
       $.ajax({
         url: "/api/account_bases/",

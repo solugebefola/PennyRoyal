@@ -2,7 +2,7 @@
   var _paginatedTransactions = {
     per: 25,
     page: 1,
-    transactions: TransactionStore.filterTransactionsOnAccounts(ActiveAccountStore.all())
+    transactions: []
   };
 
   var _resetPaginatedTransactions = function (newPaginatedTransactions) {
@@ -19,11 +19,23 @@
 
   PaginatedTransactionStore = root.PaginatedTransactionStore = $.extend({}, EventEmitter.prototype, {
 
-    page: function () {
+    transactions: function () {
       var per = _paginatedTransactions.per;
       var page = _paginatedTransactions.page;
       return _paginatedTransactions
-        .transactions.slice(per * (page - 1), per);
+        .transactions.slice(per * (page - 1), per * (page - 1) + per);
+    },
+
+    page: function () {
+      return _paginatedTransactions.page;
+    },
+
+    per: function () {
+      return _paginatedTransactions.per;
+    },
+
+    total_count: function () {
+      return _paginatedTransactions.transactions.length;
     },
 
     addChangeHandler: function (callback) {
@@ -41,11 +53,11 @@
     dispatcherID: AppDispatcher.register(function(payload) {
       switch (payload.actionType){
         case fluxConstants.TRANSACTIONS_RECEIVED:
-          wait_for(TransactionStore.dispatcherID);
+          AppDispatcher.waitFor([TransactionStore.dispatcherID]);
           _resetPaginatedTransactions();
           break;
         case fluxConstants.ACTIVE_ACCOUNTS_RECEIVED:
-          wait_for(ActiveAccountStore.dispatcherID);
+          AppDispatcher.waitFor([ActiveAccountStore.dispatcherID]);
           _resetPaginatedTransactions();
           break;
         case fluxConstants.PAGINATION_PARAMETERS_RECEIVED:

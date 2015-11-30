@@ -247,3 +247,31 @@ div.transaction-item.category {
   background: #fff;
   color: #000;
 }
+
+.transaction.nav-list {
+  background: transparent;
+  padding-top: 5px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.transaction.nav-list > li{
+  padding: 0 5px;
+  display: block;
+  float: left;
+  color: #22c531;
+  background: transparent;
+}
+
+.transaction.nav-list-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

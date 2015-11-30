@@ -13,6 +13,10 @@ var TransactionIndex = React.createClass({
     ActiveTransactionStore.removeChangeHandler(this._onActiveChange);
   },
 
+  componentWillReceiveProps: function (newProps) {
+    
+  },
+
   _makeComponents: function () {
     var transactionsList = this.props.paginatedTransactions.map(function (transaction) {
       if (transaction.id == this.state.activeTransaction.id) {
@@ -56,6 +60,7 @@ var TransactionIndex = React.createClass({
           </li>
           { transactionsList }
         </ul>
+        <PaginationNav />
       </div>
     );
   },

@@ -45,17 +45,6 @@
       }
     },
 
-    page: function (accounts, page, per) {
-      var pagee = page || 1;
-      var perr = per || 25;
-      return filterTransactionsOnAccounts(accounts)
-        .transactions.slice(perr * (page - 1), perr);
-    },
-
-    total_count: function (accounts) {
-      return filterTransactionsOnAccounts(account).length;
-    },
-
     addChangeHandler: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },
@@ -76,9 +65,6 @@
           break;
         case fluxConstants.SINGLE_TRANSACTION_RECEIVED:
           _takeSingleTransaction(payload.newTransaction);
-          break;
-        case fluxConstants.ACTIVE_ACCOUNTS_RECEIVED:
-          TransactionStore.filterTransactionsOnAccounts(payload.newActiveAccounts);
           break;
       }
     })

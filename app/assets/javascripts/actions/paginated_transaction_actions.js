@@ -1,9 +1,9 @@
 (function (root) {
-  PaginatedTransactionApiActions = root.PaginatedTransactionApiActions = {
-    paginatedTransactionsReceived: function (newPaginatedTransactions) {
+  PaginatedTransactionActions = root.PaginatedTransactionActions = {
+    paginationParametersReceived: function (newPaginationParameters) {
       AppDispatcher.dispatch({
-        actionType: fluxConstants.PAGINATED_TRANSACTIONS_RECEIVED,
-        newPaginatedTransactions: newPaginatedTransactions
+        actionType: fluxConstants.PAGINATION_PARAMETERS_RECEIVED,
+        newPaginationParameters: newPaginationParameters
       });
     }
   };
