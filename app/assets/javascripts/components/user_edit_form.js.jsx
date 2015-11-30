@@ -18,7 +18,9 @@ var UserEditForm = React.createClass({
     return (
       <div>
         <section className="user modal">
-          <h1>Set up your User Profile</h1>
+          <header className="form">
+            <h1>Set up your User Profile</h1>
+          </header>
           <form
             onSubmit={ this.submitChangeHandler }
             action=""
@@ -47,7 +49,7 @@ var UserEditForm = React.createClass({
             </label>
             <label className="input-label">Gender
             <input
-              className="form edit input"
+              className="form edit input gender"
               type="text"
               name="gender"
               onChange={ this.inputChangeHandler }
@@ -55,14 +57,16 @@ var UserEditForm = React.createClass({
             </label>
             <label className="input-label">Age
             <input
-              className="form edit input"
+              className="form edit input age"
               type="number"
               name="age"
               onChange={ this.inputChangeHandler }
               value={ this.state.age } />
             </label>
             <button type="submit">Save</button>
-            <Link to="/accounts" className="cancel" type="cancel">Cancel</Link>
+            <button>
+              <Link to="/accounts" className="cancel" type="cancel">Cancel</Link>
+            </button>
           </form>
         </section>
       </div>
