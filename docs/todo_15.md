@@ -1,7 +1,7 @@
 ## Todo
 ### Monday
 #### React Components
-- [ ] App footer
+- [x] App footer
 - [ ] Search
   - [ ] Dropdown on typing with tags, categories, transaction descriptions
   - [ ] Displays transactions in normal transaction index

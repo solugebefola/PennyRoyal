@@ -40,7 +40,6 @@ var TransactionIndex = React.createClass({
     var transactionsList = this._makeComponents();
     return (
       <div>
-        <h1 className="transaction-title">Transactions</h1>
         <ul className="transaction-list">
           <li className="transaction-index-header">
             <ul className="transaction-item-attributes group">
