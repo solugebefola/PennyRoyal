@@ -62,7 +62,7 @@ var UserEditForm = React.createClass({
               value={ this.state.age } />
             </label>
             <button type="submit">Save</button>
-            <Link to="/account" className="cancel" type="cancel">Cancel</Link>
+            <Link to="/accounts" className="cancel" type="cancel">Cancel</Link>
           </form>
         </section>
       </div>

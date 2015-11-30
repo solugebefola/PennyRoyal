@@ -32,7 +32,7 @@ var AccountPreForm = React.createClass({
         <section className="modal">
         Choose your financial institution
           { insts }
-        <Link className="back" to="/account">✖︎ Cancel</Link>
+        <Link className="back" to="/accounts">✖︎ Cancel</Link>
         </section>
       </div>
     );

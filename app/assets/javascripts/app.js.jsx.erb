@@ -44,7 +44,20 @@ var App = React.createClass({
           </li>
         </ul>
         <footer className="footer group">
-          Content.
+          <ul className="footer list">
+            <li>
+              <Link
+                className={ "app-footer link " + overviewCurrent }
+                to="/accounts">OVERVIEW
+              </Link>
+            </li>
+            <Link
+              className={ "app-footer link " + transactionCurrent }
+              to="/transactions">TRANSACTIONS
+            </Link>
+
+          </ul>
+
         </footer>
       </div>
     );
@@ -57,8 +70,8 @@ var App = React.createClass({
       ReactDOM.render((
         <Router history={ createBrowserHistory }>
           <Route path="/" component={ App }>
-          <IndexRoute component={ OverviewIndex } />
-            <Route path="account" component={ OverviewIndex }>
+            <IndexRoute component={ OverviewIndex } />
+            <Route path="accounts" component={ OverviewIndex }>
               <IndexRoute component={ HiddenForm } />
               <Route path="pre" component={ AccountPreForm } />
               <Route path="edit" component={ AccountEditForm } />
