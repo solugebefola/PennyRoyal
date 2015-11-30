@@ -14,7 +14,7 @@ var TransactionIndex = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
-    
+
   },
 
   _makeComponents: function () {
@@ -75,7 +75,7 @@ var TransactionIndex = React.createClass({
 
   _setActive: function (e) {
     e.preventDefault();
-    var newActive = this.props.transactions.find(function(transaction) {
+    var newActive = this.props.paginatedTransactions.find(function(transaction) {
       return (transaction.id == e.currentTarget.id);
     });
     ActiveTransactionActions.getActiveTransaction(newActive);
