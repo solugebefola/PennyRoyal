@@ -14,7 +14,6 @@
 
 .transaction-main section {
   display: block;
-  padding-left: 10px;
 }
 
 h1.transaction.header {
@@ -189,10 +188,10 @@ div.transaction-item.category {
   position: absolute;
   left: 342px;
   width: 300px;
-  height: 200px;
-  transform: translateX(-50%);
+  height: auto;
+  transform: translateX(-50%) translateY(0%);
   z-index: 11;
-  bottom: -222px;
+  // bottom: -222px;
   font-size: 12px;
   border-left: 2px solid #555;
   border-right: 2px solid #555;
@@ -211,7 +210,7 @@ div.transaction-item.category {
 
 .transaction-item.detail > section {
   display: block;
-  height: 45px;
+  min-height: 60px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -229,6 +228,7 @@ div.transaction-item.category {
 }
 
 span.tags {
+  display: block;
   padding: 5px;
   margin: 2px;
   background: #aaa;

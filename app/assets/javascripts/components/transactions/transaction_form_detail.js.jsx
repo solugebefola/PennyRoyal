@@ -30,10 +30,8 @@ var TransactionFormDetail = React.createClass({
     if (this.state.tag_ids.find(function(tagid){
       return id == tagid;
     })){
-      console.log(id + "true");
       return true;
     }else{
-      console.log(id + "false");
       return false;
     }
   },
@@ -53,7 +51,7 @@ var TransactionFormDetail = React.createClass({
   render: function() {
     return (
       <div>
-        <form className="transaction-item detail">
+        <form className="transaction-item detail group">
           <section><h3>Tags</h3>
             { this.makeTagList() }
           </section>
@@ -105,7 +103,7 @@ var TransactionFormDetail = React.createClass({
   },
 
   handleNotes: function (e) {
-    this.setState({ notes: e.target.id });
+    this.setState({ notes: e.target.value });
   },
 
   handleDetail: function (e) {
