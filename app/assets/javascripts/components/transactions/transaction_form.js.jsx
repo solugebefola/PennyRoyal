@@ -98,10 +98,8 @@ var TransactionForm = React.createClass({
 
   handleSubmit: function () {
     if (this.props.newT){
-      console.log("new item, not made yet!");
     }else{
       var newProps = $.extend({}, this.state);
-      debugger
       ApiUtil.editTransaction(newProps);
     }
   },
