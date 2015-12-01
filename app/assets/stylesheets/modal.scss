@@ -132,6 +132,25 @@ nav.form-options .user {
   padding: 10px 0px
 }
 
+.edit.main {
+  background: #eee;
+  border: 1px solid #fdda85;
+  padding: 20px;
+  form {
+    label {
+      margin: 5px 5px 10px;
+      input, select {
+        display: block;
+        background: #fff;
+        margin: 0px 5px 15px 5px;
+      }
+    }
+    button {
+      margin: 15px 10px 15px 0px;
+    }
+  }
+}
+
 .fakebutton {
   display: block;
   float: left;

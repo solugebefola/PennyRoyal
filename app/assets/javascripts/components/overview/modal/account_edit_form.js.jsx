@@ -24,48 +24,50 @@ var AccountEditForm = React.createClass({
 
     return (
       <div>
-        <form onSubmit={this.submitChangeHandler} action="">
-          <label className="account-form input-label">Account Name
-          <input
-            className="account-form edit input"
-            type="text"
-            name="name"
-            onChange={this.inputChangeHandler}
-            value={this.state.name} />
-          </label>
-          <label className="account-form input-label">Username
-          <input
-            className="account-form edit input"
-            type="text"
-            name="username"
-            onChange={this.inputChangeHandler}
-            value={this.state.username} />
-          </label>
-          <label className="account-form input-label">Password
-          <input
-            className="account-form edit input"
-            type="text"
-            name="password"
-            onChange={this.inputChangeHandler}
-            value={this.state.password}/>
-          </label>
-          <label className="account-form input-label">Account Type
-            <select
-              name="account_type"
-              onChange={this.selectChangeHandler}>
-              { accountTypes }
-            </select>
-          </label>
-          <button
-            className="account-form-button submit"
-            type="submit">Update Account
-          </button>
-          <button
-            className="account-form-button delete"
-            type="delete"
-            onClick={ this.deleteButtonChangeHandler }>Delete Account
-          </button>
-        </form>
+        <main className="edit main group">
+          <form onSubmit={ this.submitChangeHandler } action="">
+            <label className="account-form input-label">Account Name
+            <input
+              className="account-form edit input"
+              type="text"
+              name="name"
+              onChange={ this.inputChangeHandler }
+              value={ this.state.name } />
+            </label>
+            <label className="account-form input-label">Username
+            <input
+              className="account-form edit input"
+              type="text"
+              name="username"
+              onChange={ this.inputChangeHandler }
+              value={ this.state.username } />
+            </label>
+            <label className="account-form input-label">Password
+            <input
+              className="account-form edit input"
+              type="text"
+              name="password"
+              onChange={ this.inputChangeHandler }
+              value={ this.state.password }/>
+            </label>
+            <label className="account-form input-label">Account Type
+              <select
+                name="account_type"
+                onChange={ this.selectChangeHandler }>
+                { accountTypes }
+              </select>
+            </label>
+            <button
+              className="account-form-button submit"
+              type="submit">Update Account
+            </button>
+            <button
+              className="account-form-button delete"
+              type="delete"
+              onClick={ this.deleteButtonChangeHandler }>Delete Account
+            </button>
+          </form>
+        </main>
       </div>
     );
   },
