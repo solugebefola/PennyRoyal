@@ -80,16 +80,17 @@
               name="user[confirm_terms]"/>
               Yes, I agree to the PennyRoyal <a href="#">Terms of Use</a>.</label>
         </li>
+      </ul>
       <button class="log-in-button" type="submit">SIGN UP</button>
     </form>
-    <form action"/session" method="POST">
+    <form action="/session" method="POST">
       <%= auth_token %>
       <input
         type="hidden"
         name="user[email]"
         value="guest@ourfineestablishment.com">
       <input type="hidden"
-      name="user[email]"
+      name="user[password]"
       value="guestpassword">
       <button class="guest-button" type="submit">SIGN IN AS GUEST</button>
     </form>
