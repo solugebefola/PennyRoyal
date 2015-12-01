@@ -5,10 +5,10 @@ var ModalForm = React.createClass({
         <section className="modal">
           <header className="menu group">
             <nav className="form-options group">
-              <span className="group">
+              <span className="account group">
                 <Link to="/accounts/modal/pre">Add Account</Link>
               </span>
-              <span>
+              <span className="user group">
                 <Link to="/accounts/modal/user_profile">About Me</Link>
               </span>
             </nav>
