@@ -3,8 +3,8 @@ var AccountEditForm = React.createClass({
     return {
       username: "",
       password: "",
-      name: this.props.name,
-      accountType: this.props.account_type
+      name: this.props.account.name,
+      accountType: this.props.account.account_type
     };
   },
   componentWillMount: function() {

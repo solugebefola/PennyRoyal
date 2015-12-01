@@ -6,16 +6,16 @@ var ModalForm = React.createClass({
           <header className="menu group">
             <nav className="form-options group">
               <span className="account group">
-                <Link to="/accounts/modal/pre">Add Account</Link>
+                <Link to="/accounts/modal/edit">Accounts</Link>
               </span>
               <span className="user group">
                 <Link to="/accounts/modal/user_profile">About Me</Link>
               </span>
             </nav>
           </header>
-          <main className="form main">
+          <div className="form main">
             { this.props.children }
-          </main>
+          </div>
         </section>
       </div>
     );

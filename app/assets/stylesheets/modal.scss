@@ -29,7 +29,7 @@ nav.form-options .account {
 }
 
 nav.form-options .user {
-  background: no-repeat top/50% url("about_me.png");
+  background: no-repeat center/50% url("about_me.png");
 }
 
 .form-options a {
@@ -50,8 +50,11 @@ nav.form-options .user {
   );
 }
 
-.form.main {
+div.form.main {
   padding: 0 20px 20px 20px;
+  width: 500px;
+  overflow-y: scroll;
+  height: 588px;
 }
 
 .preview-image {
@@ -138,7 +141,7 @@ nav.form-options .user {
   padding: 20px;
   form {
     label {
-      margin: 5px 5px 10px;
+      margin: 5px 5px 10px 0px;
       input, select {
         display: block;
         background: #fff;
@@ -149,6 +152,10 @@ nav.form-options .user {
       margin: 15px 10px 15px 0px;
     }
   }
+}
+
+.form.account-list {
+  margin: 15px 0px;
 }
 
 .fakebutton {
