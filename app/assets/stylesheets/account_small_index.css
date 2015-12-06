@@ -19,9 +19,24 @@
   background: #eee;
   font-size: 16px;
   font-weight: 500;
-  padding-left: 10px;
+  padding: 10px;
   border: 1px solid #aaa;
 
+}
+
+.minibar {
+  display: block;
+}
+
+.minibar > li:first-child {
+  font-size: 16px;
+  float: left;
+  padding: 0;
+}
+
+.minibar > li:last-child {
+  float: right;
+  padding: 0;
 }
 
 .account-small-item p:first-child {

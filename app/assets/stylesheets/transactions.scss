@@ -9,7 +9,7 @@
 
 
 .transaction-main {
-  box-shadow: -3px 0px 10px #eee;
+  margin: 0 10px;
 }
 
 .transaction-main section {
@@ -55,7 +55,7 @@ h1.transaction.header {
 }
 
 .transaction-list {
-  border: 1px solid #eee;
+  border-top: 1px solid #eee;
 }
 
 .transaction-index-header {

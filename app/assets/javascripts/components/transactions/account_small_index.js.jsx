@@ -47,7 +47,16 @@ var AccountSmallIndex = React.createClass({
             <AccountTypeNavbar />
           </li>
           <li>
-            <p>Accounts <em onClick={ this.updateTransactions }>Update Accounts</em></p>
+            <ul className="minibar group">
+              <li>
+                Accounts
+              </li>
+              <li>
+                <em onClick={ this.updateTransactions }>
+                  Update Accounts
+                </em>
+              </li>
+            </ul>
           </li>
           <li>
             <ul>

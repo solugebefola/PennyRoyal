@@ -12,6 +12,9 @@ var ModalForm = React.createClass({
                 <Link to="/accounts/modal/user_profile">About Me</Link>
               </span>
             </nav>
+            <div className="back">
+              <Link to="/accounts">✖︎ Cancel</Link>
+            </div>
           </header>
           <div className="form main">
             { this.props.children }
