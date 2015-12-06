@@ -22,7 +22,7 @@ var AccountPreForm = React.createClass({
     var insts = this.state.institutions.map(function (inst) {
       return (
         <Link
-          to={ "account/new/" + inst.id + "?institution=" + inst.name }
+          to={ "accounts/modal/new/" + inst.id + "?institution=" + inst.name }
           className="pre-form institution"
           key={ inst.id }>{ inst.name }</Link>
       );
