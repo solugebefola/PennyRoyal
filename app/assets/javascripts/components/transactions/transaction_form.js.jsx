@@ -5,7 +5,6 @@ var TransactionForm = React.createClass({
     var category = CategoryStore.single(transaction.category_id) || {name: "uncategorized"};
     transaction.categoryName = category.name;
     transaction.detail = false;
-    transaction.tag_ids = [];
     return transaction;
   },
 
@@ -44,7 +43,7 @@ var TransactionForm = React.createClass({
       return(
         <div className="detail-form">
           <TransactionFormDetail
-            transaction={ this.props.transaction }
+            transaction={ this.state }
             getDetailProps={ this.getDetailProps } />
         </div>
       );

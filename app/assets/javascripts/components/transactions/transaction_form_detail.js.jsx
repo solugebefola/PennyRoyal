@@ -1,14 +1,8 @@
 var TransactionFormDetail = React.createClass({
   getInitialState: function() {
-    var checkedTags = this.props.transaction.tags
-      .map(function(tag) {
-        return tag.id;
-      }
-    );
-
     return {
       tags: TagStore.all(),
-      tag_ids: checkedTags,
+      tag_ids: this.props.transaction.tag_ids,
       notes: this.props.transaction.notes
     };
   },
@@ -24,6 +18,7 @@ var TransactionFormDetail = React.createClass({
 
   componentWillUnmount: function() {
     TagStore.removeChangeHandler(this._onChange);
+    this.props.getDetailProps(this.state);
   },
 
   checkIDinTagIDs: function(id) {
@@ -110,7 +105,10 @@ var TransactionFormDetail = React.createClass({
     e.preventDefault();
     var exitDetail = { detail: false };
     if (e.target.name !== "cancel") {
-      this.props.getDetailProps(this.state);
+      this.props.getDetailProps({
+        tag_ids: this.state.tag_ids,
+        notes: this.state.notes
+      });
     }else{
       this.props.getDetailProps(exitDetail);
     }
