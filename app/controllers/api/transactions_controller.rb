@@ -20,6 +20,7 @@ class Api::TransactionsController < ApplicationController
 
   def update
     @transaction = Transaction.find(params[:id])
+    params[:transaction][:tag_ids] ||= []
     @transaction.update(transaction_params)
     render :show
   end

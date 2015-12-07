@@ -18,7 +18,6 @@ var TransactionFormDetail = React.createClass({
 
   componentWillUnmount: function() {
     TagStore.removeChangeHandler(this._onChange);
-    this.props.getDetailProps(this.state);
   },
 
   checkIDinTagIDs: function(id) {
