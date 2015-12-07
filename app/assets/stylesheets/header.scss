@@ -12,13 +12,13 @@
   float: left;
   color: #aa7700;
   width: 300px;
-  padding: 5px 0px 0 20px;
-  vertical-align: baseline;
+  padding-left: 20px;
+  vertical-align: middle;
   img{
+    position: relative;
+    bottom: 5px;
     max-width: 15%;
     max-height: auto;
-    display: block;
-    float: left;
   }
 }
 

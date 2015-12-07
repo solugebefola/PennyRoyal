@@ -57,6 +57,7 @@
           _resetPaginatedTransactions();
           break;
         case fluxConstants.ACTIVE_ACCOUNTS_RECEIVED:
+        case fluxConstants.ACTIVE_ACCOUNTS_EMPTY:
           AppDispatcher.waitFor([ActiveAccountStore.dispatcherID]);
           _resetPaginatedTransactions();
           break;
