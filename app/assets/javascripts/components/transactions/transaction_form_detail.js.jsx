@@ -1,5 +1,6 @@
 var TransactionFormDetail = React.createClass({
   getInitialState: function() {
+    debugger
     return {
       tags: TagStore.all(),
       tag_ids: this.props.transaction.tag_ids,

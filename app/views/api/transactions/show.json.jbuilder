@@ -1,5 +1,5 @@
 json.(@transaction,
-:tags,
+:tag_ids,
 :id,
 :date,
 :account_id,

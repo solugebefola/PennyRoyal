@@ -3,7 +3,7 @@ json.per @per
 json.page @page
 json.transactions do
   json.array! @transactions,
-  :tags,
+  :tag_ids,
   :id,
   :account_id,
   :category_id,

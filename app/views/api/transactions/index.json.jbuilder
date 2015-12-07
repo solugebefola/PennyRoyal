@@ -1,6 +1,5 @@
 json.array! @transactions,
 :tag_ids,
-:tags,
 :id,
 :account_id,
 :category_id,

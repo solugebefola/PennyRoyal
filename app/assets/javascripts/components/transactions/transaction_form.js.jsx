@@ -99,6 +99,7 @@ var TransactionForm = React.createClass({
     if (this.props.newT){
     }else{
       var newProps = $.extend({}, this.state);
+      debugger
       ApiUtil.editTransaction(newProps);
     }
   },
