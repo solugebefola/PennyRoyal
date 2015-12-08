@@ -2,9 +2,7 @@ var AccountSmallIndex = React.createClass({
   getInitialState: function() {
     return { accounts: AccountStore.allAsArray(), activeAccounts: ActiveAccountStore.all() };
   },
-  componentWillMount: function() {
 
-  },
   componentDidMount: function() {
     AccountStore.addChangeHandler(this._onChange);
     ActiveAccountStore.addChangeHandler(this._onActiveChange);

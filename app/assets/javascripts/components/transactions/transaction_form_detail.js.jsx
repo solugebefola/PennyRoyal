@@ -7,10 +7,6 @@ var TransactionFormDetail = React.createClass({
     };
   },
 
-  componentWillMount: function() {
-
-  },
-
   componentDidMount: function() {
     TagStore.addChangeHandler(this._onChange);
     ApiUtil.getTags();
