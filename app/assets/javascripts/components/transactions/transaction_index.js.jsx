@@ -37,6 +37,11 @@ var TransactionIndex = React.createClass({
   },
 
   render: function() {
+    if (this.state.activeTransaction.id === 0 && this.props.paginatedTransactions.length > 0) {
+      this.setState({
+        activeTransaction: this.props.paginatedTransactions[0]
+      });
+    }
     var transactionsList = this._makeComponents();
     return (
       <div>

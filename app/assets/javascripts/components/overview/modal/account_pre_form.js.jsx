@@ -5,10 +5,6 @@ var AccountPreForm = React.createClass({
     };
   },
 
-  componentWillMount: function() {
-
-  },
-
   componentDidMount: function() {
     InstitutionStore.addChangeHandler(this._onChange);
     ApiUtil.getInstitutions();

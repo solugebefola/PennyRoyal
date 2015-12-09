@@ -5,17 +5,21 @@ var AccountsFormList = React.createClass({
 
   componentDidMount: function() {
     AccountStore.addChangeHandler(this._onChange);
+    InstitutionStore.addChangeHandler(this._onChange);
+    ApiUtil.getInstitutions();
   },
 
   componentWillUnmount: function() {
     AccountStore.removeChangeHandler(this._onChange);
+    InstitutionStore.removeChangeHandler(this._onChange);
   },
 
   render: function() {
     var accounts = this.state.accounts.map(function (account) {
       return (
         <li key={ account.id } className="form account-list">
-          <AccountEditForm account={ account } />
+          <AccountEditForm
+            account={ account }/>
         </li>
       );
     });

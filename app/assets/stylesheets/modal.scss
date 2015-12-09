@@ -140,6 +140,8 @@ div.form.main {
   border: 1px solid #fdda85;
   padding: 20px;
   form {
+    display: block;
+    float: left;
     label {
       margin: 5px 5px 10px 0px;
       input, select {
@@ -174,5 +176,18 @@ div.form.main {
   a {
       padding: 11px;
     display: block;
+  }
+}
+
+.account-form.sidebar {
+  display: block;
+  float: right;
+  h1 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 14px;
+    font-weight: 400;
   }
 }

@@ -3,25 +3,15 @@ var AccountEditForm = React.createClass({
     return {
       username: "",
       password: "",
-      name: this.props.account.name,
+      name: "",
       accountType: this.props.account.account_type
     };
-  },
-  componentWillMount: function() {
-
-  },
-  componentDidMount: function() {
-
-  },
-  componentWillUnmount: function() {
-
   },
 
   render: function() {
     var accountTypes = accountConstants.accountType.map(function (type) {
       return <option key={ type } value={ type }>{ type }</option>;
     });
-
     return (
       <div>
         <main className="edit main group">
@@ -67,6 +57,9 @@ var AccountEditForm = React.createClass({
               onClick={ this.deleteButtonChangeHandler }>Delete Account
             </button>
           </form>
+          <div className="account-form sidebar">
+              <h1>{ this.props.account.name }</h1>
+          </div>
         </main>
       </div>
     );

@@ -12,6 +12,12 @@
       return _institutions.slice(0);
     },
 
+    oneById: function (id) {
+      return _institutions.find(function (inst) {
+        return inst.id === parseInt(id);
+      });
+    },
+
     addChangeHandler: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },
