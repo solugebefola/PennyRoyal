@@ -50,7 +50,6 @@ button.cat {
 }
 
 .modal {
-  display: block;
   border: 1px solid #000;
   border-radius: 2px;
   box-shadow: 0 5px 10px #aaa;
@@ -58,7 +57,17 @@ button.cat {
   height: 700px;
   position: absolute;
   background: #fff;
-  top: 20px;
+  top: -20px;
   left: 350px;
   z-index: 50;
+}
+
+.overlay {
+  z-index: 49;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255,255,255,0.60);
 }

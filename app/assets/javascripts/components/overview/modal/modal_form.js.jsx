@@ -15,12 +15,14 @@ var ModalForm = React.createClass({
               </span>
             </nav>
             <div className="back" onClick={ this.history.goBack }>
-              ✖︎
+              <i className="fa fa-times"></i>
             </div>
           </header>
           <div className="form main">
             { this.props.children }
           </div>
+        </section>
+        <section className="modal overlay">
         </section>
       </div>
     );

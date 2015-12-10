@@ -25,7 +25,9 @@ var AccountTypeIndex = React.createClass({
   render: function() {
     var accounts = this.props.accounts.map(function(account){
       return (
-        <li className="account-type-index-items" key={account.id}>
+        <li
+          className="account-type-index-items"
+          key={ account.id }>
           <AccountIndexItem accountItem={ account } />
         </li>
       );
