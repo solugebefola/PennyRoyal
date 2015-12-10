@@ -50,6 +50,16 @@ nav.form-options .user {
   );
 }
 
+.form-options a.active {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 50%,
+    #aaa
+  );
+  color: #080;
+}
+
 div.form.main {
   padding: 0 20px 20px 20px;
   width: 500px;

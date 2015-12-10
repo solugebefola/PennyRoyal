@@ -28,7 +28,6 @@ var AccountPreForm = React.createClass({
         <header className="form">
           <h1>Choose your financial institution</h1>
             { insts }
-          <Link className="back" to="/accounts">✖︎ Cancel</Link>
         </header>
       </div>
     );
