@@ -66,6 +66,8 @@ group :development, :test do
 
   gem 'binding_of_caller'
 
+  gem 'rspec'
+
 end
 
 group :development do

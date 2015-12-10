@@ -1,4 +1,6 @@
 var ModalForm = React.createClass({
+  mixins: [ReactRouter.History],
+
   render: function() {
     return (
       <div>
@@ -12,8 +14,8 @@ var ModalForm = React.createClass({
                 <Link to="/accounts/modal/user_profile">About Me</Link>
               </span>
             </nav>
-            <div className="back">
-              <Link to="/accounts">✖︎ Cancel</Link>
+            <div className="back" onClick={ this.handleCancel }>
+              <Link to="/accounts">✖︎</Link>
             </div>
           </header>
           <div className="form main">
@@ -22,5 +24,11 @@ var ModalForm = React.createClass({
         </section>
       </div>
     );
+  },
+
+  handleCancel: function (e) {
+    e.preventDefault();
+    // this.history.pushState(null, )
+
   }
 });

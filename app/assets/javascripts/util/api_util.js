@@ -13,7 +13,7 @@
 
     editAccount: function(params) {
       $.ajax({
-        url: "/api/account/" + params[id],
+        url: "/api/accounts/" + params.id,
         method: "PATCH",
         data: { account: params },
         success: function (account) {
@@ -24,7 +24,7 @@
 
     deleteAccount: function(params) {
       $.ajax({
-        url: "/api/account/" + params[id],
+        url: "/api/accounts/" + params.id,
         method: "DELETE",
         success: function (accounts) {
           AccountApiActions.accountsReceived(accounts);

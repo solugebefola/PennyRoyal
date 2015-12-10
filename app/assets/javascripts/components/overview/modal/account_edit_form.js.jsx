@@ -4,14 +4,12 @@ var AccountEditForm = React.createClass({
       username: "",
       password: "",
       name: "",
-      accountType: this.props.account.account_type
+      accountType: this.props.account.account_type,
+      id: this.props.account.id
     };
   },
 
   render: function() {
-    var accountTypes = accountConstants.accountType.map(function (type) {
-      return <option key={ type } value={ type }>{ type }</option>;
-    });
     return (
       <div>
         <main className="edit main group">
@@ -39,13 +37,6 @@ var AccountEditForm = React.createClass({
               name="password"
               onChange={ this.inputChangeHandler }
               value={ this.state.password }/>
-            </label>
-            <label className="account-form input-label">Account Type
-              <select
-                name="account_type"
-                onChange={ this.selectChangeHandler }>
-                { accountTypes }
-              </select>
             </label>
             <button
               className="account-form-button submit"

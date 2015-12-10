@@ -19,6 +19,7 @@ class Api::AccountsController < ApplicationController
   def update
     @account = Account.find(params[:id])
     @account.update!(account_params)
+    @institution = @account.institution
     render :show
   end
 

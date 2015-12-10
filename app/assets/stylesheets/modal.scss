@@ -119,11 +119,9 @@ div.form.main {
 .back {
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 18px;
   text-align: right;
-  a {
-    display: block;
-  }
+  font-size: 30px;
 }
 
 .age, .gender {
@@ -174,7 +172,7 @@ div.form.main {
   cursor: pointer;
   margin: 0px 10px 0 0;
   a {
-      padding: 11px;
+      padding: 11px 10px 10px 10px;
     display: block;
   }
 }

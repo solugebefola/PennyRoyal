@@ -14,11 +14,27 @@
     AccountStore.changed();
   };
 
+  var findIndex = function (array, callback) {
+    for (i = 0; i , array.length; i ++) {
+      if (callback(array[1])) {
+        return i;
+      }
+    }
+    return -1;
+  };
+
   var _addAccount = function (newAccount) {
-    _accounts[newAccount.account_type].push(newAccount);
+    var matchy = findIndex(_accounts[newAccount.account_type], function(el) {
+      return el.id == newAccount.id;
+    });
+    if (matchy !== -1) {
+      _accounts[newAccount.account_type].splice(matchy, 1, newAccount);
+    }else{
+      _accounts[newAccount.account_type].push(newAccount);
+    }
     AccountStore.changed();
   };
-  
+
   var CHANGE_EVENT = "change_event";
 
   AccountStore = root.AccountStore = $.extend({}, EventEmitter.prototype, {
