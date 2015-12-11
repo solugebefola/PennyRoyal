@@ -1,6 +1,6 @@
 var TransactionSearch = React.createClass({
   getInitialState: function() {
-    return {};
+    return { search_text: "" };
   },
   componentWillMount: function() {
 
@@ -38,13 +38,46 @@ var TransactionSearch = React.createClass({
     balances = this.balances();
     return (
       <div>
-        <h1 className="transaction header">This Month's Transactions</h1>
-        { openingStatement }
-        <p>
-          <em className="positive">{ accounting.formatMoney(balances[0], "$",2,",",".") }</em>
-          <em className="negative">{ accounting.formatMoney(balances[1], "$",2,",",".") }</em>
-        </p>
+        <ul className="transaction-search list group">
+          <li>
+            <h1 className="transaction-search header">This Month's Transactions</h1>
+            { openingStatement }
+            <p>
+              <em className="positive">
+                { accounting.formatMoney(balances[0], "$",2,",",".") }
+              </em>
+              <em className="negative">
+                { accounting.formatMoney(balances[1], "$",2,",",".") }
+              </em>
+            </p>
+          </li>
+          <li>
+            <form>
+              <label className="transaction-search">Search
+              <input
+                type="text"
+                onKeyPress={ this.handleSearch }
+                onChange={ this.handleChange }
+                value={ this.state.searchValue }/>
+              </label>
+            </form>
+          </li>
+        </ul>
       </div>
     );
+  },
+
+  handleChange: function (e) {
+    e.preventDefault();
+    this.setState({ search_text: e.target.value });
+  },
+
+  handleSearch: function (e) {
+    e.stopPropagation();
+    if (e.key === "Enter") {
+      ApiUtil.getTransactionSearches(e.target.value);
+      this.setState({ search_text: "" });
+    }
   }
+
 });

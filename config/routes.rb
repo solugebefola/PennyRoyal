@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :update, :index]
     resources :transaction_updates, only: [:index]
     resources :paginated_transactions, only: [:index]
+    resources :transaction_searches, only: [:index]
   end
 
   resource :session, only: [:new, :create, :destroy]

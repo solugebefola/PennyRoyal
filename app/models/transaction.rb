@@ -14,8 +14,8 @@ class Transaction < ActiveRecord::Base
   pg_search_scope :transaction_search, against: :description,
     associated_against: {
       account: [:account_type, :name],
-      category: :name,
-      tags: :name
+      category: [:name],
+      tags: [:name]
     }
 
   def ensure_date_filled

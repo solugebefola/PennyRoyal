@@ -95,6 +95,17 @@
       });
     },
 
+    getTransactionSearches: function(search) {
+      $.ajax({
+        url: "/api/transaction_searches/",
+        method: "GET",
+        data: { search_text: search },
+        success: function (transactions) {
+          TransactionApiActions.transactionsReceived(transactions);
+        }
+      });
+    },
+
     getAccountBases: function () {
       $.ajax({
         url: "/api/account_bases/",
