@@ -11,11 +11,18 @@
     <% if logged_in? %>
       <header class="user-header group">
         <ul>
-          <li>
+          <li class="group">
             <%= button_to "logout", session_url, method: :delete, class: "header-link" %>
           </li>
-          <li>
-            <a href="#/accounts/modal/user_profile" class="header-link">hello <%= current_user.email %></a>
+          <li class="group">
+            <a href="#/accounts/modal/edit" class="header-link">
+              Accounts
+            </a>
+          </li>
+          <li class"group">
+            <a href="#/accounts/modal/user_profile" class="header-link">
+              hello <%= current_user.email %>
+            </a>
           </li>
       </ul>
       </header>

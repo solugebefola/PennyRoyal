@@ -1,10 +1,6 @@
 var ModalForm = React.createClass({
   mixins: [ReactRouter.History],
 
-  getInitialState: function () {
-    return { pagesBack: this.props.pagesBack };
-  },
-
   showActive: function (path) {
     if (this.history.isActive(path)) {
       return "active";
