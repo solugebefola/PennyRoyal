@@ -32,6 +32,10 @@ h1.transaction.header {
   min-height: 700px;
 }
 
+.transaction-small-index {
+  margin-left: 100px;
+}
+
 .positive, .negative {
   font-weight: 600;
   margin: 10px;
@@ -134,7 +138,7 @@ div.transaction-item.category {
 }
 
 .transaction-item.description {
-  width: 450px;
+  width: 350px;
 }
 
 .transaction-item.category {
@@ -161,6 +165,13 @@ div.transaction-item.category {
   padding: 5px 5px 5px 5px;
   border-right: 1px solid #000;
   box-shadow: inset 1px 1px 1px #caa640;
+}
+
+input.transaction-item.amount {
+  background: #224;
+  color: #fff;
+  border: none;
+  box-shadow: none;
 }
 
 .detail-tab {

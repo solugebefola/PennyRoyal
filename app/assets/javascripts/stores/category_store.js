@@ -62,5 +62,6 @@
     })
 
   });
+  CategoryStore.setMaxListeners(0);
 
 })(this);

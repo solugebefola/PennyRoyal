@@ -12,11 +12,11 @@
   float: left;
   color: #aa7700;
   width: 300px;
-  padding-left: 20px;
-  vertical-align: middle;
+  padding: 15px 0 0 20px;
   img{
-    position: relative;
-    bottom: 5px;
+    display: block;
+    float: left;
+    margin-bottom: 10px;
     max-width: 15%;
     max-height: auto;
   }
@@ -59,11 +59,12 @@
   width: 100%;
   background: #eee;
   font-size: 12px;
-  padding: 15px 0px 5px 0px;
+  // padding: 15px 0px 5px 0px;
+  min-height: 80px;
 }
 
 .app-header.list {
-  width: 800px;
+  width: 935px;
   height: 30px;
   margin: auto;
 }
@@ -71,6 +72,7 @@
 .app-header.list > li {
   display: block;
   float: right;
+  padding-top: 30px;
 }
 
 .app-header-link:hover {
@@ -95,6 +97,7 @@
 .logo {
   display: block;
   float: left;
+  margin-left: 70px;
 }
 
 .main-content {
