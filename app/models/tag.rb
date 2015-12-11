@@ -1,6 +1,5 @@
 class Tag < ActiveRecord::Base
   include PgSearch
-  multisearchable :against => :name
   validates :user_id, :name, presence: true
 
   has_many :taglinks, inverse_of: :tag

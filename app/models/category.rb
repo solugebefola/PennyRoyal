@@ -1,6 +1,5 @@
 class Category < ActiveRecord::Base
   include PgSearch
-  multisearchable :against => :name
   validates :name, presence: true
 
   belongs_to :parent_category
