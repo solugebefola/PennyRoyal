@@ -20,23 +20,28 @@ var App = React.createClass({
     return(
       <div>
         <header className="app-header group">
-          <Link to="/" className="logo group">
-            <img className="logo-image" src={"<%= image_url('pennyroyal_logo.png') %>"} />PennyRoyal
-          </Link>
-          <ul className="app-header list">
-            <li>
-              <Link
-                className={ "app-header-link " + overviewCurrent }
-                to="/accounts">OVERVIEW
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={ "app-header-link " + transactionCurrent }
-                to="/transactions">TRANSACTIONS
-              </Link>
-            </li>
-          </ul>
+          <nav className="group">
+            <Link to="/" className="logo group">
+              <img
+                className="logo-image"
+                src={"<%= image_url('pennyroyal_logo.png') %>"} />
+                PennyRoyal
+            </Link>
+            <ul className="list">
+              <li>
+                <Link
+                  className={ "app-header-link " + overviewCurrent }
+                  to="/accounts">OVERVIEW
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={ "app-header-link " + transactionCurrent }
+                  to="/transactions">TRANSACTIONS
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </header>
         <ul className="main-content group">
           <li>

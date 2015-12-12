@@ -20,7 +20,7 @@
   float: left;
   color: #aa7700;
   width: 300px;
-  padding: 15px 0 0 20px;
+  padding-top: 15px;
   img{
     display: block;
     float: left;
@@ -67,19 +67,22 @@
   background: #eee;
   font-size: 12px;
   padding: 15px 0px 5px 0px;
-  // min-height: 80px;
+  nav {
+    width: 1000px;
+    margin: auto;
+  }
 }
 
-.app-header.list {
-  width: 935px;
+.app-header .list {
   height: 30px;
-  margin: auto;
-}
-
-.app-header.list > li {
   display: block;
   float: right;
-  // padding-top: 30px;
+  padding-top: 20px;
+  margin: auto;
+  li {
+    display: block;
+    float: right;
+  }
 }
 
 .app-header-link:hover {
@@ -101,14 +104,9 @@
   color: #000;
 }
 
-.logo {
-  display: block;
-  float: left;
-  margin-left: 70px;
-}
-
 .main-content {
-  min-width: 1500px;
+  width: 1000px;
   position: relative;
   display: block;
+  margin: auto;
 }

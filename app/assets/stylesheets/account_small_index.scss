@@ -57,7 +57,9 @@
 
 .account-small-item.active {
   background: #22c531;
-  color: #fff;
+  p {
+    color: #fff;
+  }
 }
 
 .account-small-item.active:hover * {
