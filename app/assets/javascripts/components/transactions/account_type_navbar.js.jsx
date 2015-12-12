@@ -1,16 +1,4 @@
 var AccountTypeNavbar = React.createClass({
-  getInitialState: function() {
-    return {group: ""};
-  },
-  componentWillMount: function() {
-
-  },
-  componentDidMount: function() {
-
-  },
-  componentWillUnmount: function() {
-
-  },
   render: function() {
     return (
       <div>
@@ -26,8 +14,11 @@ var AccountTypeNavbar = React.createClass({
 
   clickChangeHandler: function (e) {
     e.preventDefault();
+    this.props.getTransactions();
     var targetName = e.target.attributes.name.value;
     var newGroup = accountConstants.accountSmallGroupType[targetName];
-    ActiveAccountsActions.setActiveAccounts(AccountStore.filterByGroup(newGroup));
+    ActiveAccountsActions.setActiveAccounts(
+      AccountStore.filterByGroup(newGroup)
+    );
   }
 });

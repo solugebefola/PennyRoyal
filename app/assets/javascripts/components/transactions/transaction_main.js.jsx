@@ -28,6 +28,7 @@ var TransactionMain = React.createClass({
       <div>
         <section>
           <TransactionSearch
+            searched={ this.props.searched }
             transactions={ this.state.transactions }
             activeAccounts= { this.state.activeAccounts }/>
         </section>

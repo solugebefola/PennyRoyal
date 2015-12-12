@@ -42,7 +42,9 @@ var AccountSmallIndex = React.createClass({
             <p>Type</p>
           </li>
           <li>
-            <AccountTypeNavbar />
+            <AccountTypeNavbar
+              searched={ this.props.searched }
+              getTransactions={ this.getTransactions }/>
           </li>
           <li>
             <ul className="minibar group">
@@ -81,6 +83,7 @@ var AccountSmallIndex = React.createClass({
   },
 
   _setActive: function (e) {
+    this.getTransactions();
     var newActiveAccount;
     var newActiveAccounts = [];
     if(e && ActiveAccountStore.all()){
@@ -94,11 +97,19 @@ var AccountSmallIndex = React.createClass({
   },
 
   _emptyActiveAccounts: function () {
+    this.getTransactions();
     ActiveAccountsActions.emptyActiveAccounts();
   },
 
   updateTransactions: function () {
     ApiUtil.generateTransactions();
+  },
+
+  getTransactions: function () {
+    if (this.props.searched()){
+      ApiUtil.getTransactions();
+      this.props.searched(false);
+    }
   }
 
 

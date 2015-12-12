@@ -77,6 +77,7 @@ var TransactionSearch = React.createClass({
     if (e.key === "Enter") {
       ApiUtil.getTransactionSearches(e.target.value);
       this.setState({ search_text: "" });
+      this.props.searched(true);
     }
   }
 

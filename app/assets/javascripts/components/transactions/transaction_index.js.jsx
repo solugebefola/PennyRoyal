@@ -37,7 +37,6 @@ var TransactionIndex = React.createClass({
   },
 
   render: function() {
-
     var transactionsList = this._makeComponents();
     return (
       <div>
