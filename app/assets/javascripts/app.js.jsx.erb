@@ -12,10 +12,10 @@ var App = React.createClass({
   render: function () {
     var overviewCurrent = "";
     var transactionCurrent = "";
-    if (this.props.location.pathname.match("account")){
-      overviewCurrent = "current";
-    }else if(this.props.location.pathname.match("transactions")){
+    if (this.props.location.pathname.match("transactions")){
       transactionCurrent = "current";
+    }else{
+      overviewCurrent = "current";
     }
     return(
       <div>

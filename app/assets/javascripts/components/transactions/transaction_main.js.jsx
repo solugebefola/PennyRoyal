@@ -14,7 +14,9 @@ var TransactionMain = React.createClass({
     TransactionStore.addChangeHandler(this._onChange);
     ActiveAccountStore.addChangeHandler(this._onActiveChange);
     PaginatedTransactionStore.addChangeHandler(this._onPaginatedChange);
-    ApiUtil.getTransactions();
+    if (TransactionStore.all().length === 0){
+      ApiUtil.getTransactions();
+    }
   },
 
   componentWillUnmount: function () {
