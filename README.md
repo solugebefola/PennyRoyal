@@ -14,6 +14,7 @@ The app was built using Ruby on Rails on the back end supported by postgreSQL an
   - _Not_ change the amount
   - Add a note
 - View transactions filtered by account or account type
+- Search for _transactions_ using keywords in the description, account type, or selected tags (**New!**)
 - Tag _transactions_ with multiple _tags_
 
 ## Overall structure
@@ -57,6 +58,7 @@ Transactions have a number of attributes that can be modified.  Description, dat
 These are the features that I want to add to the app:
 - Filter transactions by tag
 - Search for transactions by description, category, tag
+- Interact with [Yodlee][yodlee] for actual bank/institution data.
 - Budgets for spending
 - Graphs to show monthly spending, perhaps using D3.js
 - Alerts for overspending, payments due, etc.
@@ -67,3 +69,4 @@ These are the features that I want to add to the app:
 [pennyroyal]:https://pennyroyal.money/
 [React]:https://facebook.github.io/react/
 [Flux]:https://facebook.github.io/flux/
+[Yodlee]:http://www.yodlee.com/
