@@ -122,6 +122,12 @@ AccountBase.create!(
 )
 
 AccountBase.create!(
+  name: "Pirate Card",
+  institution_id: 1,
+  account_type: "credit_card"
+)
+
+AccountBase.create!(
   name: "Swashy Savings",
   institution_id: 3,
   account_type: "savings"
@@ -143,6 +149,12 @@ AccountBase.create!(
   name: "Yeoman's Boat Loan",
   institution_id: 4,
   account_type: "loan"
+)
+
+AccountBase.create!(
+  name: "Yeooooooman Card",
+  institution_id: 4,
+  account_type: "credit_card"
 )
 
 Category.create!(
