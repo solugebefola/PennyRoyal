@@ -103,6 +103,16 @@ Account.create(
   account_type: "loan"
 )
 
+Account.create(
+  name: "Yeooooooman Card",
+  user_id: 3,
+  institution_id: 4,
+  username: "solar",
+  user_password: "solarsolar",
+  balance: -1453.23,
+  account_type: "credit_card"
+)
+
 AccountBase.create!(
   name: "Pirate Best Savings",
   institution_id: 1,
