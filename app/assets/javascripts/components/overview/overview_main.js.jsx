@@ -7,6 +7,7 @@ var OverviewMain = React.createClass({
   componentDidMount: function () {
     CategoryStore.addChangeHandler(this._onChange);
     ApiUtil.getCategories();
+    deeThree.createCategoryBarChart(this.state.categories);
   },
 
   componentWillUnmount: function () {
@@ -21,14 +22,21 @@ var OverviewMain = React.createClass({
       <div>
         <ul className="cat list group">
           { categories }
+          <li>
+            <label className="cat label"> Add a Category
+              <input
+                className="cat input"
+                type="text"
+                onChange={ this.handleChange } />
+            </label>
+            <button className="cat" onClick={ this.handleSubmit }>
+              Add Category
+            </button>
+          </li>
+          <li>
+            <svg className="category-chart"></svg>
+          </li>
         </ul>
-        <label className="cat label"> Add a Category
-          <input
-            className="cat input"
-            type="text"
-            onChange={ this.handleChange } />
-        </label>
-        <button className="cat" onClick={ this.handleSubmit }>Add Category</button>
       </div>
     );
   },
@@ -45,6 +53,7 @@ var OverviewMain = React.createClass({
 
   _onChange: function () {
     this.setState({ categories: CategoryStore.all() });
+    deeThree.createCategoryBarChart(this.state.categories);
   }
 
 });

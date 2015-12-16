@@ -69,6 +69,8 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     connection_pool (2.2.0)
+    d3-rails (3.5.6)
+      railties (>= 3.1)
     datejs-rails (2.0.1)
       railties (>= 3.1)
     debug_inspector (0.0.2)
@@ -223,6 +225,7 @@ DEPENDENCIES
   binding_of_caller
   byebug
   coffee-rails (~> 4.1.0)
+  d3-rails
   datejs-rails
   faker
   figaro
@@ -244,3 +247,6 @@ DEPENDENCIES
   spring
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.6

@@ -24,7 +24,7 @@ gem 'font-awesome-sass', '~> 4.4.0'
 
 gem 'accountingjs-rails'
 
-gem d3-rails
+gem 'd3-rails'
 
 gem 'pg_search'
 # Use Uglifier as compressor for JavaScript assets

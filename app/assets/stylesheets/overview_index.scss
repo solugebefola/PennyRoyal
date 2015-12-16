@@ -15,6 +15,11 @@ section.overview-main {
   padding: 20px;
 }
 
+.category-chart {
+  height: 300px;
+  width: 250px;
+}
+
 .cat.span {
   background: #fdda85;
   margin: 15px;
@@ -35,7 +40,10 @@ section.overview-main {
   display: block;
   float: left;
   margin-right: 20px;
-  width: 300px;
+  > li {
+    display: block;
+    float: right;
+  }
 }
 
 .cat.label {
