@@ -42,27 +42,33 @@ var TransactionFormDetail = React.createClass({
     return (
       <div>
         <form className="transaction-item detail group">
-          <section><h3>Tags</h3>
-            { this.makeTagList() }
-          </section>
           <section>
-            <input
-              className="transaction-item tag-name"
-              type="text"
-              name="newtag"
-              id="newtag"
-              placeholder="Add a new tag..." />
-            <button className="tag-button" onClick={ this.addTag }>Add New Tag</button>
+          <h3>Tags:</h3>
+          <div className="group">
+            { this.makeTagList() }
+          </div>
+          <input
+            className="transaction-item tag-name"
+            type="text"
+            name="newtag"
+            id="newtag"
+            placeholder="Your tag here..." />
+          <button className="tag-button" onClick={ this.addTag }>
+            Create New Tag
+          </button>
           </section>
           <section>
             <label>Notes:
-              <input className="notes" name="notes" onChange={ this.handleNotes } value={ this.state.notes } />
+              <textarea className="notes" name="notes" onChange={ this.handleNotes } value={ this.state.notes }></textarea>
             </label>
-            <button name="cancel" onClick={ this.handleDetail }>Cancel</button>
-            <button type="submit" onClick={ this.handleDetail }>Save</button>
           </section>
         </form>
-        <span className="detail-tab hide" onClick={ this.handleDetail }>HIDE DETAILS</span>
+        <button className="detail-button" name="cancel" onClick={ this.handleDetail } >
+          Cancel
+        </button>
+        <button className="detail-button" type="submit" onClick={ this.handleDetail } >
+          Save
+        </button>
       </div>
     );
   },

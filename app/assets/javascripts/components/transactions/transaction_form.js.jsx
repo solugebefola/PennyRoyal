@@ -52,6 +52,18 @@ var TransactionForm = React.createClass({
     }
   },
 
+  detailTab: function () {
+    if (this.state.detail){
+      return "";
+    }else{
+      return (
+        <span className="detail-tab" onClick={ this.showDetailForm }>
+          EDIT DETAILS
+        </span>
+      );
+    }
+  },
+
   render: function() {
     return (
       <div>
@@ -88,7 +100,7 @@ var TransactionForm = React.createClass({
             value={ accounting.formatMoney(this.state.amount, "$",2,",",".") }/>
         </form>
         <div>
-          <span className="detail-tab" onClick={ this.showDetailForm }>EDIT DETAILS</span>
+          { this.detailTab() }
           { this.detailForm() }
         </div>
       </div>

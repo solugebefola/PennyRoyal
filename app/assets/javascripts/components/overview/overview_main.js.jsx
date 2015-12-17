@@ -33,9 +33,10 @@ var OverviewMain = React.createClass({
       .data(categories);
     bars.exit().remove();
 
-    console.log(categories[0]);
     var xMinScale = 0;
-    var xMaxScale = d3.max(categories, function(d) { return (d.num_transactions * 100); });
+    var xMaxScale = d3.max(categories, function(d) {
+      return (d.num_transactions * 100);
+    });
     var xMinRange = 0;
     var xMaxRange = 490;
 
@@ -76,19 +77,13 @@ var OverviewMain = React.createClass({
       .text(function(d) { return (d.name + ": " + d.num_transactions); });
   },
 
-  createCategoryBars: function () {
-    return this.topSixCategories().map( function (cat) {
-      return <div key={ cat.name }>{ cat.name }</div>;
-    });
-  },
-
   render: function() {
       var categories = CategoryStore.all().map(function (cat) {
         return <li className="cat span" key={ cat.id }>{ cat.name }</li>;
       });
     return (
       <div>
-        <h1>Your most active categories</h1>
+        <h1>Your most active categories for the past month</h1>
         <svg className="category-chart">
         </svg>
         <ul className="cat list group">

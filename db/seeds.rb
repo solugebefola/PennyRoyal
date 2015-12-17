@@ -75,7 +75,7 @@ Account.create(
 
 Account.create(
   name: "Pirate Best Savings",
-  user_id: 3,
+  user_id: 2,
   institution_id: 1,
   username: "solar",
   user_password: "solarsolar",
@@ -85,7 +85,7 @@ Account.create(
 
 Account.create(
   name: "Swashy Savings",
-  user_id: 3,
+  user_id: 2,
   institution_id: 3,
   username: "solar",
   user_password: "solarsolar",
@@ -95,7 +95,7 @@ Account.create(
 
 Account.create(
   name: "Yeoman's Boat Loan",
-  user_id: 3,
+  user_id: 2,
   institution_id: 4,
   username: "solar",
   user_password: "solarsolar",
@@ -105,12 +105,22 @@ Account.create(
 
 Account.create(
   name: "Yeooooooman Card",
-  user_id: 3,
+  user_id: 2,
   institution_id: 4,
   username: "solar",
   user_password: "solarsolar",
   balance: -1453.23,
   account_type: "credit_card"
+)
+
+Account.create(
+  name: "Galleon Expedition",
+  user_id: 2,
+  institution_id: 2,
+  username: "pirate_king",
+  user_password: "password",
+  balance: 15003.20,
+  account_type: "investment"
 )
 
 AccountBase.create!(
@@ -234,3 +244,7 @@ Transaction.create!(
   amount: -100.12,
   description: "loan payment"
 )
+
+Account.all.each do |account|
+  account.create_transactions(30)
+end
