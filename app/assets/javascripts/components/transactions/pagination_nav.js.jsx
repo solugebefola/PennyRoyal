@@ -9,8 +9,6 @@ var PaginationNav = React.createClass({
       )
     };
   },
-  componentWillMount: function() {
-  },
 
   componentDidMount: function() {
     PaginatedTransactionStore.addChangeHandler(this._onChange);
@@ -29,9 +27,7 @@ var PaginationNav = React.createClass({
           id={ i }
           className="transaction nav-list-item"
           onClick={ this.changePage }>
-
           { i }
-
         </li>;
     }
     return links;

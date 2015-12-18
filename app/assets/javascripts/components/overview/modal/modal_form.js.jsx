@@ -19,15 +19,19 @@ var ModalForm = React.createClass({
                 className="account group">
                 <Link
                   className={ this.showActive(edit) }
-                  to="/accounts/modal/edit">Accounts</Link>
+                  to="/accounts/modal/edit">
+                  Accounts
+                </Link>
               </span>
               <span className="user group ">
                 <Link
-                  className={ this.showActive(user) } to="/accounts/modal/user_profile">About Me</Link>
+                  className={ this.showActive(user) } to="/accounts/modal/user_profile">
+                  About Me
+                </Link>
               </span>
             </nav>
             <div className="back" onClick={ this.history.goBack }>
-              <i className="fa fa-times"></i>
+              <i className="fa fa-arrow-left"></i>
             </div>
           </header>
           <div className="form main">
