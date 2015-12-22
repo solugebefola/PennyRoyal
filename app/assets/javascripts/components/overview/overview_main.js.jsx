@@ -24,7 +24,9 @@ var OverviewMain = React.createClass({
         return -1;
       }
     });
-    return sorted.slice(0,6);
+    return sorted.filter(function (cat) {
+      return cat.num_transactions > 0;
+    }).slice(0,6);
   },
 
   createCategoryBarChart: function (categories) {
@@ -33,16 +35,14 @@ var OverviewMain = React.createClass({
       .data(categories);
     bars.exit().remove();
 
-    var xMinScale = 0;
     var xMaxScale = d3.max(categories, function(d) {
       return (d.num_transactions * 100);
     });
-    var xMinRange = 0;
     var xMaxRange = 490;
 
     var xScale = d3.scale.linear()
-      .domain([xMinScale, xMaxScale])
-      .range([xMinRange, xMaxRange]);
+      .domain([0, xMaxScale])
+      .range([0, xMaxRange]);
 
     bars.enter().append("rect")
       .attr("x", 0)

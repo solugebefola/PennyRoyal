@@ -104,6 +104,7 @@ var App = React.createClass({
         <Router history={ createBrowserHistory }>
           <Route path="/" component={ App }>
             <IndexRoute component={ OverviewIndex } />
+            <Route path="transactions" component={ TransactionsPage } />
             <Route path="accounts" component={ OverviewIndex }>
               <IndexRoute component={ HiddenForm } />
               <Route path="modal" component={ ModalForm }>
@@ -114,7 +115,6 @@ var App = React.createClass({
                 <Route path="user_profile" component={ UserEditForm } />
               </Route>
             </Route>
-            <Route path="transactions" component={ TransactionsPage } />
           </Route>
         </Router>
       ),document.getElementById('content'));

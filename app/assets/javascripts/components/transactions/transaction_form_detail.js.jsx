@@ -104,14 +104,14 @@ var TransactionFormDetail = React.createClass({
 
   handleDetail: function (e) {
     e.preventDefault();
-    var exitDetail = { detail: false };
     if (e.target.name !== "cancel") {
       this.props.getDetailProps({
         tag_ids: this.state.tag_ids,
-        notes: this.state.notes
+        notes: this.state.notes,
+        detail: false
       });
     }else{
-      this.props.getDetailProps(exitDetail);
+      this.props.getDetailProps({ detail: false });
     }
   }
 });
