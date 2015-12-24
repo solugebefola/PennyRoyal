@@ -90,6 +90,7 @@
         method: "PATCH",
         data: { transaction: transaction },
         success: function (transaction) {
+          debugger
           TransactionApiActions.singleTransactionReceived(transaction);
         }
       });
