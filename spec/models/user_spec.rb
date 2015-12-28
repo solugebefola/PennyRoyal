@@ -1,13 +1,31 @@
 require 'rails_helper'
-require 'user'
 
 describe User do
-  it 'validates password length' do
-    bad_user = User.new()
-    bad_user.password = "short"
-    expect(bad_user.valid?).to be_falsey
+  before(:each) do
+    @bad_user = User.new()
+    @bad_user.email = "a@b.com"
+    @bad_user.reset_token!
+    @bad_user.password = "longenough"
+  end
 
-    bad_user.password = "longenough"
-    expect(bad_user.valid?).to be_truthy
+  it 'validates password length' do
+    expect(@bad_user.valid?).to be_truthy
+
+    @bad_user.password = "short"
+    expect(@bad_user.valid?).to be_falsey
+  end
+
+  it 'validates email format' do
+    @bad_user.email = "a@b"
+    expect(@bad_user.valid?).to be_falsey
+
+    @bad_user.email = "@b.com"
+    expect(@bad_user.valid?).to be_falsey
+
+    @bad_user.email = " mm@mm.com"
+    expect(@bad_user.valid?).to be_falsey
+
+    @bad_user.email = "a@b .com"
+    expect(@bad_user.valid?).to be_falsey
   end
 end
